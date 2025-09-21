@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiHeart, FiArrowUp } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import { FiGithub, FiLinkedin, FiHeart, FiArrowUp } from "react-icons/fi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,18 +7,18 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: FiGithub,
-      href: '#',
-      label: 'GitHub'
+      href: "#",
+      label: "GitHub",
     },
     {
       icon: FiLinkedin,
-      href: '#',
-      label: 'LinkedIn'
-    }
+      href: "#",
+      label: "LinkedIn",
+    },
   ];
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -39,8 +39,8 @@ const Footer = () => {
                   Flávio Alexandre
                 </h3>
                 <p className="text-foreground-secondary leading-relaxed max-w-md">
-                  Desenvolvedor Full Stack Junior apaixonado por criar soluções 
-                  escaláveis e eficientes. Sempre em busca de novos desafios e 
+                  Desenvolvedor Full Stack Junior apaixonado por criar soluções
+                  escaláveis e eficientes. Sempre em busca de novos desafios e
                   oportunidades para crescer profissionalmente.
                 </p>
               </motion.div>
@@ -100,7 +100,8 @@ const Footer = () => {
           >
             {/* Copyright */}
             <div className="text-foreground-secondary text-sm text-center md:text-left">
-              © {currentYear} Flávio Alexandre Orrico Severiano. Todos os direitos reservados.
+              © {currentYear} Flávio Alexandre Orrico Severiano. Todos os
+              direitos reservados.
             </div>
 
             {/* Made with Love */}
@@ -112,21 +113,8 @@ const Footer = () => {
               >
                 <FiHeart className="text-red-500" size={16} />
               </motion.div>
-              <span>e muita dedicação</span>
+              <span>, ReactJS, Typescript e Tailwind CSS.</span>
             </div>
-          </motion.div>
-
-          {/* Tech Stack Note */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mt-8 pt-8 border-t border-card-border"
-          >
-            <p className="text-foreground-secondary text-xs">
-              Desenvolvido com React, TypeScript, Tailwind CSS e Framer Motion
-            </p>
           </motion.div>
         </div>
       </div>
