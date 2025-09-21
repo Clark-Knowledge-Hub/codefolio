@@ -15,15 +15,15 @@
     --foreground: 210 40% 98%; /* #f0f6fc - Primary text */
     --foreground-secondary: 215 16% 56%; /* #8b949e - Secondary text */
 
-    --primary: 142 76% 36%; /* #10B981 - Green accent */
-    --primary-light: 141 53% 53%; /* #34D399 - Light green */
+    --primary: 153 76% 47%; /* #1ed48e - Green accent */
+    --primary-light: 153 68% 60%; /* #42e0a1 - Light green */
     --primary-foreground: 215 28% 7%; /* Dark text on green */
 
     --card: 217 33% 11%; /* #1F2937 - Card background */
     --card-foreground: 210 40% 98%;
     --card-border: 217 32% 19%; /* #30363d - Card borders */
 
-    --accent: 142 76% 36%;
+    --accent: 153 76% 47%;
     --accent-foreground: 215 28% 7%;
 
     --muted: 217 33% 11%;
@@ -31,7 +31,7 @@
 
     --border: 217 32% 19%; /* #30363d */
     --input: 217 32% 19%;
-    --ring: 142 76% 36%;
+    --ring: 153 76% 47%;
 
     --radius: 0.75rem;
 
@@ -53,8 +53,8 @@
     );
 
     /* Shadows */
-    --shadow-card: 0 4px 16px rgba(16, 185, 129, 0.1);
-    --shadow-hover: 0 8px 32px rgba(16, 185, 129, 0.2);
+    --shadow-card: 0 4px 16px rgba(30, 212, 142, 0.1);
+    --shadow-hover: 0 8px 32px rgba(30, 212, 142, 0.2);
 
     /* Animation transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
