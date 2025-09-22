@@ -1,8 +1,18 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { fadeInUp, staggerContainer } from "./AnimationVariants";
-import { FiGithub, FiExternalLink, FiUsers } from "react-icons/fi";
+import {
+  FiGithub,
+  FiExternalLink,
+  FiUsers,
+  FiX,
+  FiChevronLeft,
+  FiChevronRight,
+} from "react-icons/fi";
 import caseImage from "../assets/case.jpeg";
+import caseImage2 from "../assets/case2.jpeg";
+import caseImage3 from "../assets/case3.jpeg";
+import caseImage4 from "../assets/case4.jpeg";
 
 interface Project {
   title: string;
@@ -11,6 +21,7 @@ interface Project {
   technologies: string[];
   users?: string;
   image: string;
+  gallery: string[];
   github: {
     frontend?: string;
     backend?: string;
@@ -22,6 +33,34 @@ interface Project {
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openGallery = (project: Project) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(0);
+  };
+
+  const closeGallery = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    if (selectedProject) {
+      setCurrentImageIndex((prev) =>
+        prev === selectedProject.gallery.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedProject) {
+      setCurrentImageIndex((prev) =>
+        prev === 0 ? selectedProject.gallery.length - 1 : prev - 1
+      );
+    }
+  };
 
   const projects: Project[] = [
     {
@@ -38,6 +77,7 @@ const Projects = () => {
         "MySQL",
       ],
       image: "/placeholder.svg",
+      gallery: ["/placeholder.svg"],
       github: {
         frontend: "https://github.com/ClarkAshida/cosmo-frontend",
         backend: "https://github.com/ClarkAshida/cosmo-backend",
@@ -66,6 +106,7 @@ const Projects = () => {
       ],
       users: "3000+",
       image: caseImage,
+      gallery: [caseImage, caseImage2, caseImage3, caseImage4],
       github: {
         // Repositório privado/corporativo
       },
@@ -111,31 +152,41 @@ const Projects = () => {
                 className="bg-card border border-card-border rounded-2xl overflow-hidden group transition-all duration-300 flex flex-col"
               >
                 {/* Project Image */}
-                <div className="relative h-48 bg-gradient-card overflow-hidden">
+                <div
+                  className="relative h-48 bg-gradient-card overflow-hidden cursor-pointer"
+                  onClick={() => openGallery(project)}
+                >
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   {/* Hover Overlay */}
-                  {project.demo && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    className="absolute inset-0 bg-primary/20 flex items-center justify-center transition-opacity duration-300"
+                  >
                     <motion.div
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      className="absolute inset-0 bg-primary/20 flex items-center justify-center transition-opacity duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-lg flex items-center gap-2"
                     >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() =>
-                          project.demo && window.open(project.demo, "_blank")
-                        }
-                        className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-primary-light transition-colors"
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        Acessar Projeto
-                      </motion.button>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                      Ver Galeria
                     </motion.div>
-                  )}
+                  </motion.div>
                 </div>
 
                 {/* Project Content */}
@@ -242,6 +293,99 @@ const Projects = () => {
             </motion.a>
           </motion.div>
         </motion.div>
+
+        {/* Gallery Modal */}
+        <AnimatePresence>
+          {selectedProject && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
+              onClick={closeGallery}
+            >
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.5, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                className="relative max-w-5xl w-full max-h-[90vh] bg-card rounded-2xl overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-card-border">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">
+                      {selectedProject.title}
+                    </h3>
+                    <p className="text-primary font-medium">
+                      {selectedProject.subtitle}
+                    </p>
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={closeGallery}
+                    className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary-light transition-colors"
+                  >
+                    <FiX size={20} />
+                  </motion.button>
+                </div>
+
+                {/* Image Gallery */}
+                <div className="relative">
+                  {/* Main Image */}
+                  <div className="relative h-96 md:h-[500px] overflow-hidden bg-background flex items-center justify-center">
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentImageIndex}
+                        src={selectedProject.gallery[currentImageIndex]}
+                        alt={`${selectedProject.title} - Imagem ${
+                          currentImageIndex + 1
+                        }`}
+                        className="max-w-full max-h-full object-contain"
+                        initial={{ opacity: 0, x: 300 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -300 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </AnimatePresence>
+
+                    {/* Navigation Arrows */}
+                    {selectedProject.gallery.length > 1 && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary transition-colors z-10"
+                        >
+                          <FiChevronLeft size={24} />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary transition-colors z-10"
+                        >
+                          <FiChevronRight size={24} />
+                        </button>
+                      </>
+                    )}
+
+                    {/* Image Counter */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm z-10">
+                      {currentImageIndex + 1} / {selectedProject.gallery.length}
+                    </div>
+                  </div>
+
+                  {/* Thumbnails */}
+                  {selectedProject.gallery.length > 1 && (
+                    <div className="p-6 border-t border-card-border">
+                      <div className="flex gap-3 justify-center overflow-x-auto pb-2"></div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
