@@ -36,11 +36,10 @@ const Projects = () => {
         "Tailwind CSS",
         "MySQL",
       ],
-      users: "3000+",
       image: "/placeholder.svg",
       github: {
-        frontend: "#",
-        backend: "#",
+        frontend: "https://github.com/ClarkAshida/cosmo-frontend",
+        backend: "https://github.com/ClarkAshida/cosmo-backend",
       },
       demo: "#",
       highlights: [
@@ -52,7 +51,7 @@ const Projects = () => {
     },
     {
       title: "CASE",
-      subtitle: "Controle de Atividades Educacionais",
+      subtitle: "Controle de Atividades e Serviços Educacionais",
       description:
         "Solução para digitalizar e otimizar o controle de atividades extraclasse no Senac RN, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade para a equipe.",
       technologies: [
@@ -64,12 +63,12 @@ const Projects = () => {
         "HTML5",
         "CSS3",
       ],
+      users: "3000+",
       image: "/placeholder.svg",
       github: {
-        frontend: "#",
-        backend: "#",
+        // Repositório privado/corporativo
       },
-      demo: "#",
+      // Projeto interno - não disponível publicamente
       highlights: [
         "Digitalização de processos manuais",
         "Interface intuitiva para professores",
@@ -118,22 +117,24 @@ const Projects = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   {/* Hover Overlay */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    className="absolute inset-0 bg-primary/20 flex items-center justify-center transition-opacity duration-300"
-                  >
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() =>
-                        project.demo && window.open(project.demo, "_blank")
-                      }
-                      className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-primary-light transition-colors"
+                  {project.demo && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      className="absolute inset-0 bg-primary/20 flex items-center justify-center transition-opacity duration-300"
                     >
-                      Acessar Projeto
-                    </motion.button>
-                  </motion.div>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() =>
+                          project.demo && window.open(project.demo, "_blank")
+                        }
+                        className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-primary-light transition-colors"
+                      >
+                        Acessar Projeto
+                      </motion.button>
+                    </motion.div>
+                  )}
                 </div>
 
                 {/* Project Content */}
@@ -174,32 +175,34 @@ const Projects = () => {
                   </div>
 
                   {/* GitHub Links */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.github.frontend && (
-                      <motion.a
-                        href={project.github.frontend}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        className="flex items-center gap-2 px-4 py-2 bg-transparent border border-card-border text-foreground-secondary hover:border-primary hover:text-primary transition-all text-sm rounded-lg"
-                      >
-                        <FiGithub size={16} />
-                        Frontend
-                      </motion.a>
-                    )}
-                    {project.github.backend && (
-                      <motion.a
-                        href={project.github.backend}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        className="flex items-center gap-2 px-4 py-2 bg-transparent border border-card-border text-foreground-secondary hover:border-primary hover:text-primary transition-all text-sm rounded-lg"
-                      >
-                        <FiGithub size={16} />
-                        Backend
-                      </motion.a>
-                    )}
-                  </div>
+                  {(project.github.frontend || project.github.backend) && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.github.frontend && (
+                        <motion.a
+                          href={project.github.frontend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center gap-2 px-4 py-2 bg-transparent border border-card-border text-foreground-secondary hover:border-primary hover:text-primary transition-all text-sm rounded-lg"
+                        >
+                          <FiGithub size={16} />
+                          Frontend
+                        </motion.a>
+                      )}
+                      {project.github.backend && (
+                        <motion.a
+                          href={project.github.backend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center gap-2 px-4 py-2 bg-transparent border border-card-border text-foreground-secondary hover:border-primary hover:text-primary transition-all text-sm rounded-lg"
+                        >
+                          <FiGithub size={16} />
+                          Backend
+                        </motion.a>
+                      )}
+                    </div>
+                  )}
 
                   {/* Demo Button */}
                   {project.demo && (
