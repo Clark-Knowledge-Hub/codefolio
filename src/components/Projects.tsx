@@ -107,7 +107,7 @@ const Projects = () => {
                 key={project.title}
                 variants={fadeInUp}
                 whileHover={{ y: -10, boxShadow: "var(--shadow-hover)" }}
-                className="bg-card border border-card-border rounded-2xl overflow-hidden group transition-all duration-300"
+                className="bg-card border border-card-border rounded-2xl overflow-hidden group transition-all duration-300 flex flex-col"
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-gradient-card overflow-hidden">
@@ -138,7 +138,7 @@ const Projects = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
+                <div className="p-6 flex-1">
                   {/* Header */}
                   <div className="mb-4">
                     <h3 className="text-xl font-bold text-foreground mb-1">
@@ -229,7 +229,7 @@ const Projects = () => {
           {/* Additional Projects CTA */}
           <motion.div variants={fadeInUp} className="text-center mt-12">
             <motion.a
-              href="https://github.com"
+              href="https://github.com/ClarkAshida"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
