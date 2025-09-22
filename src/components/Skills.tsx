@@ -179,6 +179,7 @@ const Skills = () => {
                   className="inline-block mr-2"
                 ></motion.span>
                 {showAll ? "▲" : "▼"}
+
                 <span> </span>
                 {showAll ? "Mostrar Menos" : "Mostrar Mais"}
                 <motion.div

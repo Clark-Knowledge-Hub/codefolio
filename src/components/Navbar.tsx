@@ -12,7 +12,6 @@ const Navbar = () => {
     { id: "projects", label: "Projetos" },
     { id: "experience", label: "Experiência" },
     { id: "education", label: "Educação" },
-    { id: "contact", label: "Contato" },
   ];
 
   useEffect(() => {
