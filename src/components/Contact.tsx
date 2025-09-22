@@ -10,7 +10,10 @@ import {
   FiSend,
   FiUser,
   FiMessageSquare,
+  FiCheckCircle,
+  FiAlertCircle,
 } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,9 +22,20 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  // Configurações do EmailJS
+  const EMAILJS_SERVICE_ID =
+    import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_portfolio";
+  const EMAILJS_TEMPLATE_ID =
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_contact";
+  const EMAILJS_PUBLIC_KEY =
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
 
   const contactInfo = [
     {
@@ -62,16 +76,43 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      // Parâmetros para o template do EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: "flavioalexandrework@gmail.com",
+        reply_to: formData.email,
+      };
 
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+      // Enviar email usando EmailJS
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
 
-    // You would typically send the data to your backend here
-    console.log("Form submitted:", formData);
+      console.log("Email enviado com sucesso:", result);
+
+      // Reset form e mostrar sucesso
+      setFormData({ name: "", email: "", message: "" });
+      setSubmitStatus("success");
+
+      // Limpar status após 5 segundos
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Erro ao enviar email:", error);
+      setSubmitStatus("error");
+
+      // Limpar status após 5 segundos
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -292,6 +333,31 @@ const Contact = () => {
                       </>
                     )}
                   </motion.button>
+
+                  {/* Status Messages */}
+                  {submitStatus !== "idle" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className={`p-4 rounded-lg flex items-center gap-3 ${
+                        submitStatus === "success"
+                          ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                          : "bg-red-500/10 border border-red-500/20 text-red-400"
+                      }`}
+                    >
+                      {submitStatus === "success" ? (
+                        <FiCheckCircle size={20} />
+                      ) : (
+                        <FiAlertCircle size={20} />
+                      )}
+                      <span className="font-medium">
+                        {submitStatus === "success"
+                          ? "Mensagem enviada com sucesso! Entrarei em contato em breve."
+                          : "Erro ao enviar mensagem. Tente novamente ou entre em contato diretamente."}
+                      </span>
+                    </motion.div>
+                  )}
                 </form>
               </div>
             </motion.div>
