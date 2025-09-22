@@ -113,10 +113,10 @@ const Contact = () => {
                   Entre em Contato
                 </h3>
                 <p className="text-foreground-secondary leading-relaxed mb-8">
-                  Tenho interesse em oportunidades de desenvolvimento full
-                  stack, especialmente projetos que envolvam Java, Spring Boot,
-                  React ou DevOps. Vamos conversar sobre como posso contribuir
-                  para o seu projeto!
+                  Tenho interesse em oportunidades de desenvolvimento de
+                  soluções inovadoras, especialmente projetos que envolvam Java,
+                  Spring Boot, Microsserviços e DevOps. Vamos conversar sobre
+                  como posso contribuir para o seu projeto!
                 </p>
               </div>
 

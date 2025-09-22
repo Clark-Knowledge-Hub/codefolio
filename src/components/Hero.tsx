@@ -1,19 +1,22 @@
-import { motion } from 'framer-motion';
-import { FiArrowRight, FiMail } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import { FiArrowRight, FiMail } from "react-icons/fi";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
-      
+
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Greeting */}
@@ -32,12 +35,13 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-6 leading-tight"
-            style={{ 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              background: 'linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--primary)))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
+            style={{
+              fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              background:
+                "linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--primary)))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
           >
             Flávio Alexandre
@@ -49,9 +53,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-2xl md:text-4xl lg:text-5xl font-bold text-primary mb-8"
-            style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}
           >
-            Desenvolvedor Full Stack
+            Desenvolvedor de Software
           </motion.h2>
 
           {/* Description */}
@@ -61,8 +65,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-xl text-foreground-secondary max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            Desenvolvedor Junior apaixonado por criar APIs RESTful escaláveis em Java e 
-            interfaces modernas com React. Experiência com sistemas para +3000 usuários ativos.
+            Desenvolvedor de Software com experiência em criar soluções para
+            resolver problemas reais. Sou paixonado por tecnologia e estou
+            sempre em busca de novos desafios para crescer profissionalmente.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -73,9 +78,9 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: 'var(--shadow-hover)' }}
+              whileHover={{ scale: 1.05, boxShadow: "var(--shadow-hover)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection("projects")}
               className="group bg-gradient-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 shadow-card transition-all hover:shadow-hover"
             >
               Ver Meus Projetos
@@ -85,7 +90,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="group px-8 py-4 rounded-lg font-semibold text-lg border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all flex items-center gap-2"
             >
               Entre em Contato

@@ -23,12 +23,14 @@ const Education = () => {
       period: "Março 2025 – Junho 2028",
       status: "Em andamento",
       description:
-        "Formação superior focada em desenvolvimento de software, arquitetura de sistemas e gestão de tecnologia.",
+        "Formação superior que constrói uma base robusta nos fundamentos da computação. O curso aprofunda em Algoritmos e Estruturas de Dados para a criação de soluções eficientes, Redes de Computadores para entender a comunicação de sistemas, Banco de Dados para modelagem e gestão da informação, e Matemática Aplicada como alicerce para o raciocínio lógico e a resolução de problemas complexos.",
       highlights: [
         "Algoritmos e Estruturas de Dados",
         "Engenharia de Software",
+        "Banco de Dados e Modelagem de Dados",
+        "Redes de Computadores",
+        "Matemática Discreta e Cálculo",
         "Arquitetura de Sistemas",
-        "Banco de Dados",
       ],
     },
     {
@@ -52,12 +54,6 @@ const Education = () => {
       status: "Concluído",
       description:
         "Formação técnica integrada ao ensino médio, desenvolvendo bases sólidas em matemática, física e pensamento analítico.",
-      highlights: [
-        "Matemática Aplicada",
-        "Gestão de Projetos",
-        "Análise de Dados",
-        "Pensamento Analítico",
-      ],
     },
   ];
 

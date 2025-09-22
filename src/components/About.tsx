@@ -65,55 +65,76 @@ const About = () => {
             {/* Content Section */}
             <motion.div variants={fadeInUp} className="space-y-6">
               <h3 className="text-2xl font-bold text-primary mb-4">
-                Desenvolvedor Full Stack Apaixonado por Tecnologia
+                Desenvolvedor de Software
               </h3>
 
               <div className="space-y-4 text-foreground-secondary leading-relaxed">
                 <p>
-                  Desenvolvedor Junior com experiência em arquitetar e
-                  desenvolver sistemas para mais de{" "}
+                  Desenvolvedor de Software focado em criar soluções que
+                  resolvem problemas reais.{" "}
                   <span className="text-primary font-semibold">
-                    3000 usuários ativos
-                  </span>
-                  . Especializado em Java 21, Spring Boot e ReactJS, com forte
-                  prática em testes automatizados (JUnit, Cypress) e pipelines
-                  de CI/CD.
-                </p>
-
-                <p>
-                  Trabalhei com{" "}
+                    Com mais de um ano de experiência
+                  </span>{" "}
+                  no Laboratório de Inovação do Senac, arquitetei e desenvolvi
+                  do dois sistemas em produção, impactando diretamente a
+                  eficiência de mais de{" "}
                   <span className="text-primary font-semibold">
-                    GitHub Actions e Docker
-                  </span>
-                  , garantindo a confiabilidade e escalabilidade das aplicações.
-                  Atuei em squads ágeis sob metodologia Scrum, desenvolvendo
-                  soluções que impactam diretamente na produtividade das
-                  equipes.
+                    3000 usuários
+                  </span>{" "}
+                  na rede da instituição.
                 </p>
-
                 <p>
-                  Minha paixão está em criar código limpo, eficiente e
-                  escalável, sempre buscando as melhores práticas de
-                  desenvolvimento e mantendo-me atualizado com as mais recentes
-                  tecnologias do mercado.
+                  Minha especialidade é o ecossistema{" "}
+                  <span className="text-primary font-semibold">Java</span> com{" "}
+                  <span className="text-primary font-semibold">
+                    Spring Boot
+                  </span>{" "}
+                  e arquitetura de{" "}
+                  <span className="text-primary font-semibold">
+                    Microsserviços
+                  </span>
+                  . Tenho um forte compromisso com a qualidade de código,
+                  aplicando testes automatizados (JUnit, Mockito) e garantindo a
+                  entrega contínua através de pipelines CI/CD.
+                </p>
+                <p>
+                  Minha paixão é criar tecnologia que{" "}
+                  <span className="text-primary font-semibold">
+                    agrega valor real
+                  </span>
+                  , simplifica operações e impulsiona a inovação. Estou sempre
+                  em busca de novos desafios que me permitam inovar e otimizar
+                  processos, contribuindo para o avanço de projetos e negócios.
                 </p>
               </div>
 
               {/* Stats */}
               <motion.div
                 variants={fadeInUp}
-                className="grid grid-cols-2 gap-6 mt-8"
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"
               >
                 <div className="bg-card border border-card-border rounded-lg p-4 text-center">
-                  <div className="text-3xl font-bold text-primary">3K+</div>
-                  <div className="text-sm text-foreground-secondary">
+                  <div className="text-2xl font-bold text-primary">1+</div>
+                  <div className="text-xs text-foreground-secondary">
+                    Ano de Experiência
+                  </div>
+                </div>
+                <div className="bg-card border border-card-border rounded-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-primary">3+</div>
+                  <div className="text-xs text-foreground-secondary">
+                    Anos de Estudo em TI
+                  </div>
+                </div>
+                <div className="bg-card border border-card-border rounded-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-primary">3K+</div>
+                  <div className="text-xs text-foreground-secondary">
                     Usuários Ativos
                   </div>
                 </div>
                 <div className="bg-card border border-card-border rounded-lg p-4 text-center">
-                  <div className="text-3xl font-bold text-primary">85%+</div>
-                  <div className="text-sm text-foreground-secondary">
-                    Cobertura de Testes
+                  <div className="text-2xl font-bold text-primary">2</div>
+                  <div className="text-xs text-foreground-secondary">
+                    Projetos em Produção
                   </div>
                 </div>
               </motion.div>
