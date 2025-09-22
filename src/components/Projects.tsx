@@ -1,16 +1,19 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { fadeInUp, staggerContainer } from "./AnimationVariants";
-import { FiGithub, FiExternalLink, FiCalendar, FiUsers } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiUsers } from "react-icons/fi";
 
 interface Project {
   title: string;
   subtitle: string;
   description: string;
   technologies: string[];
-  period: string;
   users?: string;
-  github?: string;
+  image: string;
+  github: {
+    frontend?: string;
+    backend?: string;
+  };
   demo?: string;
   highlights: string[];
 }
@@ -21,7 +24,7 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
-      title: "COSMO",
+      title: "Cosmo",
       subtitle: "Gerenciamento de Ativos de TI",
       description:
         "Plataforma centralizada para cadastrar, rastrear e gerenciar o ciclo de vida de ativos de TI na Alares Internet. Desenvolvida com API RESTful em Java 21 e Spring Boot, e frontend com ReactJS, TypeScript e Tailwind CSS.",
@@ -31,11 +34,14 @@ const Projects = () => {
         "React",
         "TypeScript",
         "Tailwind CSS",
-        "PostgreSQL",
+        "MySQL",
       ],
-      period: "Julho 2025 – Atual",
       users: "3000+",
-      github: "",
+      image: "/placeholder.svg",
+      github: {
+        frontend: "#",
+        backend: "#",
+      },
       demo: "#",
       highlights: [
         "Arquitetura escalável para +3000 usuários",
@@ -49,9 +55,21 @@ const Projects = () => {
       subtitle: "Controle de Atividades Educacionais",
       description:
         "Solução para digitalizar e otimizar o controle de atividades extraclasse no Senac RN, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade para a equipe.",
-      technologies: ["ReactJS", "ExpressJS", "Node.js", "JavaScript", "CSS3"],
-      period: "Janeiro 2024 – Agosto 2024",
-      github: "#",
+      technologies: [
+        "ReactJS",
+        "ExpressJS",
+        "Node.js",
+        "PostgreSQL",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+      ],
+      image: "/placeholder.svg",
+      github: {
+        frontend: "#",
+        backend: "#",
+      },
+      demo: "#",
       highlights: [
         "Digitalização de processos manuais",
         "Interface intuitiva para professores",
@@ -92,87 +110,111 @@ const Projects = () => {
                 whileHover={{ y: -10, boxShadow: "var(--shadow-hover)" }}
                 className="bg-card border border-card-border rounded-2xl overflow-hidden group transition-all duration-300"
               >
-                {/* Project Header */}
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-foreground mb-1">
-                        {project.title}
-                      </h3>
-                      <p className="text-primary font-medium">
-                        {project.subtitle}
-                      </p>
-                    </div>
-                    <div className="flex space-x-3">
-                      {project.github && (
-                        <motion.a
-                          href={project.github}
-                          whileHover={{ scale: 1.1 }}
-                          className="text-foreground-secondary hover:text-primary transition-colors"
-                        >
-                          <FiGithub size={24} />
-                        </motion.a>
-                      )}
-                      {project.demo && (
-                        <motion.a
-                          href={project.demo}
-                          whileHover={{ scale: 1.1 }}
-                          className="text-foreground-secondary hover:text-primary transition-colors"
-                        >
-                          <FiExternalLink size={24} />
-                        </motion.a>
-                      )}
-                    </div>
+                {/* Project Image */}
+                <div className="relative h-48 bg-gradient-card overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* Hover Overlay */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    className="absolute inset-0 bg-primary/20 flex items-center justify-center transition-opacity duration-300"
+                  >
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() =>
+                        project.demo && window.open(project.demo, "_blank")
+                      }
+                      className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-primary-light transition-colors"
+                    >
+                      Acessar Projeto
+                    </motion.button>
+                  </motion.div>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-6">
+                  {/* Header */}
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-foreground mb-1">
+                      {project.title}
+                    </h3>
+                    <p className="text-primary font-medium text-sm">
+                      {project.subtitle}
+                    </p>
                   </div>
 
-                  {/* Project Info */}
-                  <div className="flex items-center gap-4 text-sm text-foreground-secondary mb-6">
-                    <div className="flex items-center gap-1">
-                      <FiCalendar size={16} />
-                      {project.period}
+                  {/* Users Info */}
+                  {project.users && (
+                    <div className="flex items-center gap-1 text-sm text-foreground-secondary mb-4">
+                      <FiUsers size={16} />
+                      {project.users} usuários
                     </div>
-                    {project.users && (
-                      <div className="flex items-center gap-1">
-                        <FiUsers size={16} />
-                        {project.users} usuários
-                      </div>
-                    )}
-                  </div>
+                  )}
 
                   {/* Description */}
-                  <p className="text-foreground-secondary leading-relaxed mb-6">
+                  <p className="text-foreground-secondary text-sm leading-relaxed mb-4">
                     {project.description}
                   </p>
 
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <h4 className="text-foreground font-semibold mb-3">
-                      Principais Conquistas:
-                    </h4>
-                    <ul className="space-y-2">
-                      {project.highlights.map((highlight, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-foreground-secondary text-sm"
-                        >
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20"
+                        className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full border border-primary/20"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
+
+                  {/* GitHub Links */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.github.frontend && (
+                      <motion.a
+                        href={project.github.frontend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        className="flex items-center gap-2 px-4 py-2 bg-transparent border border-card-border text-foreground-secondary hover:border-primary hover:text-primary transition-all text-sm rounded-lg"
+                      >
+                        <FiGithub size={16} />
+                        Frontend
+                      </motion.a>
+                    )}
+                    {project.github.backend && (
+                      <motion.a
+                        href={project.github.backend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        className="flex items-center gap-2 px-4 py-2 bg-transparent border border-card-border text-foreground-secondary hover:border-primary hover:text-primary transition-all text-sm rounded-lg"
+                      >
+                        <FiGithub size={16} />
+                        Backend
+                      </motion.a>
+                    )}
+                  </div>
+
+                  {/* Demo Button */}
+                  {project.demo && (
+                    <motion.a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold hover:shadow-hover transition-all"
+                    >
+                      <FiExternalLink size={16} />
+                      Acessar Projeto
+                    </motion.a>
+                  )}
                 </div>
 
                 {/* Hover Effect Gradient */}
