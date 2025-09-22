@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { fadeInUp, staggerContainer } from './AnimationVariants';
-import { FiGithub, FiExternalLink, FiCalendar, FiUsers } from 'react-icons/fi';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { fadeInUp, staggerContainer } from "./AnimationVariants";
+import { FiGithub, FiExternalLink, FiCalendar, FiUsers } from "react-icons/fi";
 
 interface Project {
   title: string;
@@ -21,37 +21,45 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
-      title: 'COSMO',
-      subtitle: 'Gerenciamento de Ativos de TI',
-      description: 'Plataforma centralizada para cadastrar, rastrear e gerenciar o ciclo de vida de ativos de TI na Alares Internet. Desenvolvida com API RESTful em Java 21 e Spring Boot, e frontend com ReactJS, TypeScript e Tailwind CSS.',
-      technologies: ['Java 21', 'Spring Boot', 'React', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
-      period: 'Julho 2025 – Atual',
-      users: '3000+',
-      github: '#',
-      demo: '#',
+      title: "COSMO",
+      subtitle: "Gerenciamento de Ativos de TI",
+      description:
+        "Plataforma centralizada para cadastrar, rastrear e gerenciar o ciclo de vida de ativos de TI na Alares Internet. Desenvolvida com API RESTful em Java 21 e Spring Boot, e frontend com ReactJS, TypeScript e Tailwind CSS.",
+      technologies: [
+        "Java 21",
+        "Spring Boot",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+      ],
+      period: "Julho 2025 – Atual",
+      users: "3000+",
+      github: "",
+      demo: "#",
       highlights: [
-        'Arquitetura escalável para +3000 usuários',
-        'API RESTful completa com documentação',
-        'Interface responsiva e intuitiva',
-        'Integração com sistemas legados'
-      ]
+        "Arquitetura escalável para +3000 usuários",
+        "API RESTful completa com documentação",
+        "Interface responsiva e intuitiva",
+        "Integração com sistemas legados",
+      ],
     },
     {
-      title: 'CASE',
-      subtitle: 'Controle de Atividades Educacionais',
-      description: 'Solução para digitalizar e otimizar o controle de atividades extraclasse no Senac RN, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade para a equipe.',
-      technologies: ['ReactJS', 'ExpressJS', 'Node.js', 'JavaScript', 'CSS3'],
-      period: 'Janeiro 2024 – Agosto 2024',
-      github: '#',
+      title: "CASE",
+      subtitle: "Controle de Atividades Educacionais",
+      description:
+        "Solução para digitalizar e otimizar o controle de atividades extraclasse no Senac RN, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade para a equipe.",
+      technologies: ["ReactJS", "ExpressJS", "Node.js", "JavaScript", "CSS3"],
+      period: "Janeiro 2024 – Agosto 2024",
+      github: "#",
       highlights: [
-        'Digitalização de processos manuais',
-        'Interface intuitiva para professores',
-        'Redução de 70% no tempo de controle',
-        'Sistema de notificações automáticas'
-      ]
-    }
+        "Digitalização de processos manuais",
+        "Interface intuitiva para professores",
+        "Redução de 70% no tempo de controle",
+        "Sistema de notificações automáticas",
+      ],
+    },
   ];
-
 
   return (
     <section id="projects" className="py-20 bg-background-secondary">
@@ -70,7 +78,8 @@ const Projects = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Soluções completas que desenvolvi, desde a concepção até a implementação
+              Soluções completas que desenvolvi, desde a concepção até a
+              implementação
             </p>
           </motion.div>
 
@@ -80,7 +89,7 @@ const Projects = () => {
               <motion.div
                 key={project.title}
                 variants={fadeInUp}
-                whileHover={{ y: -10, boxShadow: 'var(--shadow-hover)' }}
+                whileHover={{ y: -10, boxShadow: "var(--shadow-hover)" }}
                 className="bg-card border border-card-border rounded-2xl overflow-hidden group transition-all duration-300"
               >
                 {/* Project Header */}
@@ -137,10 +146,15 @@ const Projects = () => {
 
                   {/* Highlights */}
                   <div className="mb-6">
-                    <h4 className="text-foreground font-semibold mb-3">Principais Conquistas:</h4>
+                    <h4 className="text-foreground font-semibold mb-3">
+                      Principais Conquistas:
+                    </h4>
                     <ul className="space-y-2">
                       {project.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start gap-2 text-foreground-secondary text-sm">
+                        <li
+                          key={i}
+                          className="flex items-start gap-2 text-foreground-secondary text-sm"
+                        >
                           <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           {highlight}
                         </li>
@@ -168,10 +182,7 @@ const Projects = () => {
           </div>
 
           {/* Additional Projects CTA */}
-          <motion.div 
-            variants={fadeInUp}
-            className="text-center mt-12"
-          >
+          <motion.div variants={fadeInUp} className="text-center mt-12">
             <motion.a
               href="https://github.com"
               target="_blank"

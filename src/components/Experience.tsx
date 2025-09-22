@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { fadeInUp, fadeInLeft, staggerContainer } from './AnimationVariants';
-import { FiMapPin, FiCalendar, FiCheckCircle } from 'react-icons/fi';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { fadeInUp, fadeInLeft, staggerContainer } from "./AnimationVariants";
+import { FiMapPin, FiCalendar, FiCheckCircle } from "react-icons/fi";
 
 interface ExperienceItem {
   title: string;
@@ -19,23 +19,38 @@ const Experience = () => {
 
   const experiences: ExperienceItem[] = [
     {
-      title: 'Desenvolvedor Junior',
-      company: 'Senac RN',
-      location: 'Natal, RN',
-      period: 'Agosto 2024 – Setembro 2025',
+      title: "Desenvolvedor Junior",
+      company: "Senac RN",
+      location: "Natal, RN",
+      period: "Agosto 2024 – Setembro 2025",
       current: true,
-      description: 'Desenvolvimento de sistemas educacionais com foco em escalabilidade e qualidade, trabalhando em squads ágeis com metodologia Scrum.',
+      description:
+        "Desenvolvimento de sistemas educacionais com foco em escalabilidade e qualidade, trabalhando em squads ágeis com metodologia Scrum.",
       achievements: [
-        'Arquitetei e desenvolvi sistemas para +3000 usuários ativos, com replicação nacional em todas as unidades do Senac',
-        'Garanti a confiabilidade das aplicações com +85% de cobertura de testes usando JUnit e Mockito',
-        'Automatizei pipelines de CI/CD com GitHub Actions e Docker, reduzindo tempo de deploy em 60%',
-        'Criei interfaces de front-end responsivas com ReactJS, TypeScript e Tailwind CSS',
-        'Implementei APIs RESTful escaláveis em Java 21 com Spring Boot seguindo arquitetura limpa',
-        'Colaborei em squads multidisciplinares utilizando metodologias ágeis (Scrum)'
-      ]
-    }
+        "Arquitetei e desenvolvi sistemas para +3000 usuários ativos, com replicação nacional em todas as unidades do Senac",
+        "Garanti a confiabilidade das aplicações com +85% de cobertura de testes usando JUnit e Mockito",
+        "Automatizei pipelines de CI/CD com GitHub Actions e Docker, reduzindo tempo de deploy em 60%",
+        "Criei interfaces de front-end responsivas com ReactJS, TypeScript e Tailwind CSS",
+        "Implementei APIs RESTful escaláveis em Java 21 com Spring Boot seguindo arquitetura limpa",
+        "Colaborei em squads multidisciplinares utilizando metodologias ágeis (Scrum)",
+      ],
+    },
+    {
+      title: "Estagiário de TI",
+      company: "Alares Internet",
+      location: "Natal, RN",
+      period: "Março 2024 – Presente",
+      current: true,
+      description:
+        "Suporte técnico especializado e desenvolvimento de soluções para automatização de processos de TI em ambiente corporativo.",
+      achievements: [
+        "Prestei suporte técnico em software, hardware e redes para +300 colaboradores, garantindo a estabilidade de ambientes críticos",
+        "Automatizei processos manuais de revisão de acesso em sistemas com scripts em Python (Pandas, PyAutoGui, OpenCV)",
+        "Desenvolvo a plataforma de inventário Cosmo (Java 21, Spring, ReactJS, TypeScript) para automatizar o ciclo de vida de ativos de TI",
+        "Aumentei a eficiência operacional através da implementação de soluções tecnológicas inovadoras",
+      ],
+    },
   ];
-
 
   return (
     <section id="experience" className="py-20 bg-background">
@@ -54,7 +69,8 @@ const Experience = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Minha jornada profissional desenvolvendo soluções que impactam milhares de usuários
+              Minha jornada profissional desenvolvendo soluções que impactam
+              milhares de usuários
             </p>
           </motion.div>
 
@@ -68,14 +84,14 @@ const Experience = () => {
               >
                 {/* Timeline Line */}
                 <div className="absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"></div>
-                
+
                 {/* Timeline Dot */}
                 <motion.div
                   whileHover={{ scale: 1.2 }}
                   className={`absolute left-4 top-8 w-4 h-4 rounded-full border-4 ${
                     experience.current
-                      ? 'bg-primary border-primary shadow-lg shadow-primary/50'
-                      : 'bg-background border-primary'
+                      ? "bg-primary border-primary shadow-lg shadow-primary/50"
+                      : "bg-background border-primary"
                   }`}
                 >
                   {experience.current && (
@@ -89,7 +105,7 @@ const Experience = () => {
 
                 {/* Content Card */}
                 <motion.div
-                  whileHover={{ y: -5, boxShadow: 'var(--shadow-hover)' }}
+                  whileHover={{ y: -5, boxShadow: "var(--shadow-hover)" }}
                   className="ml-16 bg-card border border-card-border rounded-2xl p-8 shadow-card"
                 >
                   {/* Header */}
@@ -104,7 +120,7 @@ const Experience = () => {
                         </span>
                       )}
                     </div>
-                    
+
                     <h4 className="text-xl font-semibold text-primary mb-3">
                       {experience.company}
                     </h4>
@@ -149,33 +165,6 @@ const Experience = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Call to Action */}
-          <motion.div 
-            variants={fadeInUp}
-            className="text-center mt-16"
-          >
-            <div className="bg-gradient-card border border-card-border rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Interessado em Colaborar?
-              </h3>
-              <p className="text-foreground-secondary mb-6 max-w-2xl mx-auto">
-                Estou sempre aberto a novos desafios e oportunidades para aplicar 
-                minha experiência em projetos inovadores.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="bg-gradient-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold shadow-card hover:shadow-hover transition-all"
-              >
-                Vamos Conversar
-              </motion.button>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

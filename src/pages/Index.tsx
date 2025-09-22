@@ -1,4 +1,4 @@
-import Portfolio from './Portfolio';
+import Portfolio from "./Portfolio";
 
 const Index = () => {
   return <Portfolio />;
