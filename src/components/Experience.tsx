@@ -22,7 +22,7 @@ const Experience = () => {
       title: "Desenvolvedor Junior",
       company: "Senac RN",
       location: "Natal, RN",
-      period: "Agosto 2024 – Setembro 2025",
+      period: "Agosto 2024 – Presente",
       current: true,
       description:
         "Desenvolvimento de sistemas educacionais com foco em escalabilidade e qualidade, trabalhando em squads ágeis com metodologia Scrum.",

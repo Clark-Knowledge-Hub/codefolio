@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { fadeInUp, staggerContainer } from "./AnimationVariants";
 import { FiGithub, FiExternalLink, FiUsers } from "react-icons/fi";
+import caseImage from "../assets/case.jpeg";
 
 interface Project {
   title: string;
@@ -53,7 +54,7 @@ const Projects = () => {
       title: "CASE",
       subtitle: "Controle de Atividades e Serviços Educacionais",
       description:
-        "Solução para digitalizar e otimizar o controle de atividades extraclasse no Senac RN, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade para a equipe.",
+        "Projeto Integrador criado para resolver um problema real do Senac RN: digitalizar e otimizar o controle de atividades extraclasse de instrutores, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade, privacidade e eficiência para a instituição.",
       technologies: [
         "ReactJS",
         "ExpressJS",
@@ -64,7 +65,7 @@ const Projects = () => {
         "CSS3",
       ],
       users: "3000+",
-      image: "/placeholder.svg",
+      image: caseImage,
       github: {
         // Repositório privado/corporativo
       },
