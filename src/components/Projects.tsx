@@ -378,27 +378,7 @@ const Projects = () => {
                   {/* Thumbnails */}
                   {selectedProject.gallery.length > 1 && (
                     <div className="p-3 sm:p-6 border-t border-card-border">
-                      <div className="flex gap-2 sm:gap-3 justify-center overflow-x-auto pb-2">
-                        {selectedProject.gallery.map((image, index) => (
-                          <motion.button
-                            key={index}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => setCurrentImageIndex(index)}
-                            className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden border-2 transition-colors ${
-                              index === currentImageIndex
-                                ? "border-primary"
-                                : "border-card-border hover:border-primary/50"
-                            }`}
-                          >
-                            <img
-                              src={image}
-                              alt={`Thumbnail ${index + 1}`}
-                              className="w-full h-full object-cover"
-                            />
-                          </motion.button>
-                        ))}
-                      </div>
+                      <div className="flex gap-2 sm:gap-3 justify-center overflow-x-auto pb-2"></div>
                     </div>
                   )}
                 </div>
