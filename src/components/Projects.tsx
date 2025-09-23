@@ -375,12 +375,9 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Thumbnails */}
-                  {selectedProject.gallery.length > 1 && (
-                    <div className="p-3 sm:p-6 border-t border-card-border">
-                      <div className="flex gap-2 sm:gap-3 justify-center overflow-x-auto pb-2"></div>
-                    </div>
-                  )}
+                  <div className="p-3 sm:p-6 border-t border-card-border">
+                    <div className="flex gap-2 sm:gap-3 justify-center overflow-x-auto pb-2"></div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
