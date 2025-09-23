@@ -99,7 +99,7 @@ const Education = () => {
                 key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -5, boxShadow: "var(--shadow-hover)" }}
-                className="bg-card border border-card-border rounded-2xl p-8 shadow-card transition-all duration-300"
+                className="bg-card border border-card-border rounded-2xl p-4 sm:p-6 lg:p-8 shadow-card transition-all duration-300"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   {/* Icon */}

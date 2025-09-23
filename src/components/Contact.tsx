@@ -146,7 +146,7 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Info */}
             <motion.div variants={fadeInUp} className="space-y-8">
               <div>

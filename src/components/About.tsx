@@ -25,19 +25,17 @@ const About = () => {
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image Section */}
             <motion.div variants={fadeInUp} className="relative">
               <div className="relative w-full max-w-md mx-auto">
-                {/* Profile Image Placeholder */}
-                <div className="aspect-square bg-gradient-card rounded-2xl shadow-card border border-card-border flex items-center justify-center  w-[400px] h-auto mx-auto">
-                  <div className="text-6xl text-primary">
-                    <img
-                      className="object-contain rounded-2xl"
-                      src={aboutme}
-                      alt="Profile"
-                    />
-                  </div>
+                {/* Profile Image */}
+                <div className="aspect-square rounded-2xl shadow-card border border-card-border overflow-hidden bg-gradient-card">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={aboutme}
+                    alt="Flávio Alexandre - Desenvolvedor de Software"
+                  />
                 </div>
 
                 {/* Decorative Elements */}
@@ -111,29 +109,37 @@ const About = () => {
               {/* Stats */}
               <motion.div
                 variants={fadeInUp}
-                className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"
+                className="grid grid-cols-2 gap-4 mt-8"
               >
-                <div className="bg-card border border-card-border rounded-lg p-4 text-center">
-                  <div className="text-2xl font-bold text-primary">1+</div>
-                  <div className="text-xs text-foreground-secondary">
+                <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-primary">
+                    1+
+                  </div>
+                  <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
                     Ano de Experiência
                   </div>
                 </div>
-                <div className="bg-card border border-card-border rounded-lg p-4 text-center">
-                  <div className="text-2xl font-bold text-primary">3+</div>
-                  <div className="text-xs text-foreground-secondary">
+                <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-primary">
+                    3+
+                  </div>
+                  <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
                     Anos de Estudo em TI
                   </div>
                 </div>
-                <div className="bg-card border border-card-border rounded-lg p-4 text-center">
-                  <div className="text-2xl font-bold text-primary">3K+</div>
-                  <div className="text-xs text-foreground-secondary">
+                <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-primary">
+                    3K+
+                  </div>
+                  <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
                     Usuários Ativos
                   </div>
                 </div>
-                <div className="bg-card border border-card-border rounded-lg p-4 text-center">
-                  <div className="text-2xl font-bold text-primary">2</div>
-                  <div className="text-xs text-foreground-secondary">
+                <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-primary">
+                    2
+                  </div>
+                  <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
                     Projetos em Produção
                   </div>
                 </div>

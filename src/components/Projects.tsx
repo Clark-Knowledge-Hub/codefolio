@@ -143,7 +143,7 @@ const Projects = () => {
           </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -301,7 +301,7 @@ const Projects = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-2 sm:p-4"
               onClick={closeGallery}
             >
               <motion.div
@@ -309,16 +309,16 @@ const Projects = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.5, opacity: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                className="relative max-w-5xl w-full max-h-[90vh] bg-card rounded-2xl overflow-hidden"
+                className="relative max-w-5xl w-full max-h-[95vh] sm:max-h-[90vh] bg-card rounded-lg sm:rounded-2xl overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Header */}
-                <div className="flex items-center justify-between p-6 border-b border-card-border">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground">
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-card-border">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg sm:text-2xl font-bold text-foreground truncate">
                       {selectedProject.title}
                     </h3>
-                    <p className="text-primary font-medium">
+                    <p className="text-primary font-medium text-sm sm:text-base truncate">
                       {selectedProject.subtitle}
                     </p>
                   </div>
@@ -326,16 +326,16 @@ const Projects = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={closeGallery}
-                    className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary-light transition-colors"
+                    className="ml-4 w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary-light transition-colors flex-shrink-0"
                   >
-                    <FiX size={20} />
+                    <FiX size={16} className="sm:w-5 sm:h-5" />
                   </motion.button>
                 </div>
 
                 {/* Image Gallery */}
                 <div className="relative">
                   {/* Main Image */}
-                  <div className="relative h-96 md:h-[500px] overflow-hidden bg-background flex items-center justify-center">
+                  <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden bg-background flex items-center justify-center">
                     <AnimatePresence mode="wait">
                       <motion.img
                         key={currentImageIndex}
@@ -356,29 +356,49 @@ const Projects = () => {
                       <>
                         <button
                           onClick={prevImage}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary transition-colors z-10"
+                          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-primary/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary transition-colors z-10"
                         >
-                          <FiChevronLeft size={24} />
+                          <FiChevronLeft size={16} className="sm:w-6 sm:h-6" />
                         </button>
                         <button
                           onClick={nextImage}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary transition-colors z-10"
+                          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-primary/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary transition-colors z-10"
                         >
-                          <FiChevronRight size={24} />
+                          <FiChevronRight size={16} className="sm:w-6 sm:h-6" />
                         </button>
                       </>
                     )}
 
                     {/* Image Counter */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm z-10">
+                    <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-2 rounded-full text-white text-xs sm:text-sm z-10">
                       {currentImageIndex + 1} / {selectedProject.gallery.length}
                     </div>
                   </div>
 
                   {/* Thumbnails */}
                   {selectedProject.gallery.length > 1 && (
-                    <div className="p-6 border-t border-card-border">
-                      <div className="flex gap-3 justify-center overflow-x-auto pb-2"></div>
+                    <div className="p-3 sm:p-6 border-t border-card-border">
+                      <div className="flex gap-2 sm:gap-3 justify-center overflow-x-auto pb-2">
+                        {selectedProject.gallery.map((image, index) => (
+                          <motion.button
+                            key={index}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden border-2 transition-colors ${
+                              index === currentImageIndex
+                                ? "border-primary"
+                                : "border-card-border hover:border-primary/50"
+                            }`}
+                          >
+                            <img
+                              src={image}
+                              alt={`Thumbnail ${index + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </motion.button>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

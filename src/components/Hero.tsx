@@ -75,13 +75,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "var(--shadow-hover)" }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection("projects")}
-              className="group bg-gradient-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 shadow-card transition-all hover:shadow-hover"
+              className="group bg-gradient-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg flex items-center gap-2 shadow-card transition-all hover:shadow-hover w-full sm:w-auto justify-center"
             >
               Ver Meus Projetos
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -91,7 +91,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection("contact")}
-              className="group px-8 py-4 rounded-lg font-semibold text-lg border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all flex items-center gap-2"
+              className="group px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
             >
               Entre em Contato
               <FiMail className="group-hover:scale-110 transition-transform" />

@@ -67,12 +67,14 @@
     @apply border-border;
   }
 
+  html,
+  body {
+    @apply overflow-x-hidden;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-inter antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  }
-
-  html {
-    scroll-behavior: smooth;
   }
 }

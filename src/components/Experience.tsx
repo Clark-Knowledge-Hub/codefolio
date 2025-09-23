@@ -83,12 +83,12 @@ const Experience = () => {
                 className="relative"
               >
                 {/* Timeline Line */}
-                <div className="absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"></div>
+                <div className="absolute left-4 sm:left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"></div>
 
                 {/* Timeline Dot */}
                 <motion.div
                   whileHover={{ scale: 1.2 }}
-                  className={`absolute left-4 top-8 w-4 h-4 rounded-full border-4 ${
+                  className={`absolute left-2 sm:left-4 top-8 w-4 h-4 rounded-full border-4 ${
                     experience.current
                       ? "bg-primary border-primary shadow-lg shadow-primary/50"
                       : "bg-background border-primary"
@@ -106,7 +106,7 @@ const Experience = () => {
                 {/* Content Card */}
                 <motion.div
                   whileHover={{ y: -5, boxShadow: "var(--shadow-hover)" }}
-                  className="ml-16 bg-card border border-card-border rounded-2xl p-8 shadow-card"
+                  className="ml-12 sm:ml-16 bg-card border border-card-border rounded-2xl p-4 sm:p-6 lg:p-8 shadow-card"
                 >
                   {/* Header */}
                   <div className="mb-6">
