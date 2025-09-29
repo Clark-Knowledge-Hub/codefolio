@@ -1,39 +1,296 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flávio Alexandre - Desenvolvedor</title>
+
+    <!-- SEO Meta Tags -->
+    <title>
+      Flávio Alexandre - Desenvolvedor Backend Java | Spring Boot & DevOps
+      Specialist
+    </title>
     <meta
       name="description"
-      content="Portfólio de Flávio Alexandre, Desenvolvedor de Software especializado em Java, Spring Boot, React e DevOps. Experiência com sistemas para +3000 usuários."
+      content="Portfolio de Flávio Alexandre, Desenvolvedor Backend especializado em Java, Spring Boot, RabbitMQ, Kafka e DevOps. Desenvolvedor Fullstack com experiência em sistemas para +3000 usuários. Codefolio profissional para recrutadores."
     />
     <meta name="author" content="Flávio Alexandre Orrico Severiano" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Portuguese" />
 
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="Java, Spring Boot, Desenvolvedor Backend, Fullstack Developer, RabbitMQ, Kafka, DevOps, Portfolio, Codefolio, Developer Portfolio, Programador, Desenvolvedor de Software, Java Developer, Backend Developer, Microservices, CI/CD, Docker, Kubernetes, REST API, PostgreSQL, React, TypeScript"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.flavioalexandre.tech/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.flavioalexandre.tech/" />
     <meta
       property="og:title"
-      content="Flávio Alexandre - Desenvolvedor de Software"
+      content="Flávio Alexandre - Desenvolvedor Backend Java | Spring Boot & DevOps"
     />
     <meta
       property="og:description"
-      content="Portfólio de Flávio Alexandre, Desenvolvedor de Software especializado em Java, Spring Boot, React e DevOps."
+      content="Portfolio profissional de Flávio Alexandre. Desenvolvedor Backend Java especialista em Spring Boot, RabbitMQ, Kafka e DevOps. Codefolio com projetos para +3000 usuários."
     />
-    <meta property="og:type" content="website" />
     <meta
       property="og:image"
-      content="https://lovable.dev/opengraph-image-p98pqg.png"
+      content="https://www.flavioalexandre.tech/portfolio.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="Flávio Alexandre - Desenvolvedor Backend Java | Spring Boot & DevOps Portfolio"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta
+      property="og:site_name"
+      content="Flávio Alexandre - Developer Portfolio"
     />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.flavioalexandre.tech/" />
     <meta
-      name="twitter:image"
-      content="https://lovable.dev/opengraph-image-p98pqg.png"
+      property="twitter:title"
+      content="Flávio Alexandre - Java Backend Developer | Spring Boot Specialist"
     />
+    <meta
+      property="twitter:description"
+      content="Desenvolvedor Backend Java especialista em Spring Boot, RabbitMQ, Kafka e DevOps. Portfolio com projetos para +3000 usuários."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.flavioalexandre.tech/portfolio.png"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="Flávio Alexandre - Desenvolvedor Backend Java | Spring Boot & DevOps Portfolio"
+    />
+
+    <!-- LinkedIn -->
+    <meta
+      property="og:image:secure_url"
+      content="https://www.flavioalexandre.tech/portfolio.png"
+    />
+
+    <!-- WhatsApp -->
+    <meta
+      property="og:image:url"
+      content="https://www.flavioalexandre.tech/portfolio.png"
+    />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#1ed48e" />
+    <meta name="msapplication-TileColor" content="#1ed48e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- Structured Data - JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Flávio Alexandre Orrico Severiano",
+        "jobTitle": "Desenvolvedor Backend Java | Spring Boot Specialist",
+        "description": "Desenvolvedor Backend especializado em Java, Spring Boot, RabbitMQ, Kafka e DevOps com experiência em sistemas para +3000 usuários",
+        "url": "https://www.flavioalexandre.tech/",
+        "sameAs": [
+          "https://github.com/ClarkAshida",
+          "https://www.linkedin.com/in/flávio-alexandre-dev/"
+        ],
+        "knowsAbout": [
+          "Java",
+          "Spring Boot",
+          "RabbitMQ",
+          "Kafka",
+          "DevOps",
+          "Backend Development",
+          "Fullstack Development",
+          "Microservices",
+          "REST API",
+          "Docker",
+          "CI/CD",
+          "PostgreSQL",
+          "React",
+          "TypeScript"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Senac RN"
+        },
+        "alumniOf": [
+          {
+            "@type": "Organization",
+            "name": "Universidade Federal do Rio Grande do Norte",
+            "description": "Bacharelado em Tecnologia da Informação"
+          },
+          {
+            "@type": "Organization",
+            "name": "Senac Rio Grande do Norte",
+            "description": "Técnico em Desenvolvimento de Sistemas"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <!-- SEO Content for Search Engines (Hidden, loaded before React) -->
+    <noscript>
+      <div id="seo-content" style="display: none">
+        <h1>
+          Flávio Alexandre - Desenvolvedor Backend Java & Spring Boot Specialist
+        </h1>
+        <h2>Portfolio Profissional de Desenvolvedor Backend e Fullstack</h2>
+        <p>
+          Desenvolvedor de Software especializado em <strong>Java</strong>,
+          <strong>Spring Boot</strong>, <strong>RabbitMQ</strong>,
+          <strong>Kafka</strong> e <strong>DevOps</strong>. Este
+          <strong>portfolio</strong> apresenta projetos desenvolvidos com
+          tecnologias modernas para sistemas com mais de 3000 usuários ativos.
+        </p>
+
+        <h3>Experiência em Desenvolvimento Backend</h3>
+        <p>
+          Como <strong>Desenvolvedor Backend</strong>, trabalho principalmente
+          com <strong>Java 21</strong>, <strong>Spring Boot</strong>,
+          implementando arquiteturas de <strong>microservices</strong> e
+          integrações com <strong>RabbitMQ</strong> e
+          <strong>Kafka</strong> para processamento de mensagens em tempo real.
+        </p>
+
+        <h3>Especialização em DevOps e CI/CD</h3>
+        <p>
+          Experiência sólida em <strong>DevOps</strong> com implementação de
+          pipelines CI/CD, containerização com Docker, orquestração com
+          Kubernetes e automação de deployments em ambientes de produção.
+        </p>
+
+        <h3>Desenvolvimento Fullstack</h3>
+        <p>
+          Como <strong>Desenvolvedor Fullstack</strong>, também trabalho com
+          tecnologias frontend como React, TypeScript e Next.js, criando
+          interfaces modernas e responsivas integradas com APIs REST robustas.
+        </p>
+
+        <h3>Portfolio de Projetos</h3>
+        <p>
+          Este <strong>codefolio</strong> demonstra projetos reais desenvolvidos
+          para empresas, incluindo sistemas de gestão, plataformas educacionais
+          e soluções de automação que impactam milhares de usuários diariamente.
+        </p>
+
+        <h3>Contato Profissional</h3>
+        <p>
+          <strong>Programador</strong> disponível para oportunidades como
+          <strong>Desenvolvedor Java</strong>,
+          <strong>Backend Developer</strong> ou
+          <strong>DevOps Engineer</strong>. Entre em contato através do
+          <strong>developer portfolio</strong> para discussão de projetos.
+        </p>
+      </div>
+    </noscript>
+
+    <!-- React Application Root -->
+    <div id="root">
+      <!-- Loading content for better UX -->
+      <div
+        id="initial-loader"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: linear-gradient(180deg, #111827, #1f2937);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #1ed48e;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          z-index: 9999;
+        "
+      >
+        <div style="text-align: center">
+          <div
+            style="
+              width: 50px;
+              height: 50px;
+              border: 3px solid #1ed48e40;
+              border-top: 3px solid #1ed48e;
+              border-radius: 50%;
+              animation: spin 1s linear infinite;
+              margin: 0 auto 20px;
+            "
+          ></div>
+          <h1 style="margin: 0; font-size: 24px; font-weight: 600">
+            Flávio Alexandre
+          </h1>
+          <p style="margin: 10px 0 0; opacity: 0.8">
+            Desenvolvedor de Software Java & Spring Boot
+          </p>
+        </div>
+      </div>
+
+      <style>
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        /* Hide loader when React loads */
+        #root:not(:empty) #initial-loader {
+          display: none;
+        }
+      </style>
+    </div>
+
+    <!-- React Application -->
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Performance and Analytics -->
+    <script>
+      // Remove loader when React is ready
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("initial-loader");
+        if (loader) {
+          loader.style.opacity = "0";
+          loader.style.transition = "opacity 0.5s ease";
+          setTimeout(() => loader.remove(), 500);
+        }
+      });
+
+      // Basic performance tracking
+      window.addEventListener("load", function () {
+        if ("performance" in window) {
+          const loadTime =
+            performance.timing.loadEventEnd -
+            performance.timing.navigationStart;
+          console.log("Page load time:", loadTime + "ms");
+        }
+      });
+    </script>
   </body>
 </html>

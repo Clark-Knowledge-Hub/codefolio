@@ -104,7 +104,6 @@ const Projects = () => {
         "HTML5",
         "CSS3",
       ],
-      users: "3000+",
       image: caseImage,
       gallery: [caseImage, caseImage2, caseImage3, caseImage4],
       github: {

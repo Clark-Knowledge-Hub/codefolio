@@ -10,5 +10,30 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Flávio Alexandre - Desenvolvedor Backend Java | Portfolio
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://www.flavioalexandre.tech/sitemap.xml
+
+# Crawl-delay for better server performance  
+Crawl-delay: 1
+
+# Priority pages for indexing
+User-agent: Googlebot
+Allow: /
+Allow: /#about
+Allow: /#projects
+Allow: /#skills
+Allow: /#experience
+Allow: /#contact
+
+User-agent: Bingbot
+Allow: /
+
+# Block unnecessary crawling of assets
+User-agent: *
+Disallow: /assets/
+Disallow: /.vite/
+Disallow: /node_modules/
