@@ -45,12 +45,6 @@ const Contact = () => {
       href: "mailto:flavioalexandrwork@gmail.com",
     },
     {
-      icon: FiPhone,
-      label: "Telefone",
-      value: "(84) 98706-0910",
-      href: "#contact",
-    },
-    {
       icon: FiMapPin,
       label: "Localização",
       value: "Natal, RN, Brasil",
