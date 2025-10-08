@@ -75,9 +75,9 @@ const About = () => {
                   </span>{" "}
                   no Laboratório de Inovação do Senac, arquitetei e desenvolvi
                   do dois sistemas em produção, impactando diretamente a
-                  eficiência de mais de{" "}
+                  eficiência de{" "}
                   <span className="text-primary font-semibold">
-                    3000 usuários
+                    centenas de usuários
                   </span>{" "}
                   na rede da instituição.
                 </p>
@@ -129,7 +129,7 @@ const About = () => {
                 </div>
                 <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
                   <div className="text-xl sm:text-2xl font-bold text-primary">
-                    3K+
+                    100+
                   </div>
                   <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
                     Usuários Ativos

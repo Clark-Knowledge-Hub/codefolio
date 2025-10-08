@@ -82,7 +82,7 @@ const Projects = () => {
         frontend: "https://github.com/ClarkAshida/cosmo-frontend",
         backend: "https://github.com/ClarkAshida/cosmo-backend",
       },
-      demo: "#",
+
       highlights: [
         "Arquitetura escalável para +3000 usuários",
         "API RESTful completa com documentação",

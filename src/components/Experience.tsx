@@ -27,9 +27,9 @@ const Experience = () => {
       description:
         "Desenvolvimento de sistemas educacionais com foco em escalabilidade e qualidade, trabalhando em squads ágeis com metodologia Scrum.",
       achievements: [
-        "Arquitetei e desenvolvi sistemas para +3000 usuários ativos, com replicação nacional em todas as unidades do Senac",
+        "Arquitetei e desenvolvi sistemas para +100 usuários ativos, com replicação nacional em todas as unidades do Senac",
         "Garanti a confiabilidade das aplicações com +85% de cobertura de testes usando JUnit e Mockito",
-        "Automatizei pipelines de CI/CD com GitHub Actions e Docker, reduzindo tempo de deploy em 60%",
+        "Automatizei pipelines de CI/CD com GitHub Actions e Docker, reduzindo tempo de deploy em +60%",
         "Criei interfaces de front-end responsivas com ReactJS, TypeScript e Tailwind CSS",
         "Implementei APIs RESTful escaláveis em Java 21 com Spring Boot seguindo arquitetura limpa",
         "Colaborei em squads multidisciplinares utilizando metodologias ágeis (Scrum)",
