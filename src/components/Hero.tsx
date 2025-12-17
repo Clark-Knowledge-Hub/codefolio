@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { FiArrowRight, FiMail } from "react-icons/fi";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -26,7 +31,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-foreground-secondary mb-4"
           >
-            Olá, eu sou
+            {t.hero.greeting}
           </motion.p>
 
           {/* Name */}
@@ -44,7 +49,7 @@ const Hero = () => {
               backgroundClip: "text",
             }}
           >
-            Flávio Alexandre
+            {t.hero.name}
           </motion.h1>
 
           {/* Title */}
@@ -55,7 +60,7 @@ const Hero = () => {
             className="text-2xl md:text-4xl lg:text-5xl font-bold text-primary mb-8"
             style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}
           >
-            Desenvolvedor de Software
+            {t.hero.title}
           </motion.h2>
 
           {/* Description */}
@@ -65,9 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-xl text-foreground-secondary max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            Desenvolvedor de Software com experiência em criar soluções para
-            resolver problemas reais. Sou paixonado por tecnologia e estou
-            sempre em busca de novos desafios para crescer profissionalmente.
+            {t.hero.description}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -83,7 +86,7 @@ const Hero = () => {
               onClick={() => scrollToSection("projects")}
               className="group bg-gradient-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg flex items-center gap-2 shadow-card transition-all hover:shadow-hover w-full sm:w-auto justify-center"
             >
-              Ver Meus Projetos
+              {t.hero.cta.projects}
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
 
@@ -93,7 +96,7 @@ const Hero = () => {
               onClick={() => scrollToSection("contact")}
               className="group px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
             >
-              Entre em Contato
+              {t.hero.cta.contact}
               <FiMail className="group-hover:scale-110 transition-transform" />
             </motion.button>
           </motion.div>

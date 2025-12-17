@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { fadeInUp, staggerContainer } from "./AnimationVariants";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
 import {
   FiMail,
   FiPhone,
@@ -16,6 +18,8 @@ import {
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,14 +44,14 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: FiMail,
-      label: "Email",
+      label: t.contact.info.email,
       value: "flavioalexandrwork@gmail.com",
       href: "mailto:flavioalexandrwork@gmail.com",
     },
     {
       icon: FiMapPin,
-      label: "Localização",
-      value: "Natal, RN, Brasil",
+      label: t.contact.info.location,
+      value: t.contact.info.locationValue,
       href: "#contact",
     },
   ];
@@ -131,12 +135,11 @@ const Contact = () => {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Vamos Trabalhar Juntos?
+              {t.contact.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-xl text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Estou sempre aberto a discutir novas oportunidades e projetos
-              desafiadores
+              {t.contact.subtitle}
             </p>
           </motion.div>
 
@@ -145,13 +148,10 @@ const Contact = () => {
             <motion.div variants={fadeInUp} className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-6">
-                  Entre em Contato
+                  {t.contact.getInTouch}
                 </h3>
                 <p className="text-foreground-secondary leading-relaxed mb-8">
-                  Tenho interesse em oportunidades de desenvolvimento de
-                  soluções inovadoras, especialmente projetos que envolvam Java,
-                  Spring Boot, Microsserviços e DevOps. Vamos conversar sobre
-                  como posso contribuir para o seu projeto!
+                  {t.contact.description}
                 </p>
               </div>
 
@@ -191,7 +191,7 @@ const Contact = () => {
               {/* Social Links */}
               <div>
                 <h4 className="text-lg font-semibold text-foreground mb-4">
-                  Conecte-se Comigo
+                  {t.contact.connect}
                 </h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
@@ -215,7 +215,7 @@ const Contact = () => {
             <motion.div variants={fadeInUp}>
               <div className="bg-card border border-card-border rounded-2xl p-8 shadow-card">
                 <h3 className="text-2xl font-bold text-foreground mb-6">
-                  Envie uma Mensagem
+                  {t.contact.form.title}
                 </h3>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -225,7 +225,7 @@ const Contact = () => {
                       htmlFor="name"
                       className="block text-foreground font-medium mb-2"
                     >
-                      Nome Completo
+                      {t.contact.form.name}
                     </label>
                     <div className="relative">
                       <FiUser
@@ -240,7 +240,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full pl-12 pr-4 py-3 bg-background border border-card-border rounded-lg text-foreground placeholder-foreground-secondary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                        placeholder="Seu nome completo"
+                        placeholder={t.contact.form.namePlaceholder}
                       />
                     </div>
                   </div>
@@ -251,7 +251,7 @@ const Contact = () => {
                       htmlFor="email"
                       className="block text-foreground font-medium mb-2"
                     >
-                      Email
+                      {t.contact.form.email}
                     </label>
                     <div className="relative">
                       <FiMail
@@ -266,7 +266,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full pl-12 pr-4 py-3 bg-background border border-card-border rounded-lg text-foreground placeholder-foreground-secondary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                        placeholder="seu.email@exemplo.com"
+                        placeholder={t.contact.form.emailPlaceholder}
                       />
                     </div>
                   </div>
@@ -277,7 +277,7 @@ const Contact = () => {
                       htmlFor="message"
                       className="block text-foreground font-medium mb-2"
                     >
-                      Mensagem
+                      {t.contact.form.message}
                     </label>
                     <div className="relative">
                       <FiMessageSquare
@@ -292,7 +292,7 @@ const Contact = () => {
                         required
                         rows={5}
                         className="w-full pl-12 pr-4 py-3 bg-background border border-card-border rounded-lg text-foreground placeholder-foreground-secondary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
-                        placeholder="Conte-me sobre seu projeto ou oportunidade..."
+                        placeholder={t.contact.form.messagePlaceholder}
                       />
                     </div>
                   </div>
@@ -318,12 +318,12 @@ const Contact = () => {
                           }}
                           className="w-5 h-5 border-2 border-primary-foreground border-t-transparent rounded-full"
                         />
-                        Enviando...
+                        {t.contact.form.sending}
                       </>
                     ) : (
                       <>
                         <FiSend size={18} />
-                        Enviar Mensagem
+                        {t.contact.form.send}
                       </>
                     )}
                   </motion.button>
@@ -347,8 +347,8 @@ const Contact = () => {
                       )}
                       <span className="font-medium">
                         {submitStatus === "success"
-                          ? "Mensagem enviada com sucesso! Entrarei em contato em breve."
-                          : "Erro ao enviar mensagem. Tente novamente ou entre em contato diretamente."}
+                          ? t.contact.form.success
+                          : t.contact.form.error}
                       </span>
                     </motion.div>
                   )}

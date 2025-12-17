@@ -2,8 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { fadeInUp, staggerContainer } from "./AnimationVariants";
 import aboutme from "../assets/aboutme.jpeg";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -20,7 +24,7 @@ const About = () => {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Sobre Mim
+              {t.about.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
           </motion.div>
@@ -63,46 +67,42 @@ const About = () => {
             {/* Content Section */}
             <motion.div variants={fadeInUp} className="space-y-6">
               <h3 className="text-2xl font-bold text-primary mb-4">
-                Desenvolvedor de Software
+                {t.about.role}
               </h3>
 
               <div className="space-y-4 text-foreground-secondary leading-relaxed">
                 <p>
-                  Desenvolvedor de Software focado em criar soluções que
-                  resolvem problemas reais.{" "}
+                  {t.about.description.p1}{" "}
                   <span className="text-primary font-semibold">
-                    Com mais de um ano de experiência
+                    {t.about.description.p1Highlight1}
                   </span>{" "}
-                  no Laboratório de Inovação do Senac, arquitetei e desenvolvi
-                  do dois sistemas em produção, impactando diretamente a
-                  eficiência de{" "}
+                  {t.about.description.p1Middle}{" "}
                   <span className="text-primary font-semibold">
-                    centenas de usuários
+                    {t.about.description.p1Highlight2}
                   </span>{" "}
-                  na rede da instituição.
+                  {t.about.description.p1End}
                 </p>
                 <p>
-                  Minha especialidade é o ecossistema{" "}
-                  <span className="text-primary font-semibold">Java</span> com{" "}
+                  {t.about.description.p2}{" "}
                   <span className="text-primary font-semibold">
-                    Spring Boot
+                    {t.about.description.p2Java}
                   </span>{" "}
-                  e arquitetura de{" "}
+                  {t.about.description.p2With}{" "}
                   <span className="text-primary font-semibold">
-                    Microsserviços
+                    {t.about.description.p2Spring}
+                  </span>{" "}
+                  {t.about.description.p2And}{" "}
+                  <span className="text-primary font-semibold">
+                    {t.about.description.p2Micro}
                   </span>
-                  . Tenho um forte compromisso com a qualidade de código,
-                  aplicando testes automatizados (JUnit, Mockito) e garantindo a
-                  entrega contínua através de pipelines CI/CD.
+                  {t.about.description.p2End}
                 </p>
                 <p>
-                  Minha paixão é criar tecnologia que{" "}
+                  {t.about.description.p3}{" "}
                   <span className="text-primary font-semibold">
-                    agrega valor real
+                    {t.about.description.p3Highlight}
                   </span>
-                  , simplifica operações e impulsiona a inovação. Estou sempre
-                  em busca de novos desafios que me permitam inovar e otimizar
-                  processos, contribuindo para o avanço de projetos e negócios.
+                  {t.about.description.p3End}
                 </p>
               </div>
 
@@ -116,7 +116,7 @@ const About = () => {
                     1+
                   </div>
                   <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
-                    Ano de Experiência
+                    {t.about.stats.experience}
                   </div>
                 </div>
                 <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
@@ -124,7 +124,7 @@ const About = () => {
                     3+
                   </div>
                   <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
-                    Anos de Estudo em TI
+                    {t.about.stats.study}
                   </div>
                 </div>
                 <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
@@ -132,7 +132,7 @@ const About = () => {
                     100+
                   </div>
                   <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
-                    Usuários Ativos
+                    {t.about.stats.users}
                   </div>
                 </div>
                 <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
@@ -140,7 +140,7 @@ const About = () => {
                     2
                   </div>
                   <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
-                    Projetos em Produção
+                    {t.about.stats.projects}
                   </div>
                 </div>
               </motion.div>

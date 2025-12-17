@@ -2,6 +2,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { fadeInUp, fadeInLeft, staggerContainer } from "./AnimationVariants";
 import { FiMapPin, FiCalendar, FiCheckCircle } from "react-icons/fi";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
+import { getExperienceData } from "../lib/translatedData";
 
 interface ExperienceItem {
   title: string;
@@ -14,10 +17,17 @@ interface ExperienceItem {
 }
 
 const Experience = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const experiences: ExperienceItem[] = [
+  const experiences: ExperienceItem[] = getExperienceData(
+    language
+  ) as ExperienceItem[];
+
+  // Remove old data
+  const oldExperiences: ExperienceItem[] = [
     {
       title: "Desenvolvedor Junior",
       company: "Senac RN",
@@ -50,7 +60,7 @@ const Experience = () => {
         "Aumentei a eficiência operacional através da implementação de soluções tecnológicas inovadoras",
       ],
     },
-  ];
+  ]; // Marker for removal
 
   return (
     <section id="experience" className="py-20 bg-background">
@@ -65,12 +75,11 @@ const Experience = () => {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Experiência Profissional
+              {t.experience.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Minha jornada profissional desenvolvendo soluções que impactam
-              milhares de usuários
+              {t.experience.subtitle}
             </p>
           </motion.div>
 
@@ -116,7 +125,7 @@ const Experience = () => {
                       </h3>
                       {experience.current && (
                         <span className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full border border-primary/20">
-                          Atual
+                          {t.experience.current}
                         </span>
                       )}
                     </div>
@@ -146,7 +155,7 @@ const Experience = () => {
                   <div>
                     <h5 className="text-foreground font-semibold mb-4 flex items-center gap-2">
                       <FiCheckCircle className="text-primary" size={20} />
-                      Principais Conquistas:
+                      {t.experience.achievementsTitle}
                     </h5>
                     <ul className="space-y-3">
                       {experience.achievements.map((achievement, i) => (

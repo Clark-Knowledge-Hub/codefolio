@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { FiArrowUp } from "react-icons/fi";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";

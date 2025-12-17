@@ -1,6 +1,9 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { fadeInUp, staggerContainer } from "./AnimationVariants";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
+import { getProjectsData } from "../lib/translatedData";
 import {
   FiGithub,
   FiExternalLink,
@@ -31,10 +34,24 @@ interface Project {
 }
 
 const Projects = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Carregar imagens
+  const projects: Project[] = getProjectsData(language).map(
+    (project, index) => ({
+      ...project,
+      image: index === 0 ? "/placeholder.svg" : caseImage,
+      gallery:
+        index === 0
+          ? ["/placeholder.svg"]
+          : [caseImage, caseImage2, caseImage3, caseImage4],
+    })
+  ) as Project[];
 
   const openGallery = (project: Project) => {
     setSelectedProject(project);
@@ -62,63 +79,6 @@ const Projects = () => {
     }
   };
 
-  const projects: Project[] = [
-    {
-      title: "Cosmo",
-      subtitle: "Gerenciamento de Ativos de TI",
-      description:
-        "Plataforma centralizada para cadastrar, rastrear e gerenciar o ciclo de vida de ativos de TI na Alares Internet. Desenvolvida com API RESTful em Java 21 e Spring Boot, e frontend com ReactJS, TypeScript e Tailwind CSS.",
-      technologies: [
-        "Java 21",
-        "Spring Boot",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "MySQL",
-      ],
-      image: "/placeholder.svg",
-      gallery: ["/placeholder.svg"],
-      github: {
-        frontend: "https://github.com/ClarkAshida/cosmo-frontend",
-        backend: "https://github.com/ClarkAshida/cosmo-backend",
-      },
-
-      highlights: [
-        "Arquitetura escalável para +3000 usuários",
-        "API RESTful completa com documentação",
-        "Interface responsiva e intuitiva",
-        "Integração com sistemas legados",
-      ],
-    },
-    {
-      title: "CASE",
-      subtitle: "Controle de Atividades e Serviços Educacionais",
-      description:
-        "Projeto Integrador criado para resolver um problema real do Senac RN: digitalizar e otimizar o controle de atividades extraclasse de instrutores, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade, privacidade e eficiência para a instituição.",
-      technologies: [
-        "ReactJS",
-        "ExpressJS",
-        "Node.js",
-        "PostgreSQL",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-      ],
-      image: caseImage,
-      gallery: [caseImage, caseImage2, caseImage3, caseImage4],
-      github: {
-        // Repositório privado/corporativo
-      },
-      // Projeto interno - não disponível publicamente
-      highlights: [
-        "Digitalização de processos manuais",
-        "Interface intuitiva para professores",
-        "Redução de 70% no tempo de controle",
-        "Sistema de notificações automáticas",
-      ],
-    },
-  ];
-
   return (
     <section id="projects" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-6">
@@ -132,12 +92,11 @@ const Projects = () => {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Projetos em Destaque
+              {t.projects.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Soluções completas que desenvolvi, desde a concepção até a
-              implementação
+              {t.projects.subtitle}
             </p>
           </motion.div>
 
@@ -288,7 +247,7 @@ const Projects = () => {
               className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all"
             >
               <FiGithub size={20} />
-              Ver Mais Projetos no GitHub
+              {t.projects.moreProjects}
             </motion.a>
           </motion.div>
         </motion.div>
