@@ -449,7 +449,6 @@ export const translations = {
           "Provided specialized technical support in software, hardware and infrastructure for multiple company sectors",
           "Ensured stability and availability of critical and operational IT infrastructure environments",
           "Automated manual processes for access provisioning and removal across multiple systems with Python and PowerShell scripts",
-          "Developed the Cosmo inventory platform (Java 21, Spring, ReactJS, TypeScript) to automate IT asset lifecycle",
         ],
       },
       achievementsTitle: "Key Achievements:",
