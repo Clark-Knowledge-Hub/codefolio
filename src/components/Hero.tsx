@@ -91,8 +91,16 @@ const Hero = () => {
             </motion.button>
 
             <motion.a
-              href={language === "pt" ? "/Flavio-Alexandre-Curriculo-BR.pdf" : "/Flavio-Alexandre-Curriculo-EN.pdf"}
-              download={language === "pt" ? "Flavio-Alexandre-Curriculo-BR.pdf" : "Flavio-Alexandre-Curriculo-EN.pdf"}
+              href={
+                language === "pt"
+                  ? "/Flavio-Alexandre-Curriculo-BR.pdf"
+                  : "/Flavio-Alexandre-Curriculo-EN.pdf"
+              }
+              download={
+                language === "pt"
+                  ? "Flavio-Alexandre-Curriculo-BR.pdf"
+                  : "Flavio-Alexandre-Curriculo-EN.pdf"
+              }
               whileHover={{ scale: 1.05, boxShadow: "var(--shadow-hover)" }}
               whileTap={{ scale: 0.95 }}
               className="group bg-card border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg flex items-center gap-2 shadow-card transition-all hover:shadow-hover hover:bg-primary hover:text-primary-foreground w-full sm:w-auto justify-center"

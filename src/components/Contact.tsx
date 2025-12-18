@@ -213,8 +213,16 @@ const Contact = () => {
               {/* Download Resume */}
               <div className="pt-6 border-t border-card-border">
                 <motion.a
-                  href={language === "pt" ? "/Flavio-Alexandre-Curriculo-BR.pdf" : "/Flavio-Alexandre-Curriculo-EN.pdf"}
-                  download={language === "pt" ? "Flavio-Alexandre-Curriculo-BR.pdf" : "Flavio-Alexandre-Curriculo-EN.pdf"}
+                  href={
+                    language === "pt"
+                      ? "/Flavio-Alexandre-Curriculo-BR.pdf"
+                      : "/Flavio-Alexandre-Curriculo-EN.pdf"
+                  }
+                  download={
+                    language === "pt"
+                      ? "Flavio-Alexandre-Curriculo-BR.pdf"
+                      : "Flavio-Alexandre-Curriculo-EN.pdf"
+                  }
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-card border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary hover:text-primary-foreground transition-all"

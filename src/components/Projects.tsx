@@ -16,6 +16,9 @@ import caseImage from "../assets/case.jpeg";
 import caseImage2 from "../assets/case2.jpeg";
 import caseImage3 from "../assets/case3.jpeg";
 import caseImage4 from "../assets/case4.jpeg";
+import dinlyImage1 from "../assets/dinly1.png";
+import dinlyImage2 from "../assets/dinly2.png";
+import gip from "../assets/gip.png";
 
 interface Project {
   title: string;
@@ -30,6 +33,7 @@ interface Project {
     backend?: string;
   };
   demo?: string;
+  internalOnly?: boolean;
   highlights: string[];
 }
 
@@ -43,14 +47,41 @@ const Projects = () => {
 
   // Carregar imagens
   const projects: Project[] = getProjectsData(language).map(
-    (project, index) => ({
-      ...project,
-      image: index === 0 ? "/placeholder.svg" : caseImage,
-      gallery:
-        index === 0
-          ? ["/placeholder.svg"]
-          : [caseImage, caseImage2, caseImage3, caseImage4],
-    })
+    (project, index) => {
+      // Grimore - placeholder
+      if (index === 0) {
+        return {
+          ...project,
+          image: "/placeholder.svg",
+          gallery: ["/placeholder.svg"],
+        };
+      }
+      // Dinly - imagens do dinly
+      if (index === 1) {
+        return {
+          ...project,
+          image: dinlyImage1,
+          gallery: [dinlyImage1, dinlyImage2],
+        };
+      }
+      // CASE - imagens do case
+      if (index === 2) {
+        return {
+          ...project,
+          image: caseImage,
+          gallery: [caseImage, caseImage2, caseImage3, caseImage4],
+        };
+      }
+      // GIP - placeholder
+      if (index === 3) {
+        return {
+          ...project,
+          image: gip,
+          gallery: [gip],
+        };
+      }
+      return project;
+    }
   ) as Project[];
 
   const openGallery = (project: Project) => {
@@ -101,7 +132,7 @@ const Projects = () => {
           </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -214,19 +245,26 @@ const Projects = () => {
                     </div>
                   )}
 
-                  {/* Demo Button */}
-                  {project.demo && (
-                    <motion.a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold hover:shadow-hover transition-all"
-                    >
+                  {/* Demo Button or Internal Only Badge */}
+                  {project.internalOnly ? (
+                    <div className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gray-500/20 text-gray-500 dark:text-gray-400 rounded-lg font-semibold border border-gray-500/30 cursor-not-allowed">
                       <FiExternalLink size={16} />
-                      Acessar Projeto
-                    </motion.a>
+                      {t.projects.buttons.internalOnly}
+                    </div>
+                  ) : (
+                    project.demo && (
+                      <motion.a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold hover:shadow-hover transition-all"
+                      >
+                        <FiExternalLink size={16} />
+                        {t.projects.buttons.accessProject}
+                      </motion.a>
+                    )
                   )}
                 </div>
 

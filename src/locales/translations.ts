@@ -86,28 +86,52 @@ export const translations = {
       title: "Projetos em Destaque",
       subtitle:
         "Soluções completas que desenvolvi, desde a concepção até a implementação",
-      cosmo: {
-        title: "Cosmo",
-        subtitle: "Gerenciamento de Ativos de TI",
+      grimore: {
+        title: "Grimore",
+        subtitle: "Gestão Universitária Gamificada",
         description:
-          "Plataforma centralizada para cadastrar, rastrear e gerenciar o ciclo de vida de ativos de TI na Alares Internet. Desenvolvida com API RESTful em Java 21 e Spring Boot, e frontend com ReactJS, TypeScript e Tailwind CSS.",
+          "Aplicação web que elimina a fricção da gestão universitária na UFRN. Resolve os três maiores problemas do estudante: preguiça em configurar horários, esquecimento de prazos e falta de controle de faltas.",
         highlights: [
-          "Arquitetura escalável para +3000 usuários",
-          "API RESTful completa com documentação",
-          "Interface responsiva e intuitiva",
-          "Integração com sistemas legados",
+          "Design lúdico e minimalista",
+          "Gestão automática de horários",
+          "Alertas de prazos e controle de faltas",
+          "Backend robusto com Spring Boot",
         ],
       },
       case: {
         title: "CASE",
         subtitle: "Controle de Atividades e Serviços Educacionais",
         description:
-          "Projeto Integrador criado para resolver um problema real do Senac RN: digitalizar e otimizar o controle de atividades extraclasse de instrutores, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade, privacidade e eficiência para a instituição.",
+          "Sistema para digitalizar o controle de atividades extraclasse de instrutores do Senac RN, substituindo processos manuais e reduzindo em 70% o tempo de controle.",
         highlights: [
           "Digitalização de processos manuais",
           "Interface intuitiva para professores",
           "Redução de 70% no tempo de controle",
           "Sistema de notificações automáticas",
+        ],
+      },
+      dinly: {
+        title: "Dinly",
+        subtitle: "Landing Page e API de Leads Serverless",
+        description:
+          "Landing page de pré-lançamento com sistema de cadastro de leads. Arquitetura Serverless na AWS usando API Gateway, Lambda (Node.js) e DynamoDB para alta escalabilidade e baixo custo.",
+        highlights: [
+          "Arquitetura 100% Serverless na AWS",
+          "API REST com AWS Lambda e Node.js",
+          "Persistência em DynamoDB",
+          "Landing page responsiva com React",
+        ],
+      },
+      gip: {
+        title: "GIP",
+        subtitle: "Sistema de Gestão da Permanência Estudantil",
+        description:
+          "Sistema web de gestão escolar com modelo de IA preditiva para avaliar risco de evasão de alunos. Implementado nacionalmente no Senac RN, integra análise preditiva com gestão administrativa para reduzir a evasão escolar.",
+        highlights: [
+          "IA preditiva para análise de evasão",
+          "Implementação nacional no Senac",
+          "Integração com gestão administrativa",
+          "Stack completa: Java, Spring Boot, React",
         ],
       },
       buttons: {
@@ -116,6 +140,8 @@ export const translations = {
         github: "GitHub",
         frontend: "Frontend",
         backend: "Backend",
+        internalOnly: "Acessível apenas na rede interna do Senac",
+        accessProject: "Acessar Projeto",
       },
       moreProjects: "Ver Mais Projetos no GitHub",
       gallery: {
@@ -359,28 +385,52 @@ export const translations = {
       title: "Featured Projects",
       subtitle:
         "Complete solutions I developed, from conception to implementation",
-      cosmo: {
-        title: "Cosmo",
-        subtitle: "IT Asset Management",
+      grimore: {
+        title: "Grimore",
+        subtitle: "Gamified University Management",
         description:
-          "Centralized platform to register, track, and manage the lifecycle of IT assets at Alares Internet. Developed with RESTful API in Java 21 and Spring Boot, and frontend with ReactJS, TypeScript and Tailwind CSS.",
+          "Web application that eliminates friction in university management at UFRN. Solves the three biggest student problems: laziness in setting up schedules, forgetting deadlines, and lack of attendance control.",
         highlights: [
-          "Scalable architecture for +3000 users",
-          "Complete RESTful API with documentation",
-          "Responsive and intuitive interface",
-          "Integration with legacy systems",
+          "Playful and minimalist design",
+          "Automatic schedule management",
+          "Deadline alerts and attendance control",
+          "Robust backend with Spring Boot",
         ],
       },
       case: {
         title: "CASE",
         subtitle: "Educational Activities and Services Control",
         description:
-          "Integrative Project created to solve a real problem at Senac RN: digitalize and optimize the control of instructors' extra-class activities, replacing manual processes. Developed with ReactJS and ExpressJS, resulting in significant gains in productivity, privacy, and efficiency for the institution.",
+          "System to digitalize the control of extra-class activities for Senac RN instructors, replacing manual processes and reducing control time by 70%.",
         highlights: [
           "Digitalization of manual processes",
           "Intuitive interface for teachers",
           "70% reduction in control time",
           "Automated notification system",
+        ],
+      },
+      dinly: {
+        title: "Dinly",
+        subtitle: "Landing Page and Serverless Lead API",
+        description:
+          "Pre-launch landing page with lead registration system. Serverless architecture on AWS using API Gateway, Lambda (Node.js) and DynamoDB for high scalability and low cost.",
+        highlights: [
+          "100% Serverless architecture on AWS",
+          "REST API with AWS Lambda and Node.js",
+          "DynamoDB persistence",
+          "Responsive landing page with React",
+        ],
+      },
+      gip: {
+        title: "GIP",
+        subtitle: "Student Retention Management System",
+        description:
+          "School management web system with predictive AI model to assess student dropout risk. Implemented nationally at Senac RN, it integrates predictive analysis with administrative management to reduce school dropout.",
+        highlights: [
+          "Predictive AI for dropout analysis",
+          "National implementation at Senac",
+          "Integration with administrative management",
+          "Full stack: Java, Spring Boot, React",
         ],
       },
       buttons: {
@@ -389,6 +439,8 @@ export const translations = {
         github: "GitHub",
         frontend: "Frontend",
         backend: "Backend",
+        internalOnly: "Accessible only on Senac's internal network",
+        accessProject: "Access Project",
       },
       moreProjects: "See More Projects on GitHub",
       gallery: {
