@@ -141,6 +141,23 @@ const Experience = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Download CV Section */}
+          <motion.div variants={fadeInUp} className="mt-16 text-center">
+            <p className="text-foreground-secondary text-lg mb-6">
+              {t.experience.downloadCV}
+            </p>
+            <motion.a
+              href="/Flavio-Alexandre-Curriculo.pdf"
+              download="Flavio-Alexandre-Curriculo.pdf"
+              whileHover={{ scale: 1.05, boxShadow: "var(--shadow-hover)" }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg shadow-card hover:shadow-hover transition-all"
+            >
+              <FiCheckCircle size={20} />
+              {t.experience.downloadCVButton}
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

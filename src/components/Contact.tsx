@@ -209,6 +209,20 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Download Resume */}
+              <div className="pt-6 border-t border-card-border">
+                <motion.a
+                  href="/Flavio-Alexandre-Curriculo.pdf"
+                  download="Flavio-Alexandre-Curriculo.pdf"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-card border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary hover:text-primary-foreground transition-all"
+                >
+                  <FiMail size={20} />
+                  {t.contact.downloadResume}
+                </motion.a>
+              </div>
             </motion.div>
 
             {/* Contact Form */}

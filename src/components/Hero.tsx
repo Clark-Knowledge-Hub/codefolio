@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiArrowRight, FiMail } from "react-icons/fi";
+import { FiArrowRight, FiDownload } from "react-icons/fi";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../locales/translations";
 
@@ -90,15 +90,16 @@ const Hero = () => {
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
+            <motion.a
+              href="/Flavio-Alexandre-Curriculo.pdf"
+              download="Flavio-Alexandre-Curriculo.pdf"
+              whileHover={{ scale: 1.05, boxShadow: "var(--shadow-hover)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection("contact")}
-              className="group px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+              className="group bg-card border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg flex items-center gap-2 shadow-card transition-all hover:shadow-hover hover:bg-primary hover:text-primary-foreground w-full sm:w-auto justify-center"
             >
-              {t.hero.cta.contact}
-              <FiMail className="group-hover:scale-110 transition-transform" />
-            </motion.button>
+              {t.hero.cta.resume}
+              <FiDownload className="group-hover:translate-x-1 transition-transform" />
+            </motion.a>
           </motion.div>
 
           {/* Scroll Indicator */}

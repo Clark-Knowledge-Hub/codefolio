@@ -20,6 +20,7 @@ export const translations = {
         "Desenvolvedor de Software com experiência em criar soluções para resolver problemas reais. Sou paixonado por tecnologia e estou sempre em busca de novos desafios para crescer profissionalmente.",
       cta: {
         projects: "Ver Meus Projetos",
+        resume: "Baixar Currículo",
         contact: "Entre em Contato",
       },
     },
@@ -176,6 +177,8 @@ export const translations = {
         ],
       },
       achievementsTitle: "Principais Conquistas:",
+      downloadCV: "Quer saber mais sobre minha trajetória?",
+      downloadCVButton: "Baixar Currículo Completo",
     },
 
     // Education
@@ -239,6 +242,7 @@ export const translations = {
         locationValue: "Natal, RN, Brasil",
       },
       connect: "Conecte-se Comigo",
+      downloadResume: "Baixar Currículo",
       form: {
         title: "Envie uma Mensagem",
         name: "Nome",
@@ -289,6 +293,7 @@ export const translations = {
         "Software Developer with experience in creating solutions to solve real problems. I am passionate about technology and always looking for new challenges to grow professionally.",
       cta: {
         projects: "View My Projects",
+        resume: "Download Resume",
         contact: "Get in Touch",
       },
     },
@@ -448,6 +453,8 @@ export const translations = {
         ],
       },
       achievementsTitle: "Key Achievements:",
+      downloadCV: "Want to know more about my journey?",
+      downloadCVButton: "Download Full Resume",
     },
 
     // Education
@@ -511,6 +518,7 @@ export const translations = {
         locationValue: "Natal, RN, Brazil",
       },
       connect: "Connect with Me",
+      downloadResume: "Download Resume",
       form: {
         title: "Send a Message",
         name: "Name",
