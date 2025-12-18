@@ -50,11 +50,21 @@ export const getExperienceData = (language: "pt" | "en") => {
 
   return [
     {
+      title: t.experience.lance.title,
+      company: t.experience.lance.company,
+      location: t.experience.lance.location,
+      period: t.experience.lance.period,
+      current: true,
+      description: t.experience.lance.description,
+      achievements: t.experience.lance.achievements,
+    },
+    {
       title: t.experience.senac.title,
       company: t.experience.senac.company,
       location: t.experience.senac.location,
       period: t.experience.senac.period,
-      current: true,
+      duration: t.experience.senac.duration,
+      current: false,
       description: t.experience.senac.description,
       achievements: t.experience.senac.achievements,
     },
@@ -63,7 +73,8 @@ export const getExperienceData = (language: "pt" | "en") => {
       company: t.experience.alares.company,
       location: t.experience.alares.location,
       period: t.experience.alares.period,
-      current: true,
+      duration: t.experience.alares.duration,
+      current: false,
       description: t.experience.alares.description,
       achievements: t.experience.alares.achievements,
     },

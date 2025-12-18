@@ -109,38 +109,22 @@ const About = () => {
               {/* Stats */}
               <motion.div
                 variants={fadeInUp}
-                className="grid grid-cols-2 gap-4 mt-8"
+                className="grid grid-cols-1 gap-4 mt-8"
               >
-                <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">
-                    1+
+                <div className="bg-card border border-card-border rounded-lg p-4 sm:p-5 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">
+                    2+
                   </div>
-                  <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
+                  <div className="text-sm sm:text-base text-foreground-secondary leading-tight mt-1">
                     {t.about.stats.experience}
                   </div>
                 </div>
-                <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">
-                    3+
+                <div className="bg-card border border-card-border rounded-lg p-4 sm:p-5">
+                  <div className="text-sm sm:text-base text-foreground-secondary font-semibold mb-2">
+                    {t.about.stats.education}
                   </div>
-                  <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
-                    {t.about.stats.study}
-                  </div>
-                </div>
-                <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">
-                    100+
-                  </div>
-                  <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
-                    {t.about.stats.users}
-                  </div>
-                </div>
-                <div className="bg-card border border-card-border rounded-lg p-3 sm:p-4 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">
-                    2
-                  </div>
-                  <div className="text-xs sm:text-sm text-foreground-secondary leading-tight">
-                    {t.about.stats.projects}
+                  <div className="text-base sm:text-lg text-primary font-bold">
+                    {t.about.stats.educationValue}
                   </div>
                 </div>
               </motion.div>

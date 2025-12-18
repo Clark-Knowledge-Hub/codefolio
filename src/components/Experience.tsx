@@ -14,6 +14,7 @@ interface ExperienceItem {
   description: string;
   achievements: string[];
   current?: boolean;
+  duration?: string;
 }
 
 const Experience = () => {
@@ -25,42 +26,6 @@ const Experience = () => {
   const experiences: ExperienceItem[] = getExperienceData(
     language
   ) as ExperienceItem[];
-
-  // Remove old data
-  const oldExperiences: ExperienceItem[] = [
-    {
-      title: "Desenvolvedor Junior",
-      company: "Senac RN",
-      location: "Natal, RN",
-      period: "Agosto 2024 – Presente",
-      current: true,
-      description:
-        "Desenvolvimento de sistemas educacionais com foco em escalabilidade e qualidade, trabalhando em squads ágeis com metodologia Scrum.",
-      achievements: [
-        "Arquitetei e desenvolvi sistemas para +100 usuários ativos, com replicação nacional em todas as unidades do Senac",
-        "Garanti a confiabilidade das aplicações com +85% de cobertura de testes usando JUnit e Mockito",
-        "Automatizei pipelines de CI/CD com GitHub Actions e Docker, reduzindo tempo de deploy em +60%",
-        "Criei interfaces de front-end responsivas com ReactJS, TypeScript e Tailwind CSS",
-        "Implementei APIs RESTful escaláveis em Java 21 com Spring Boot seguindo arquitetura limpa",
-        "Colaborei em squads multidisciplinares utilizando metodologias ágeis (Scrum)",
-      ],
-    },
-    {
-      title: "Estagiário de TI",
-      company: "Alares Internet",
-      location: "Natal, RN",
-      period: "Março 2024 – Presente",
-      current: true,
-      description:
-        "Suporte técnico especializado e desenvolvimento de soluções para automatização de processos de TI em ambiente corporativo.",
-      achievements: [
-        "Prestei suporte técnico em software, hardware e redes para +300 colaboradores, garantindo a estabilidade de ambientes críticos",
-        "Automatizei processos manuais de revisão de acesso em sistemas com scripts em Python (Pandas, PyAutoGui, OpenCV)",
-        "Desenvolvo a plataforma de inventário Cosmo (Java 21, Spring, ReactJS, TypeScript) para automatizar o ciclo de vida de ativos de TI",
-        "Aumentei a eficiência operacional através da implementação de soluções tecnológicas inovadoras",
-      ],
-    },
-  ]; // Marker for removal
 
   return (
     <section id="experience" className="py-20 bg-background">
@@ -91,9 +56,7 @@ const Experience = () => {
                 variants={fadeInLeft}
                 className="relative"
               >
-                {/* Timeline Line */}
-                <div className="absolute left-4 sm:left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"></div>
-
+                <div className="absolute left-4 sm:left-6 top-8 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"></div>
                 {/* Timeline Dot */}
                 <motion.div
                   whileHover={{ scale: 1.2 }}
@@ -123,11 +86,15 @@ const Experience = () => {
                       <h3 className="text-2xl font-bold text-foreground">
                         {experience.title}
                       </h3>
-                      {experience.current && (
+                      {experience.current ? (
                         <span className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full border border-primary/20">
                           {t.experience.current}
                         </span>
-                      )}
+                      ) : experience.duration ? (
+                        <span className="inline-flex items-center px-3 py-1 bg-foreground/5 text-foreground-secondary text-sm font-medium rounded-full border border-foreground/10">
+                          {experience.duration}
+                        </span>
+                      ) : null}
                     </div>
 
                     <h4 className="text-xl font-semibold text-primary mb-3">
