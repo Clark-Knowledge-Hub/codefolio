@@ -148,8 +148,8 @@ const Experience = () => {
               {t.experience.downloadCV}
             </p>
             <motion.a
-              href="/Flavio-Alexandre-Curriculo.pdf"
-              download="Flavio-Alexandre-Curriculo.pdf"
+              href={language === "pt" ? "/Flavio-Alexandre-Curriculo-BR.pdf" : "/Flavio-Alexandre-Curriculo-EN.pdf"}
+              download={language === "pt" ? "Flavio-Alexandre-Curriculo-BR.pdf" : "Flavio-Alexandre-Curriculo-EN.pdf"}
               whileHover={{ scale: 1.05, boxShadow: "var(--shadow-hover)" }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg shadow-card hover:shadow-hover transition-all"
