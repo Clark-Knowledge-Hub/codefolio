@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiHeart, FiArrowUp } from "react-icons/fi";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -35,20 +39,19 @@ const Footer = () => {
           >
             {/* Copyright */}
             <div className="text-foreground-secondary text-sm text-center md:text-left">
-              © {currentYear} Flávio Alexandre Orrico Severiano. Todos os
-              direitos reservados.
+              © {currentYear} {t.footer.rights}
             </div>
 
             {/* Made with Love */}
             <div className="flex items-center gap-2 text-foreground-secondary text-sm">
-              <span>Feito com</span>
+              <span>{t.footer.madeWith}</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
                 <FiHeart className="text-red-500" size={16} />
               </motion.div>
-              <span>, ReactJS, Typescript e Tailwind CSS.</span>
+              <span>{t.footer.technologies}</span>
             </div>
           </motion.div>
         </div>

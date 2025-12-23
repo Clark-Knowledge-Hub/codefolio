@@ -2,7 +2,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { fadeInUp, staggerContainer } from "./AnimationVariants";
 import { FiBook, FiCalendar, FiMapPin, FiAward } from "react-icons/fi";
-
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
+import { getEducationData } from "../lib/translatedData";
 interface EducationItem {
   degree: string;
   institution: string;
@@ -13,10 +15,17 @@ interface EducationItem {
 }
 
 const Education = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const education: EducationItem[] = [
+  const education: EducationItem[] = getEducationData(
+    language
+  ) as EducationItem[];
+
+  // Old data to be removed
+  const oldEducation: EducationItem[] = [
     {
       degree: "Bacharelado em Tecnologia da Informação",
       institution: "Universidade Federal do Rio Grande do Norte (UFRN)",
@@ -55,19 +64,21 @@ const Education = () => {
       description:
         "Formação técnica integrada ao ensino médio, desenvolvendo bases sólidas em matemática, física e pensamento analítico.",
     },
-  ];
+  ]; // Marker for removal
 
   const getStatusColor = (status: string) => {
-    switch (status) {
-      case "Cursando":
-        return "bg-blue-500/10 text-blue-400 border-blue-500/20";
-      case "Em andamento":
-        return "bg-primary/10 text-primary border-primary/20";
-      case "Concluído":
-        return "bg-green-500/10 text-green-400 border-green-500/20";
-      default:
-        return "bg-foreground-secondary/10 text-foreground-secondary border-foreground-secondary/20";
-    }
+    const statusMap: Record<string, string> = {
+      [t.education.status.studying]:
+        "bg-blue-500/10 text-blue-400 border-blue-500/20",
+      [t.education.status.inProgress]:
+        "bg-primary/10 text-primary border-primary/20",
+      [t.education.status.completed]:
+        "bg-green-500/10 text-green-400 border-green-500/20",
+    };
+    return (
+      statusMap[status] ||
+      "bg-foreground-secondary/10 text-foreground-secondary border-foreground-secondary/20"
+    );
   };
 
   return (
@@ -83,12 +94,11 @@ const Education = () => {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Formação Acadêmica
+              {t.education.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Minha jornada educacional construindo as bases sólidas para uma
-              carreira em tecnologia
+              {t.education.subtitle}
             </p>
           </motion.div>
 

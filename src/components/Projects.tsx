@@ -1,6 +1,9 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { fadeInUp, staggerContainer } from "./AnimationVariants";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
+import { getProjectsData } from "../lib/translatedData";
 import {
   FiGithub,
   FiExternalLink,
@@ -13,6 +16,9 @@ import caseImage from "../assets/case.jpeg";
 import caseImage2 from "../assets/case2.jpeg";
 import caseImage3 from "../assets/case3.jpeg";
 import caseImage4 from "../assets/case4.jpeg";
+import dinlyImage1 from "../assets/dinly1.png";
+import dinlyImage2 from "../assets/dinly2.png";
+import gip from "../assets/gip.png";
 
 interface Project {
   title: string;
@@ -27,14 +33,56 @@ interface Project {
     backend?: string;
   };
   demo?: string;
+  internalOnly?: boolean;
   highlights: string[];
 }
 
 const Projects = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Carregar imagens
+  const projects: Project[] = getProjectsData(language).map(
+    (project, index) => {
+      // Grimore - placeholder
+      if (index === 0) {
+        return {
+          ...project,
+          image: "/placeholder.svg",
+          gallery: ["/placeholder.svg"],
+        };
+      }
+      // Dinly - imagens do dinly
+      if (index === 1) {
+        return {
+          ...project,
+          image: dinlyImage1,
+          gallery: [dinlyImage1, dinlyImage2],
+        };
+      }
+      // CASE - imagens do case
+      if (index === 2) {
+        return {
+          ...project,
+          image: caseImage,
+          gallery: [caseImage, caseImage2, caseImage3, caseImage4],
+        };
+      }
+      // GIP - placeholder
+      if (index === 3) {
+        return {
+          ...project,
+          image: gip,
+          gallery: [gip],
+        };
+      }
+      return project;
+    }
+  ) as Project[];
 
   const openGallery = (project: Project) => {
     setSelectedProject(project);
@@ -62,63 +110,6 @@ const Projects = () => {
     }
   };
 
-  const projects: Project[] = [
-    {
-      title: "Cosmo",
-      subtitle: "Gerenciamento de Ativos de TI",
-      description:
-        "Plataforma centralizada para cadastrar, rastrear e gerenciar o ciclo de vida de ativos de TI na Alares Internet. Desenvolvida com API RESTful em Java 21 e Spring Boot, e frontend com ReactJS, TypeScript e Tailwind CSS.",
-      technologies: [
-        "Java 21",
-        "Spring Boot",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "MySQL",
-      ],
-      image: "/placeholder.svg",
-      gallery: ["/placeholder.svg"],
-      github: {
-        frontend: "https://github.com/ClarkAshida/cosmo-frontend",
-        backend: "https://github.com/ClarkAshida/cosmo-backend",
-      },
-
-      highlights: [
-        "Arquitetura escalável para +3000 usuários",
-        "API RESTful completa com documentação",
-        "Interface responsiva e intuitiva",
-        "Integração com sistemas legados",
-      ],
-    },
-    {
-      title: "CASE",
-      subtitle: "Controle de Atividades e Serviços Educacionais",
-      description:
-        "Projeto Integrador criado para resolver um problema real do Senac RN: digitalizar e otimizar o controle de atividades extraclasse de instrutores, substituindo processos manuais. Desenvolvido com ReactJS e ExpressJS, resultando em significativo ganho de produtividade, privacidade e eficiência para a instituição.",
-      technologies: [
-        "ReactJS",
-        "ExpressJS",
-        "Node.js",
-        "PostgreSQL",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-      ],
-      image: caseImage,
-      gallery: [caseImage, caseImage2, caseImage3, caseImage4],
-      github: {
-        // Repositório privado/corporativo
-      },
-      // Projeto interno - não disponível publicamente
-      highlights: [
-        "Digitalização de processos manuais",
-        "Interface intuitiva para professores",
-        "Redução de 70% no tempo de controle",
-        "Sistema de notificações automáticas",
-      ],
-    },
-  ];
-
   return (
     <section id="projects" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-6">
@@ -132,17 +123,16 @@ const Projects = () => {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Projetos em Destaque
+              {t.projects.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Soluções completas que desenvolvi, desde a concepção até a
-              implementação
+              {t.projects.subtitle}
             </p>
           </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -255,19 +245,26 @@ const Projects = () => {
                     </div>
                   )}
 
-                  {/* Demo Button */}
-                  {project.demo && (
-                    <motion.a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold hover:shadow-hover transition-all"
-                    >
+                  {/* Demo Button or Internal Only Badge */}
+                  {project.internalOnly ? (
+                    <div className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gray-500/20 text-gray-500 dark:text-gray-400 rounded-lg font-semibold border border-gray-500/30 cursor-not-allowed">
                       <FiExternalLink size={16} />
-                      Acessar Projeto
-                    </motion.a>
+                      {t.projects.buttons.internalOnly}
+                    </div>
+                  ) : (
+                    project.demo && (
+                      <motion.a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold hover:shadow-hover transition-all"
+                      >
+                        <FiExternalLink size={16} />
+                        {t.projects.buttons.accessProject}
+                      </motion.a>
+                    )
                   )}
                 </div>
 
@@ -288,7 +285,7 @@ const Projects = () => {
               className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all"
             >
               <FiGithub size={20} />
-              Ver Mais Projetos no GitHub
+              {t.projects.moreProjects}
             </motion.a>
           </motion.div>
         </motion.div>

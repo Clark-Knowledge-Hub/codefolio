@@ -1,16 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navItems = [
-  { id: "home", label: "Início" },
-  { id: "about", label: "Sobre" },
-  { id: "skills", label: "Habilidades" },
-  { id: "projects", label: "Projetos" },
-  { id: "experience", label: "Experiência" },
-  { id: "education", label: "Educação" },
-];
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
 
 const Navbar = () => {
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
+
+  const navItems = [
+    { id: "home", label: t.nav.home },
+    { id: "about", label: t.nav.about },
+    { id: "skills", label: t.nav.skills },
+    { id: "projects", label: t.nav.projects },
+    { id: "experience", label: t.nav.experience },
+    { id: "education", label: t.nav.education },
+  ];
+
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -113,8 +118,40 @@ const Navbar = () => {
                 onClick={() => scrollToSection("contact")}
                 className="px-4 py-2 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all"
               >
-                Entrar em Contato
+                {t.nav.contact}
               </motion.button>
+
+              {/* Language Toggle */}
+              <div className="flex items-center gap-1 p-1 bg-card border border-card-border rounded-lg">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => language !== "pt" && toggleLanguage()}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-all ${
+                    language === "pt"
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-foreground-secondary hover:text-foreground hover:bg-background"
+                  }`}
+                  aria-label="Switch to Portuguese"
+                >
+                  <span>🇧🇷</span>
+                  <span>PT</span>
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => language !== "en" && toggleLanguage()}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-all ${
+                    language === "en"
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-foreground-secondary hover:text-foreground hover:bg-background"
+                  }`}
+                  aria-label="Switch to English"
+                >
+                  <span>🇺🇸</span>
+                  <span>EN</span>
+                </motion.button>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -186,8 +223,41 @@ const Navbar = () => {
                     onClick={() => scrollToSection("contact")}
                     className="mt-4 px-4 py-3 text-center text-primary border border-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all"
                   >
-                    Entrar em Contato
+                    {t.nav.contact}
                   </motion.button>
+
+                  {/* Mobile Language Toggle */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="mt-2 flex items-center gap-2 p-1.5 bg-card border border-card-border rounded-lg"
+                  >
+                    <motion.button
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => language !== "pt" && toggleLanguage()}
+                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md transition-all ${
+                        language === "pt"
+                          ? "bg-primary text-primary-foreground shadow-sm"
+                          : "text-foreground-secondary hover:text-foreground hover:bg-background"
+                      }`}
+                    >
+                      <span>🇧🇷</span>
+                      <span>PT</span>
+                    </motion.button>
+                    <motion.button
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => language !== "en" && toggleLanguage()}
+                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md transition-all ${
+                        language === "en"
+                          ? "bg-primary text-primary-foreground shadow-sm"
+                          : "text-foreground-secondary hover:text-foreground hover:bg-background"
+                      }`}
+                    >
+                      <span>🇺🇸</span>
+                      <span>EN</span>
+                    </motion.button>
+                  </motion.div>
                 </div>
               </motion.div>
             )}

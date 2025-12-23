@@ -2,6 +2,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { fadeInUp, fadeInLeft, staggerContainer } from "./AnimationVariants";
 import { FiMapPin, FiCalendar, FiCheckCircle } from "react-icons/fi";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
+import { getExperienceData } from "../lib/translatedData";
 
 interface ExperienceItem {
   title: string;
@@ -11,46 +14,18 @@ interface ExperienceItem {
   description: string;
   achievements: string[];
   current?: boolean;
+  duration?: string;
 }
 
 const Experience = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const experiences: ExperienceItem[] = [
-    {
-      title: "Desenvolvedor Junior",
-      company: "Senac RN",
-      location: "Natal, RN",
-      period: "Agosto 2024 – Presente",
-      current: true,
-      description:
-        "Desenvolvimento de sistemas educacionais com foco em escalabilidade e qualidade, trabalhando em squads ágeis com metodologia Scrum.",
-      achievements: [
-        "Arquitetei e desenvolvi sistemas para +100 usuários ativos, com replicação nacional em todas as unidades do Senac",
-        "Garanti a confiabilidade das aplicações com +85% de cobertura de testes usando JUnit e Mockito",
-        "Automatizei pipelines de CI/CD com GitHub Actions e Docker, reduzindo tempo de deploy em +60%",
-        "Criei interfaces de front-end responsivas com ReactJS, TypeScript e Tailwind CSS",
-        "Implementei APIs RESTful escaláveis em Java 21 com Spring Boot seguindo arquitetura limpa",
-        "Colaborei em squads multidisciplinares utilizando metodologias ágeis (Scrum)",
-      ],
-    },
-    {
-      title: "Estagiário de TI",
-      company: "Alares Internet",
-      location: "Natal, RN",
-      period: "Março 2024 – Presente",
-      current: true,
-      description:
-        "Suporte técnico especializado e desenvolvimento de soluções para automatização de processos de TI em ambiente corporativo.",
-      achievements: [
-        "Prestei suporte técnico em software, hardware e redes para +300 colaboradores, garantindo a estabilidade de ambientes críticos",
-        "Automatizei processos manuais de revisão de acesso em sistemas com scripts em Python (Pandas, PyAutoGui, OpenCV)",
-        "Desenvolvo a plataforma de inventário Cosmo (Java 21, Spring, ReactJS, TypeScript) para automatizar o ciclo de vida de ativos de TI",
-        "Aumentei a eficiência operacional através da implementação de soluções tecnológicas inovadoras",
-      ],
-    },
-  ];
+  const experiences: ExperienceItem[] = getExperienceData(
+    language
+  ) as ExperienceItem[];
 
   return (
     <section id="experience" className="py-20 bg-background">
@@ -65,12 +40,11 @@ const Experience = () => {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Experiência Profissional
+              {t.experience.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Minha jornada profissional desenvolvendo soluções que impactam
-              milhares de usuários
+              {t.experience.subtitle}
             </p>
           </motion.div>
 
@@ -82,9 +56,7 @@ const Experience = () => {
                 variants={fadeInLeft}
                 className="relative"
               >
-                {/* Timeline Line */}
-                <div className="absolute left-4 sm:left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"></div>
-
+                <div className="absolute left-4 sm:left-6 top-8 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"></div>
                 {/* Timeline Dot */}
                 <motion.div
                   whileHover={{ scale: 1.2 }}
@@ -114,11 +86,15 @@ const Experience = () => {
                       <h3 className="text-2xl font-bold text-foreground">
                         {experience.title}
                       </h3>
-                      {experience.current && (
+                      {experience.current ? (
                         <span className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full border border-primary/20">
-                          Atual
+                          {t.experience.current}
                         </span>
-                      )}
+                      ) : experience.duration ? (
+                        <span className="inline-flex items-center px-3 py-1 bg-foreground/5 text-foreground-secondary text-sm font-medium rounded-full border border-foreground/10">
+                          {experience.duration}
+                        </span>
+                      ) : null}
                     </div>
 
                     <h4 className="text-xl font-semibold text-primary mb-3">
@@ -146,7 +122,7 @@ const Experience = () => {
                   <div>
                     <h5 className="text-foreground font-semibold mb-4 flex items-center gap-2">
                       <FiCheckCircle className="text-primary" size={20} />
-                      Principais Conquistas:
+                      {t.experience.achievementsTitle}
                     </h5>
                     <ul className="space-y-3">
                       {experience.achievements.map((achievement, i) => (
@@ -165,6 +141,31 @@ const Experience = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Download CV Section */}
+          <motion.div variants={fadeInUp} className="mt-16 text-center">
+            <p className="text-foreground-secondary text-lg mb-6">
+              {t.experience.downloadCV}
+            </p>
+            <motion.a
+              href={
+                language === "pt"
+                  ? "/Flavio-Alexandre-Curriculo-BR.pdf"
+                  : "/Flavio-Alexandre-Curriculo-EN.pdf"
+              }
+              download={
+                language === "pt"
+                  ? "Flavio-Alexandre-Curriculo-BR.pdf"
+                  : "Flavio-Alexandre-Curriculo-EN.pdf"
+              }
+              whileHover={{ scale: 1.05, boxShadow: "var(--shadow-hover)" }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg shadow-card hover:shadow-hover transition-all"
+            >
+              <FiCheckCircle size={20} />
+              {t.experience.downloadCVButton}
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

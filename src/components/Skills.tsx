@@ -2,6 +2,8 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { fadeInUp, staggerContainer, scaleIn } from "./AnimationVariants";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../locales/translations";
 import {
   SiSpringboot,
   SiReact,
@@ -10,8 +12,6 @@ import {
   SiHtml5,
   SiCss3,
   SiTailwindcss,
-  SiNodedotjs,
-  SiExpress,
   SiPostgresql,
   SiGit,
   SiGithubactions,
@@ -20,54 +20,69 @@ import {
   SiJest,
   SiCypress,
 } from "react-icons/si";
-import { FaJava, FaMicrosoft } from "react-icons/fa";
+import { FaJava, FaAws } from "react-icons/fa";
 import { TbTestPipe } from "react-icons/tb";
 
 interface Skill {
   name: string;
   icon: React.ComponentType<any>;
-  category: "Backend" | "Frontend" | "Ferramentas";
+  category: string;
 }
 
 const Skills = () => {
-  const [activeFilter, setActiveFilter] = useState("Todos");
+  const { language } = useLanguage();
+  const t = translations[language];
+  const [activeFilter, setActiveFilter] = useState(t.skills.filters.all);
   const [showAll, setShowAll] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   const skills: Skill[] = [
     // Backend
-    { name: "Java", icon: FaJava, category: "Backend" },
-    { name: "Spring Boot", icon: SiSpringboot, category: "Backend" },
-    { name: "NodeJS", icon: SiNodedotjs, category: "Backend" },
-    { name: "ExpressJS", icon: SiExpress, category: "Backend" },
-    { name: "PostgreSQL", icon: SiPostgresql, category: "Backend" },
+    { name: "Java", icon: FaJava, category: "backend" },
+    { name: "Spring Boot", icon: SiSpringboot, category: "backend" },
+    { name: "PostgreSQL", icon: SiPostgresql, category: "backend" },
 
     // Frontend
-    { name: "ReactJS", icon: SiReact, category: "Frontend" },
-    { name: "TypeScript", icon: SiTypescript, category: "Frontend" },
-    { name: "JavaScript", icon: SiJavascript, category: "Frontend" },
-    { name: "HTML5", icon: SiHtml5, category: "Frontend" },
-    { name: "CSS3", icon: SiCss3, category: "Frontend" },
-    { name: "Tailwind CSS", icon: SiTailwindcss, category: "Frontend" },
+    { name: "ReactJS", icon: SiReact, category: "frontend" },
+    { name: "TypeScript", icon: SiTypescript, category: "frontend" },
+    { name: "JavaScript", icon: SiJavascript, category: "frontend" },
+    { name: "HTML5", icon: SiHtml5, category: "frontend" },
+    { name: "CSS3", icon: SiCss3, category: "frontend" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, category: "frontend" },
 
-    // Ferramentas
-    { name: "Git", icon: SiGit, category: "Ferramentas" },
-    { name: "GitHub Actions", icon: SiGithubactions, category: "Ferramentas" },
-    { name: "Docker", icon: SiDocker, category: "Ferramentas" },
-    { name: "Azure", icon: FaMicrosoft, category: "Ferramentas" },
-    { name: "Nginx", icon: SiNginx, category: "Ferramentas" },
-    { name: "JUnit/Mockito", icon: TbTestPipe, category: "Ferramentas" },
-    { name: "Cypress", icon: SiCypress, category: "Ferramentas" },
-    { name: "Jest", icon: SiJest, category: "Ferramentas" },
+    // Tools
+    { name: "Git", icon: SiGit, category: "tools" },
+    { name: "GitHub Actions", icon: SiGithubactions, category: "tools" },
+    { name: "Docker", icon: SiDocker, category: "tools" },
+    { name: "AWS", icon: FaAws, category: "tools" },
+    { name: "Nginx", icon: SiNginx, category: "tools" },
+    { name: "JUnit/Mockito", icon: TbTestPipe, category: "tools" },
+    { name: "Cypress", icon: SiCypress, category: "tools" },
+    { name: "Jest", icon: SiJest, category: "tools" },
   ];
 
-  const filters = ["Todos", "Backend", "Frontend", "Ferramentas"];
+  // Mapeamento de filtros para categorias
+  const filterMap: Record<string, string> = {
+    [t.skills.filters.all]: "all",
+    [t.skills.filters.backend]: "backend",
+    [t.skills.filters.frontend]: "frontend",
+    [t.skills.filters.tools]: "tools",
+  };
+
+  const filters = [
+    t.skills.filters.all,
+    t.skills.filters.backend,
+    t.skills.filters.frontend,
+    t.skills.filters.tools,
+  ];
+
+  const activeCategory = filterMap[activeFilter] || "all";
 
   const filteredSkills =
-    activeFilter === "Todos"
+    activeCategory === "all"
       ? skills
-      : skills.filter((skill) => skill.category === activeFilter);
+      : skills.filter((skill) => skill.category === activeCategory);
 
   // Limite de 8 cards (2 linhas de 4) para a visualização inicial
   const visibleSkills = showAll ? filteredSkills : filteredSkills.slice(0, 8);
@@ -86,12 +101,11 @@ const Skills = () => {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Minhas Habilidades
+              {t.skills.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-foreground-secondary mt-6 max-w-2xl mx-auto">
-              Tecnologias e ferramentas que domino para criar soluções completas
-              e escaláveis
+              {t.skills.subtitle}
             </p>
           </motion.div>
 
@@ -181,7 +195,7 @@ const Skills = () => {
                 {showAll ? "▲" : "▼"}
 
                 <span> </span>
-                {showAll ? "Mostrar Menos" : "Mostrar Mais"}
+                {showAll ? t.skills.showLess : t.skills.showMore}
                 <motion.div
                   className="absolute inset-0 rounded-full border-2 border-primary opacity-0 scale-110"
                   whileHover={{
@@ -202,26 +216,26 @@ const Skills = () => {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <h3 className="text-2xl font-bold text-primary mb-2">
-                  Backend
+                  {t.skills.filters.backend}
                 </h3>
                 <p className="text-foreground-secondary">
-                  APIs RESTful escaláveis com Java, Spring Boot e arquitetura
-                  limpa
+                  {t.skills.summary.backend}
                 </p>
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-primary mb-2">
-                  Frontend
+                  {t.skills.filters.frontend}
                 </h3>
                 <p className="text-foreground-secondary">
-                  Interfaces modernas e responsivas com React, TypeScript e
-                  Tailwind
+                  {t.skills.summary.frontend}
                 </p>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-primary mb-2">DevOps</h3>
+                <h3 className="text-2xl font-bold text-primary mb-2">
+                  {t.skills.filters.tools}
+                </h3>
                 <p className="text-foreground-secondary">
-                  CI/CD, containerização e deploy automatizado em nuvem
+                  {t.skills.summary.fullstack}
                 </p>
               </div>
             </div>
