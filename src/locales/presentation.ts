@@ -286,9 +286,8 @@ export const presentationTranslations = {
       title: "Current Experience",
       company: "LANCE — UFRN",
       role: "Jr Web Developer",
-      period: "April 2024 - Present",
-      context:
-        "Advanced Laboratory for Cloud Computing and Software Engineering",
+      period: "November 2025 - Present",
+      context: "Leading Advanced Technologies Center of Excellence",
       responsibilities: {
         title: "Responsibilities & Results",
         items: [
@@ -322,8 +321,9 @@ export const presentationTranslations = {
       title: "Previous Experience",
       company: "Senac Labs — Senac RN",
       role: "Jr Web Developer",
-      period: "August 2023 - March 2024",
-      context: "Innovation and Technology Center at Senac Rio Grande do Norte",
+      period: "August 2024 - November 2025",
+      context:
+        "Innovation and Technology Laboratory at Senac Rio Grande do Norte",
       contributions: {
         title: "Responsibilities & Results",
         items: [
@@ -359,52 +359,58 @@ export const presentationTranslations = {
       projects: [
         {
           name: "CASE",
-          tagline: "My first major project",
+          tagline: "From academic project to real solution",
           description:
-            "Complete system for complementary activities management, developed as final project at Senac. Full-stack solution that digitized manual processes and actively serves the institution.",
+            "Active management system at Senac that digitized manual processes for instructors, optimizing control of extracurricular activities.",
           impact:
-            "The project that opened doors for my career as a junior developer",
+            "Validated my ability to deliver full-stack in a real scenario.",
           contributions: [
-            "Full stack development (React + Node.js + PostgreSQL)",
-            "Automated validation and reporting system",
-            "Replacement of manual processes with digital flows",
+            "Full stack with React, Node.js and PostgreSQL",
+            "Report and validation automation",
+            "Digitization of manual flows",
           ],
           tech: ["React", "Node.js", "PostgreSQL", "JavaScript"],
           image: "/case-project.jpg",
         },
         {
           name: "GIP",
-          tagline: "Predictive intelligence in education",
+          tagline: "Data and AI in school management",
           description:
-            "Robust platform integrated with Machine Learning models for student dropout risk prediction. System that transforms data into actionable insights for educational managers.",
-          impact: "Strategic tool for data-driven pedagogical decision-making",
+            "Platform integrated with Machine Learning for student dropout prediction, transforming raw data into strategy for managers.",
+          impact:
+            "Pedagogical decision support based on real and predictive data.",
           contributions: [
-            "REST APIs for AI model integration",
-            "Interactive dashboards for data analysis",
+            "Integration via REST API with AI models",
+            "Analytical dashboards for management",
             "Automated delivery pipeline",
           ],
-          tech: ["Java", "Spring Boot", "React", "TypeScript", "Docker", "AI"],
-          image: "/gip-project.jpg",
-        },
-        {
-          name: "Grimore",
-          tagline: "Experimenting with LLMs",
-          description:
-            "Personal project in development for intelligent academic management. Exploring LLM integration with Spring AI for task automation and personalized assistance.",
-          impact:
-            "Practical lab for learning modern architecture, AI integration, and cloud deployment",
-          contributions: [
-            "Backend in Spring Boot with Spring AI",
-            "Modern frontend in React + TypeScript",
-            "Infrastructure with Docker and AWS",
-          ],
           tech: [
-            "Java 21",
+            "Java",
             "Spring Boot",
             "React",
             "TypeScript",
             "Docker",
-            "AWS",
+            "AI/ML",
+          ],
+          image: "/gip-project.jpg",
+        },
+        {
+          name: "Grimore",
+          tagline: "Innovation Lab with AI",
+          description:
+            "Experimental academic management project focused on practical application of Spring AI and LLMs for automation and intelligent assistance.",
+          impact: "Practical application of advanced Generative AI concepts.",
+          contributions: [
+            "Implementation of Spring AI and LLMs",
+            "Modern and responsive frontend",
+            "Cloud infrastructure with AWS",
+          ],
+          tech: [
+            "Java",
+            "Spring Boot",
+            "Spring AI",
+            "Spring Security",
+            "Docker",
           ],
           image: "/grimore-project.jpg",
         },
@@ -441,11 +447,7 @@ export const presentationTranslations = {
           event: "GO!RN - Largest technology event in Rio Grande do Norte",
           context:
             "Sebrae + IMD initiative for entrepreneurship and innovation",
-          details: [
-            "Presentation to +200 people audience (investors, entrepreneurs and experts)",
-            "Development of landing page and professional pitch deck",
-            "Top 6 ranking among 26 teams from various universities",
-          ],
+
           icon: "trophy",
         },
       ],

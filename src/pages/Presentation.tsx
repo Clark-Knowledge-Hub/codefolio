@@ -62,19 +62,22 @@ const Presentation = () => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [nextSlide, prevSlide]);
 
-  // Slide animation variants - Simplified for smooth transitions
+  // Slide animation variants - Optimized for fluid transitions
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? "50%" : "-50%",
+      x: direction > 0 ? "100%" : "-100%",
       opacity: 0,
+      scale: 0.95,
     }),
     center: {
       x: 0,
       opacity: 1,
+      scale: 1,
     },
     exit: (direction: number) => ({
-      x: direction > 0 ? "-50%" : "50%",
+      x: direction > 0 ? "-100%" : "100%",
       opacity: 0,
+      scale: 0.95,
     }),
   };
 
@@ -96,8 +99,9 @@ const Presentation = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "tween", duration: 0.3, ease: "easeInOut" },
-              opacity: { duration: 0.5 },
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+              scale: { duration: 0.2 },
             }}
             className="absolute inset-0 w-full h-full"
           >

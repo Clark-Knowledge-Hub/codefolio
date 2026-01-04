@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "../../contexts/LanguageContext";
-import { presentationTranslations } from "../../locales/presentation";
 import { fadeInUp, staggerContainer } from "../AnimationVariants";
 import { FiCode, FiBookOpen } from "react-icons/fi";
 import aboutme from "../../assets/aboutme.jpeg";
 
 const Slide2QuemSou = () => {
   const { language } = useLanguage();
-  const t = presentationTranslations[language].slide2;
 
   return (
     <div className="h-screen flex items-center justify-center bg-background overflow-hidden">
@@ -21,7 +19,7 @@ const Slide2QuemSou = () => {
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-3">
-              {t.title}
+              {language === "pt" ? "Quem sou eu" : "Who I am"}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
           </motion.div>
@@ -47,68 +45,134 @@ const Slide2QuemSou = () => {
               <div className="bg-card border border-card-border rounded-xl p-6 shadow-card">
                 <h3 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
                   <FiCode className="text-2xl" />
-                  Desenvolvedor de Software
+                  {language === "pt"
+                    ? "Desenvolvedor de Software"
+                    : "Software Developer"}
                 </h3>
                 <div className="space-y-3 text-foreground-secondary leading-relaxed">
-                  {/* Bullet 1 - Experiência P&D */}
-                  <p className="flex items-start gap-3">
-                    <span className="text-primary text-lg font-bold mt-0.5">
-                      •
-                    </span>
-                    <span>
-                      <strong className="text-foreground">
-                        Trajetória de 2 anos
-                      </strong>{" "}
-                      focada em desenvolvimento web e projetos de Pesquisa &
-                      Desenvolvimento (P&D).
-                    </span>
-                  </p>
+                  {language === "pt" ? (
+                    <>
+                      {/* Bullet 1 - Experiência P&D */}
+                      <p className="flex items-start gap-3">
+                        <span className="text-primary text-lg font-bold mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-foreground">
+                            Trajetória de 2 anos
+                          </strong>{" "}
+                          focada em desenvolvimento web e projetos de Pesquisa &
+                          Desenvolvimento (P&D).
+                        </span>
+                      </p>
 
-                  {/* Bullet 2 - Stack */}
-                  <p className="flex items-start gap-3">
-                    <span className="text-primary text-lg font-bold mt-0.5">
-                      •
-                    </span>
-                    <span>
-                      Sólida base em{" "}
-                      <strong className="text-foreground">
-                        Java e Spring Boot
-                      </strong>{" "}
-                      no back-end, criando interfaces responsivas com{" "}
-                      <strong className="text-foreground">
-                        React e TypeScript
-                      </strong>
-                      .
-                    </span>
-                  </p>
+                      {/* Bullet 2 - Stack */}
+                      <p className="flex items-start gap-3">
+                        <span className="text-primary text-lg font-bold mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          Sólida base em{" "}
+                          <strong className="text-foreground">
+                            Java e Spring Boot
+                          </strong>{" "}
+                          no back-end, criando interfaces responsivas com{" "}
+                          <strong className="text-foreground">
+                            React e TypeScript
+                          </strong>
+                          .
+                        </span>
+                      </p>
 
-                  {/* Bullet 3 - Inovação (IA/Blockchain) */}
-                  <p className="flex items-start gap-3">
-                    <span className="text-primary text-lg font-bold mt-0.5">
-                      •
-                    </span>
-                    <span>
-                      <strong className="text-foreground">
-                        Vivência em projetos de pesquisa
-                      </strong>
-                      , colaborando na implementação de soluções com IA e
-                      Blockchain.
-                    </span>
-                  </p>
+                      {/* Bullet 3 - Inovação (IA/Blockchain) */}
+                      <p className="flex items-start gap-3">
+                        <span className="text-primary text-lg font-bold mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-foreground">
+                            Vivência em projetos de pesquisa
+                          </strong>
+                          , colaborando na implementação de soluções com IA e
+                          Blockchain.
+                        </span>
+                      </p>
 
-                  {/* Bullet 4 - Mindset/Qualidade */}
-                  <p className="flex items-start gap-3">
-                    <span className="text-primary text-lg font-bold mt-0.5">
-                      •
-                    </span>
-                    <span>
-                      Foco em{" "}
-                      <strong className="text-foreground">
-                        evolução contínua e boas práticas
-                      </strong>
-                      , priorizando qualidade de código e entrega de valor real.
-                    </span>
-                  </p>
+                      {/* Bullet 4 - Mindset/Qualidade */}
+                      <p className="flex items-start gap-3">
+                        <span className="text-primary text-lg font-bold mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          Foco em{" "}
+                          <strong className="text-foreground">
+                            evolução contínua e boas práticas
+                          </strong>
+                          , priorizando qualidade de código e entrega de valor
+                          real.
+                        </span>
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      {/* English Version */}
+                      <p className="flex items-start gap-3">
+                        <span className="text-primary text-lg font-bold mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-foreground">
+                            2-year trajectory
+                          </strong>{" "}
+                          focused on web development and Research & Development
+                          (R&D) projects.
+                        </span>
+                      </p>
+
+                      <p className="flex items-start gap-3">
+                        <span className="text-primary text-lg font-bold mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          Solid foundation in{" "}
+                          <strong className="text-foreground">
+                            Java and Spring Boot
+                          </strong>{" "}
+                          for back-end, creating responsive interfaces with{" "}
+                          <strong className="text-foreground">
+                            React and TypeScript
+                          </strong>
+                          .
+                        </span>
+                      </p>
+
+                      <p className="flex items-start gap-3">
+                        <span className="text-primary text-lg font-bold mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          <strong className="text-foreground">
+                            Experience in research projects
+                          </strong>
+                          , collaborating on implementing solutions with AI and
+                          Blockchain.
+                        </span>
+                      </p>
+
+                      <p className="flex items-start gap-3">
+                        <span className="text-primary text-lg font-bold mt-0.5">
+                          •
+                        </span>
+                        <span>
+                          Focus on{" "}
+                          <strong className="text-foreground">
+                            continuous evolution and best practices
+                          </strong>
+                          , prioritizing code quality and delivering real value.
+                        </span>
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -120,15 +184,21 @@ const Slide2QuemSou = () => {
                     <FiBookOpen className="text-primary text-xl mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="text-primary font-bold text-base leading-tight">
-                        Bacharelado em Tecnologia da Informação
+                        {language === "pt"
+                          ? "Bacharelado em Tecnologia da Informação"
+                          : "Bachelor's in Information Technology"}
                       </h4>
                     </div>
                   </div>
                   <p className="text-foreground text-sm font-medium mb-1">
-                    Universidade Federal do Rio Grande do Norte (UFRN)
+                    {language === "pt"
+                      ? "Universidade Federal do Rio Grande do Norte (UFRN)"
+                      : "Federal University of Rio Grande do Norte (UFRN)"}
                   </p>
                   <p className="text-foreground-secondary text-xs">
-                    Março 2025 – Junho 2028 • Em andamento
+                    {language === "pt"
+                      ? "Março 2025 – Junho 2028 • Em andamento"
+                      : "March 2025 – June 2028 • In progress"}
                   </p>
                 </div>
 
@@ -138,7 +208,9 @@ const Slide2QuemSou = () => {
                     <FiBookOpen className="text-primary text-xl mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="text-primary font-bold text-base leading-tight">
-                        Técnico em Desenvolvimento de Sistemas
+                        {language === "pt"
+                          ? "Técnico em Desenvolvimento de Sistemas"
+                          : "Technical Degree in Systems Development"}
                       </h4>
                     </div>
                   </div>
@@ -146,7 +218,9 @@ const Slide2QuemSou = () => {
                     Senac Rio Grande do Norte
                   </p>
                   <p className="text-foreground-secondary text-xs">
-                    Fevereiro 2023 – Agosto 2024 • Concluído
+                    {language === "pt"
+                      ? "Fevereiro 2023 – Agosto 2024 • Concluído"
+                      : "February 2023 – August 2024 • Completed"}
                   </p>
                 </div>
               </div>
