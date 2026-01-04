@@ -186,6 +186,8 @@ export const presentationTranslations = {
         {
           type: "certificate",
           title: "Oracle OCI AI Foundations Associate",
+          description:
+            "Fundamentos de Inteligência Artificial na Oracle Cloud, incluindo Machine Learning, Deep Learning e serviços de IA generativa.",
           issuer: "Oracle",
           date: "2024",
           icon: "certificate",
@@ -193,21 +195,21 @@ export const presentationTranslations = {
         {
           type: "certificate",
           title: "Oracle OCI Foundations Associate",
+          description:
+            "Fundamentos da Oracle Cloud Infrastructure, abrangendo computação, armazenamento, rede e serviços de banco de dados.",
           issuer: "Oracle",
           date: "2024",
           icon: "certificate",
         },
         {
           type: "award",
-          title: "6º lugar — Conexão Empreendedora",
-          subtitle: "IMD + Sebrae",
+          title: "6º Lugar",
+          subtitle: "Conexão Empreendedora 2024",
           description:
-            "Projeto em equipe aplicando IA e Machine Learning em finanças pessoais e educação financeira",
-          details: [
-            "Pitch para plateia de investidores e empreendedores",
-            "Landing page de pré-lançamento do produto",
-            "Top 6 entre 26 equipes participantes",
-          ],
+            "Pitch de projeto aplicando IA e Machine Learning em educação financeira e finanças pessoais",
+          event: "GO!RN - Maior evento de tecnologia do Rio Grande do Norte",
+          context: "Iniciativa Sebrae + IMD de empreendedorismo e inovação",
+
           icon: "trophy",
         },
       ],
@@ -409,6 +411,8 @@ export const presentationTranslations = {
         {
           type: "certificate",
           title: "Oracle OCI AI Foundations Associate",
+          description:
+            "Artificial Intelligence fundamentals in Oracle Cloud, including Machine Learning, Deep Learning, and generative AI services.",
           issuer: "Oracle",
           date: "2024",
           icon: "certificate",
@@ -416,20 +420,25 @@ export const presentationTranslations = {
         {
           type: "certificate",
           title: "Oracle OCI Foundations Associate",
+          description:
+            "Oracle Cloud Infrastructure fundamentals, covering compute, storage, networking, and database services.",
           issuer: "Oracle",
           date: "2024",
           icon: "certificate",
         },
         {
           type: "award",
-          title: "6th place — Entrepreneurial Connection",
-          subtitle: "IMD + Sebrae",
+          title: "6th Place",
+          subtitle: "Entrepreneurial Connection 2024",
           description:
-            "Team project applying AI and Machine Learning in personal finance and financial education",
+            "Pitch project applying AI and Machine Learning in financial education and personal finance",
+          event: "GO!RN - Largest technology event in Rio Grande do Norte",
+          context:
+            "Sebrae + IMD initiative for entrepreneurship and innovation",
           details: [
-            "Pitch to audience of investors and entrepreneurs",
-            "Product pre-launch landing page",
-            "Top 6 among 26 participating teams",
+            "Presentation to +200 people audience (investors, entrepreneurs and experts)",
+            "Development of landing page and professional pitch deck",
+            "Top 6 ranking among 26 teams from various universities",
           ],
           icon: "trophy",
         },

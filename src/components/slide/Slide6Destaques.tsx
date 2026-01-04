@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { presentationTranslations } from "../../locales/presentation";
 import { fadeInUp, staggerContainer } from "../AnimationVariants";
-import { FiAward } from "react-icons/fi";
+import { FiAward, FiMapPin, FiUsers } from "react-icons/fi";
 import { FaTrophy } from "react-icons/fa";
-import oracle from "../../assets/oracle.jpeg";
-import oracleia from "../../assets/oracleia.jpeg";
+import oracleFoundations from "../../assets/oracle.jpeg";
+import oracleAI from "../../assets/oracleia.jpeg";
 
 const Slide6Destaques = () => {
   const { language } = useLanguage();
@@ -30,80 +30,128 @@ const Slide6Destaques = () => {
 
           {/* Achievements Grid */}
           <div className="grid md:grid-cols-3 gap-6">
-            {t.achievements.map((achievement, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-              >
-                {achievement.type === "award" ? (
-                  /* Award Card - Larger */
-                  <div className="bg-gradient-card border-2 border-primary/40 rounded-2xl p-6 shadow-card hover:shadow-hover transition-all h-full">
-                    <div className="flex items-center justify-center gap-3 mb-4">
-                      <FaTrophy className="text-5xl text-primary" />
-                      <div>
-                        <h3 className="text-xl font-bold text-primary leading-tight">
+            {t.achievements.map((achievement, index) => {
+              // Mapear imagens das certificações
+              const getCertificateImage = () => {
+                if (achievement.title.includes("AI Foundations")) {
+                  return oracleAI;
+                }
+                if (achievement.title.includes("OCI Foundations")) {
+                  return oracleFoundations;
+                }
+                return null;
+              };
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                >
+                  {achievement.type === "award" ? (
+                    /* Award Card - Enhanced */
+                    <div className="bg-gradient-card border-2 border-primary/40 rounded-2xl overflow-hidden shadow-card hover:shadow-hover transition-all h-full flex flex-col">
+                      {/* Header com Troféu */}
+                      <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-6 text-center border-b border-primary/30">
+                        <FaTrophy className="text-6xl text-primary mx-auto mb-3" />
+                        <h3 className="text-xl font-bold text-primary leading-tight mb-1">
                           {achievement.title}
                         </h3>
-                        <p className="text-foreground-secondary text-xs">
+                        <p className="text-foreground-secondary text-sm font-semibold">
                           {achievement.subtitle}
                         </p>
                       </div>
-                    </div>
-                    <p className="text-foreground text-sm text-center mb-4 leading-relaxed">
-                      {achievement.description}
-                    </p>
-                    <div className="space-y-2">
-                      {achievement.details?.map((detail, dIndex) => (
-                        <p
-                          key={dIndex}
-                          className="text-xs text-foreground-secondary flex items-start gap-2 leading-snug"
-                        >
-                          <span className="text-primary font-bold mt-0.5">
-                            •
-                          </span>
-                          <span>{detail}</span>
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  /* Certificate Card */
-                  <div className="bg-card border-2 border-card-border rounded-2xl shadow-card hover:shadow-hover transition-all overflow-hidden h-full flex flex-col">
-                    {/* Image Placeholder */}
-                    <div className="relative h-44 bg-gradient-to-br from-primary/10 via-background to-primary/5 flex items-center justify-center">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <FiAward className="text-8xl text-primary/20" />
-                      </div>
-                      <div className="relative text-center p-4">
-                        <div className="text-base font-bold text-primary/50">
-                          Certificate
-                        </div>
-                        <img
-                          src={oracleia}
-                          alt="Oracle IA Certificate"
-                          className="mx-auto mt-2 rounded-lg"
-                        />
-                      </div>
-                    </div>
 
-                    {/* Content */}
-                    <div className="p-5 flex-1 flex flex-col justify-center">
-                      <h3 className="text-base font-bold text-foreground mb-2 leading-tight">
-                        {achievement.title}
-                      </h3>
-                      <p className="text-sm text-foreground-secondary mb-1.5 font-medium">
-                        {achievement.issuer}
-                      </p>
-                      <p className="text-xs text-foreground-secondary">
-                        {achievement.date}
-                      </p>
+                      {/* Content */}
+                      <div className="p-6 flex-1 flex flex-col">
+                        <p className="text-foreground text-sm text-center mb-4 leading-relaxed">
+                          {achievement.description}
+                        </p>
+
+                        {/* Event Details */}
+                        <div className="bg-card border border-card-border rounded-lg p-4 mb-4">
+                          <div className="flex items-center gap-2 mb-2">
+                            <FiMapPin className="text-primary text-lg flex-shrink-0" />
+                            <p className="text-xs font-semibold text-foreground">
+                              {achievement.event}
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <FiUsers className="text-primary text-lg flex-shrink-0" />
+                            <p className="text-xs text-foreground-secondary">
+                              {achievement.context}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Highlights */}
+                        <div className="space-y-2">
+                          {achievement.details?.map((detail, dIndex) => (
+                            <div
+                              key={dIndex}
+                              className="flex items-start gap-2"
+                            >
+                              <span className="text-primary font-bold text-sm mt-0.5 flex-shrink-0">
+                                ✓
+                              </span>
+                              <p className="text-xs text-foreground-secondary leading-snug">
+                                {detail}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </motion.div>
-            ))}
+                  ) : (
+                    /* Certificate Card - With Real Images */
+                    <div className="bg-card border-2 border-card-border rounded-2xl shadow-card hover:shadow-hover transition-all overflow-hidden h-full flex flex-col group">
+                      {/* Header with Title */}
+                      <div className="p-5 bg-gradient-card border-b border-card-border">
+                        <div className="flex items-center gap-2 mb-3">
+                          <FiAward className="text-primary text-2xl flex-shrink-0" />
+                          <h3 className="text-base font-bold text-foreground leading-tight">
+                            {achievement.title}
+                          </h3>
+                        </div>
+                        <p className="text-xs text-foreground-secondary leading-relaxed">
+                          {achievement.description}
+                        </p>
+                      </div>
+
+                      {/* Certificate Image */}
+                      <div className="relative h-44 bg-gradient-to-br from-primary/5 to-background flex items-center justify-center p-4 overflow-hidden">
+                        {getCertificateImage() ? (
+                          <img
+                            src={getCertificateImage()}
+                            alt={achievement.title}
+                            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                          />
+                        ) : (
+                          <FiAward className="text-8xl text-primary/20" />
+                        )}
+                        {/* Badge Oracle - Centralizado */}
+                        <div className="absolute top-3 right-3 bg-primary/95 backdrop-blur-sm px-4 py-1.5 rounded-full flex items-center justify-center">
+                          <span className="text-xs font-bold text-primary-foreground text-center">
+                            Oracle
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Footer */}
+                      <div className="p-4 bg-gradient-card border-t border-card-border">
+                        <p className="text-sm text-foreground-secondary font-semibold mb-1">
+                          {achievement.issuer}
+                        </p>
+                        <p className="text-xs text-foreground-secondary">
+                          {achievement.date}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Closing Message */}
