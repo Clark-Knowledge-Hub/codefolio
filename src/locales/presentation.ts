@@ -118,54 +118,62 @@ export const presentationTranslations = {
     },
     slide5: {
       title: "Projetos em Destaque",
-      subtitle: "Soluções que constru",
+      subtitle: "Soluções que desenvolvi",
       projects: [
         {
           name: "CASE",
-          tagline: "O projeto que abriu portas",
+          tagline: "De projeto acadêmico a solução real", // Ajuste opcional para soar mais maduro
           description:
-            "Plataforma web para gestão de atividades extraclasse, desenvolvida durante o técnico no Senac",
-          impact: "Me abriu portas para atuar como Dev Jr no mercado",
+            "Sistema de gestão ativo no Senac que digitalizou processos manuais de instrutores, otimizando o controle de atividades extraclasse.",
+          impact:
+            "Validou minha capacidade de entrega full-stack em um cenário real.",
           contributions: [
-            "Desenvolvimento full stack (React + Node.js + PostgreSQL)",
-            "Sistema de validação e relatórios automatizados",
-            "Substituição de processos manuais por fluxos digitais",
+            "Full stack com React, Node.js e PostgreSQL",
+            "Automação de relatórios e validações",
+            "Digitalização de fluxos manuais",
           ],
           tech: ["React", "Node.js", "PostgreSQL", "JavaScript"],
           image: "/case-project.jpg",
         },
         {
           name: "GIP",
-          tagline: "IA aplicada à educação",
+          tagline: "Dados e IA na gestão escolar",
           description:
-            "Plataforma integrada a modelo preditivo para identificar risco de evasão estudantil",
-          impact: "Solução mais confiável para tomada de decisão pedagógica",
+            "Plataforma integrada a Machine Learning para predição de evasão escolar, transformando dados brutos em estratégia para gestores.",
+          impact:
+            "Apoio à decisão pedagógica baseada em dados reais e preditivos.",
           contributions: [
-            "APIs REST para integração com modelo de IA",
-            "Dashboards interativos para análise de dados",
+            "Integração via API REST com modelos de IA",
+            "Dashboards analíticos para gestão",
             "Pipeline de entrega automatizado",
           ],
-          tech: ["Java", "Spring Boot", "React", "TypeScript", "Docker", "IA"],
-          image: "/gip-project.jpg",
-        },
-        {
-          name: "Grimore",
-          tagline: "Projeto pessoal em evolução",
-          description:
-            "Plataforma para gestão da vida acadêmica com automações usando LLMs",
-          impact: "Prática real de arquitetura, integração e deploy",
-          contributions: [
-            "Backend em Spring Boot com Spring AI",
-            "Frontend moderno em React + TypeScript",
-            "Infraestrutura com Docker e AWS",
-          ],
           tech: [
-            "Java 21",
+            "Java",
             "Spring Boot",
             "React",
             "TypeScript",
             "Docker",
-            "AWS",
+            "IA/ML",
+          ],
+          image: "/gip-project.jpg",
+        },
+        {
+          name: "Grimore",
+          tagline: "Laboratório de Inovação com IA",
+          description:
+            "Projeto experimental de gestão acadêmica focado na aplicação prática de Spring AI e LLMs para automação e assistência inteligente.",
+          impact: "Aplicação prática de conceitos avançados de IA Generativa.",
+          contributions: [
+            "Implementação de Spring AI e LLMs",
+            "Frontend moderno e responsivo",
+            "Infraestrutura cloud com AWS",
+          ],
+          tech: [
+            "Java",
+            "Spring Boot",
+            "Spring AI",
+            "Spring Security",
+            "Docker",
           ],
           image: "/grimore-project.jpg",
         },
@@ -343,10 +351,11 @@ export const presentationTranslations = {
       projects: [
         {
           name: "CASE",
-          tagline: "The project that opened doors",
+          tagline: "My first major project",
           description:
-            "Web platform for extracurricular activities management, developed during technical course at Senac",
-          impact: "Opened doors for me to work as a Jr Dev in the market",
+            "Complete system for complementary activities management, developed as final project at Senac. Full-stack solution that digitized manual processes and actively serves the institution.",
+          impact:
+            "The project that opened doors for my career as a junior developer",
           contributions: [
             "Full stack development (React + Node.js + PostgreSQL)",
             "Automated validation and reporting system",
@@ -357,10 +366,10 @@ export const presentationTranslations = {
         },
         {
           name: "GIP",
-          tagline: "AI applied to education",
+          tagline: "Predictive intelligence in education",
           description:
-            "Platform integrated with predictive model to identify student dropout risk",
-          impact: "More reliable solution for pedagogical decision-making",
+            "Robust platform integrated with Machine Learning models for student dropout risk prediction. System that transforms data into actionable insights for educational managers.",
+          impact: "Strategic tool for data-driven pedagogical decision-making",
           contributions: [
             "REST APIs for AI model integration",
             "Interactive dashboards for data analysis",
@@ -371,10 +380,11 @@ export const presentationTranslations = {
         },
         {
           name: "Grimore",
-          tagline: "Personal project in progress",
+          tagline: "Experimenting with LLMs",
           description:
-            "Platform for academic life management with automations using LLMs",
-          impact: "Real practice of architecture, integration, and deployment",
+            "Personal project in development for intelligent academic management. Exploring LLM integration with Spring AI for task automation and personalized assistance.",
+          impact:
+            "Practical lab for learning modern architecture, AI integration, and cloud deployment",
           contributions: [
             "Backend in Spring Boot with Spring AI",
             "Modern frontend in React + TypeScript",
