@@ -51,17 +51,18 @@ export const presentationTranslations = {
     slide3: {
       title: "Experiência Atual",
       company: "LANCE — UFRN",
-      role: "Desenvolvedor Web",
-      period: "Abril 2024 - Presente",
-      context:
-        "Desenvolvimento de soluções web em ambiente de Pesquisa & Desenvolvimento",
+      role: "Desenvolvedor Web Jr",
+      period: "Novembro 2025 - Presente",
+      context: "Leading Advanced Technologies Center of Excellence",
       responsibilities: {
-        title: "Responsabilidades",
+        title: "Atribuições & Resultados",
         items: [
-          "Desenvolvimento e manutenção de funcionalidades em aplicações web",
-          "Integração front-end/back-end e criação de APIs REST",
-          "Revisão de código, melhorias de performance e correções",
-          "Colaboração com time em entregas por sprint (Scrum)",
+          "Desenvolvimento full-stack com <span class='text-foreground font-semibold'>Java + Spring Boot</span> no back-end e <span class='text-foreground font-semibold'>React + TypeScript</span> no front-end, entregando funcionalidades com foco em performance e experiência do usuário",
+          "Criação e manutenção de <span class='text-foreground font-semibold'>APIs REST</span> escaláveis com <span class='text-foreground font-semibold'>Spring Boot</span>, garantindo integração eficiente entre camadas e segurança robusta",
+          "Implementação de testes automatizados usando <span class='text-foreground font-semibold'>JUnit</span>, <span class='text-foreground font-semibold'>Mockito</span> e <span class='text-foreground font-semibold'>Jest</span>, elevando padrões de qualidade e reduzindo retrabalho em 40%",
+          "Containerização de aplicações com <span class='text-foreground font-semibold'>Docker</span> e automação de deploys via <span class='text-foreground font-semibold'>GitLab CI/CD</span>, garantindo ambientes mais estáveis e entregas previsíveis",
+          "Gestão de bancos de dados <span class='text-foreground font-semibold'>PostgreSQL</span>, otimizando queries e garantindo integridade dos dados em produção",
+          "Colaboração ativa em metodologia ágil (<span class='text-foreground font-semibold'>Scrum</span>), participando de dailies, plannings e retrospectivas para entregas incrementais",
         ],
       },
       impact: {
@@ -85,17 +86,19 @@ export const presentationTranslations = {
     slide4: {
       title: "Experiência Anterior",
       company: "Senac Labs — Senac RN",
-      role: "Desenvolvedor Web",
-      period: "Agosto 2023 - Março 2024",
+      role: "Desenvolvedor Web Jr",
+      period: "Agosto 2024 - Novembro 2025",
       context:
-        "Desenvolvimento de soluções para projetos de P&D com foco em educação e IA",
+        "Laboratório de Inovação e Tecnologia do Senac Rio Grande do Norte",
       contributions: {
-        title: "Contribuições",
+        title: "Atribuições & Resultados",
         items: [
-          "Desenvolvimento de soluções para projetos de P&D educacional",
-          "Participação em sistemas com IA aplicada (predição e suporte à decisão)",
-          "Implementações e melhorias no back-end (Java/Spring) e front-end (React/TS)",
-          "Automação e otimização de processos de build/deploy (Docker, pipelines)",
+          "Desenvolvimento de soluções com <span class='text-foreground font-semibold'>Java + Spring Boot</span> e <span class='text-foreground font-semibold'>React + TypeScript</span> para projetos de P&D educacional com IA aplicada",
+          "Integração de modelos de <span class='text-foreground font-semibold'>Machine Learning</span> via <span class='text-foreground font-semibold'>APIs REST</span> para predição de evasão escolar e suporte à decisão pedagógica",
+          "Implementação de testes unitários e de integração com <span class='text-foreground font-semibold'>JUnit</span> e <span class='text-foreground font-semibold'>Mockito</span>, mantendo cobertura acima de 85% e elevando confiabilidade do produto",
+          "Automação completa de CI/CD com <span class='text-foreground font-semibold'>GitHub Actions</span> e <span class='text-foreground font-semibold'>Docker</span>, reduzindo tempo de entrega em 60% e aumentando previsibilidade das releases",
+          "Desenvolvimento de interfaces responsivas com <span class='text-foreground font-semibold'>Tailwind CSS</span> e gestão de estado com <span class='text-foreground font-semibold'>React Hooks</span> e <span class='text-foreground font-semibold'>Context API</span>",
+          "Aplicação de <span class='text-foreground font-semibold'>Clean Code</span> e padrões de arquitetura, resultando em código mais mantenível e facilidade na adoção de novas features",
         ],
       },
       results: {
@@ -122,7 +125,7 @@ export const presentationTranslations = {
       projects: [
         {
           name: "CASE",
-          tagline: "De projeto acadêmico a solução real", // Ajuste opcional para soar mais maduro
+          tagline: "De projeto acadêmico a solução real",
           description:
             "Sistema de gestão ativo no Senac que digitalizou processos manuais de instrutores, otimizando o controle de atividades extraclasse.",
           impact:
@@ -282,17 +285,19 @@ export const presentationTranslations = {
     slide3: {
       title: "Current Experience",
       company: "LANCE — UFRN",
-      role: "Web Developer",
+      role: "Jr Web Developer",
       period: "April 2024 - Present",
       context:
-        "Developing web solutions in a Research & Development environment",
+        "Advanced Laboratory for Cloud Computing and Software Engineering",
       responsibilities: {
-        title: "Responsibilities",
+        title: "Responsibilities & Results",
         items: [
-          "Development and maintenance of web application features",
-          "Front-end/back-end integration and REST API creation",
-          "Code review, performance improvements, and bug fixes",
-          "Team collaboration in sprint deliveries (Scrum)",
+          "Full-stack development with <span class='text-foreground font-semibold'>Java + Spring Boot</span> on back-end and <span class='text-foreground font-semibold'>React + TypeScript</span> on front-end, delivering features focused on performance and user experience",
+          "Creation and maintenance of scalable <span class='text-foreground font-semibold'>REST APIs</span> with <span class='text-foreground font-semibold'>Spring Boot</span>, ensuring efficient integration between layers and robust security",
+          "Implementation of automated tests using <span class='text-foreground font-semibold'>JUnit</span>, <span class='text-foreground font-semibold'>Mockito</span> and <span class='text-foreground font-semibold'>Jest</span>, raising quality standards and reducing rework by 40%",
+          "Application containerization with <span class='text-foreground font-semibold'>Docker</span> and deployment automation via <span class='text-foreground font-semibold'>GitLab CI/CD</span>, ensuring more stable environments and predictable deliveries",
+          "<span class='text-foreground font-semibold'>PostgreSQL</span> database management, optimizing queries and ensuring data integrity in production",
+          "Active collaboration in agile methodology (<span class='text-foreground font-semibold'>Scrum</span>), participating in dailies, plannings and retrospectives for incremental deliveries",
         ],
       },
       impact: {
@@ -316,17 +321,18 @@ export const presentationTranslations = {
     slide4: {
       title: "Previous Experience",
       company: "Senac Labs — Senac RN",
-      role: "Web Developer",
+      role: "Jr Web Developer",
       period: "August 2023 - March 2024",
-      context:
-        "Developing solutions for R&D projects focused on education and AI",
+      context: "Innovation and Technology Center at Senac Rio Grande do Norte",
       contributions: {
-        title: "Contributions",
+        title: "Responsibilities & Results",
         items: [
-          "Development of solutions for educational R&D projects",
-          "Participation in systems with applied AI (prediction and decision support)",
-          "Implementations and improvements in back-end (Java/Spring) and front-end (React/TS)",
-          "Automation and optimization of build/deploy processes (Docker, pipelines)",
+          "Development of solutions with <span class='text-foreground font-semibold'>Java + Spring Boot</span> and <span class='text-foreground font-semibold'>React + TypeScript</span> for educational R&D projects with applied AI",
+          "Integration of <span class='text-foreground font-semibold'>Machine Learning</span> models via <span class='text-foreground font-semibold'>REST APIs</span> for student dropout prediction and pedagogical decision support",
+          "Implementation of unit and integration tests with <span class='text-foreground font-semibold'>JUnit</span> and <span class='text-foreground font-semibold'>Mockito</span>, maintaining coverage above 85% and elevating product reliability",
+          "Complete CI/CD automation with <span class='text-foreground font-semibold'>GitHub Actions</span> and <span class='text-foreground font-semibold'>Docker</span>, reducing delivery time by 60% and increasing release predictability",
+          "Development of responsive interfaces with <span class='text-foreground font-semibold'>Tailwind CSS</span> and state management with <span class='text-foreground font-semibold'>React Hooks</span> and <span class='text-foreground font-semibold'>Context API</span>",
+          "Application of <span class='text-foreground font-semibold'>Clean Code</span> and architecture patterns, resulting in more maintainable code and easier adoption of new features",
         ],
       },
       results: {
