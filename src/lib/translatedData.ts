@@ -11,9 +11,8 @@ export const getProjectsData = (language: "pt" | "en") => {
       technologies: [
         "Java 21",
         "Spring Boot",
-        "Angular",
-        "TypeScript",
-        "Tailwind CSS",
+        "Spring IA",
+        "Spring Security",
         "PostgreSQL",
       ],
       image: "/placeholder.svg",

@@ -97,7 +97,7 @@ const Presentation = () => {
             exit="exit"
             transition={{
               x: { type: "tween", duration: 0.3, ease: "easeInOut" },
-              opacity: { duration: 0.3 },
+              opacity: { duration: 0.5 },
             }}
             className="absolute inset-0 w-full h-full"
           >
@@ -129,22 +129,22 @@ const Presentation = () => {
 
       {/* Progress Indicator - Bottom Center */}
       <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40">
-        <div className="bg-card/80 backdrop-blur-sm border border-card-border rounded-full px-6 py-3 shadow-card">
+        <div className="bg-card backdrop-blur-sm border border-card-border rounded-full px-6 py-3 shadow-card">
           <div className="flex items-center gap-3">
             {/* Progress Dots */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               {Array.from({ length: totalSlides }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className="group"
+                  className="group relative"
                   aria-label={`Go to slide ${index + 1}`}
                 >
                   <div
-                    className={`h-2 rounded-full transition-all duration-300 ${
+                    className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
                       index === currentSlide
-                        ? "bg-primary w-8"
-                        : "bg-foreground-secondary/30"
+                        ? "bg-primary scale-125 shadow-lg shadow-primary/50"
+                        : "bg-foreground-secondary/40 hover:bg-foreground-secondary/60 hover:scale-110"
                     }`}
                   />
                 </button>
@@ -152,7 +152,7 @@ const Presentation = () => {
             </div>
 
             {/* Slide Counter */}
-            <div className="ml-2 text-sm font-semibold text-foreground-secondary">
+            <div className="ml-4 text-sm font-bold text-foreground">
               {currentSlide + 1} / {totalSlides}
             </div>
           </div>

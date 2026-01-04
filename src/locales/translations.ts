@@ -51,7 +51,7 @@ export const translations = {
       },
       stats: {
         experience: "Experiência",
-        experienceYears: "2+ anos",
+        experienceYears: "2 anos",
         experienceRole: "Desenvolvedor de Software",
         education: "Formação",
         educationDegree: "Bacharelado em Tecnologia da Informação",
@@ -350,7 +350,7 @@ export const translations = {
       },
       stats: {
         experience: "Experience",
-        experienceYears: "2+ years",
+        experienceYears: "2 years",
         experienceRole: "Software Developer",
         education: "Education",
         educationDegree: "Bachelor's in Information Technology",

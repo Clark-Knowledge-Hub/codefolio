@@ -42,7 +42,7 @@ const Slide1Capa = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-extrabold mb-4 leading-none"
+            className="text-6xl md:text-8xl lg:text-9xl font-extrabold mb-6 leading-none"
             style={{
               fontSize: "clamp(3rem, 8vw, 6rem)",
               background:
@@ -60,9 +60,9 @@ const Slide1Capa = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-3xl md:text-4xl font-bold text-primary mb-3"
+            className="text-2xl md:text-3xl font-bold text-primary mb-6"
           >
-            {t.title}
+            {t.subtitle}
           </motion.h2>
 
           {/* Description */}
@@ -70,9 +70,9 @@ const Slide1Capa = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-lg md:text-xl text-foreground-secondary mb-8"
+            className="text-base md:text-lg text-foreground-secondary max-w-3xl mx-auto leading-relaxed mb-12"
           >
-            {t.subtitle}
+            {t.cta}
           </motion.p>
 
           {/* Tech Stack Icons - Simplified */}

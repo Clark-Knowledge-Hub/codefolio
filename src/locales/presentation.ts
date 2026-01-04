@@ -5,7 +5,7 @@ export const presentationTranslations = {
       subtitle: "Desenvolvedor de Software",
       tagline: "",
       stack: "Java • Spring Boot • React • TypeScript",
-      cta: "Transformando ideias em código que gera impacto",
+      cta: "Desenvolvendo soluções que resolvem problemas reais com Java e React.",
       technologies: [
         "Java",
         "Spring Boot",
@@ -21,13 +21,13 @@ export const presentationTranslations = {
       subtitle: "Em 30 segundos",
       profile: {
         intro:
-          "Desenvolvedor web com 2 anos de experiência em projetos de software e P&D",
+          "Desenvolvedor de software especializado em soluções web escaláveis, com 2 anos de experiência em ambientes de P&D e desenvolvimento ágil.",
         stack:
-          "Atuação com Java + Spring Boot no back-end e React + TypeScript no front-end",
+          "Especialista em arquiteturas modernas utilizando Java + Spring Boot para APIs robustas e React + TypeScript para interfaces intuitivas e performáticas.",
         experience:
-          "Experiência com soluções aplicando IA (predição de evasão) e Blockchain (gestão de ativos digitais)",
+          "Experiência comprovada na integração de tecnologias emergentes: soluções com IA para análise preditiva e Blockchain para gestão segura de ativos digitais.",
         focus:
-          "Foco em entregar produtos com qualidade, performance e clareza de código",
+          "Comprometido com excelência técnica, entregando código limpo, testável e de alta performance, sempre alinhado às melhores práticas do mercado.",
         education:
           "Bacharelado em TI (UFRN) + Técnico em Desenvolvimento de Sistemas (Senac RN)",
       },
@@ -226,7 +226,7 @@ export const presentationTranslations = {
       subtitle: "Software Developer",
       tagline: "Web • Back-end • Full Stack",
       stack: "Java + Spring Boot • React + TypeScript",
-      cta: "Transforming ideas into code that makes an impact",
+      cta: "Developing solutions that solve real problems with Java and React.",
       technologies: [
         "Java",
         "Spring Boot",
@@ -242,13 +242,13 @@ export const presentationTranslations = {
       subtitle: "In 30 seconds",
       profile: {
         intro:
-          "Web developer with 2 years of experience in software projects and R&D",
+          "Software developer specialized in scalable web solutions, with 2 years of experience in R&D environments and agile development.",
         stack:
-          "Working with Java + Spring Boot on back-end and React + TypeScript on front-end",
+          "Expert in modern architectures using Java + Spring Boot for robust APIs and React + TypeScript for intuitive, high-performance interfaces.",
         experience:
-          "Experience with solutions applying AI (dropout prediction) and Blockchain (digital asset management)",
+          "Proven experience integrating emerging technologies: AI solutions for predictive analysis and Blockchain for secure digital asset management.",
         focus:
-          "Focus on delivering products with quality, performance, and code clarity",
+          "Committed to technical excellence, delivering clean, testable, high-performance code, always aligned with industry best practices.",
         education:
           "Bachelor's in IT (UFRN) + Technical Degree in Systems Development (Senac RN)",
       },

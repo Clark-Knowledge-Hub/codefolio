@@ -42,7 +42,7 @@ const Slide7Encerramento = () => {
         }}
       />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-20 relative z-10">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
