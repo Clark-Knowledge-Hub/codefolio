@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../locales/translations";
+import LanguageToggle from "./LanguageToggle";
 
 const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -122,36 +123,7 @@ const Navbar = () => {
               </motion.button>
 
               {/* Language Toggle */}
-              <div className="flex items-center gap-1 p-1 bg-card border border-card-border rounded-lg">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => language !== "pt" && toggleLanguage()}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-all ${
-                    language === "pt"
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-foreground-secondary hover:text-foreground hover:bg-background"
-                  }`}
-                  aria-label="Switch to Portuguese"
-                >
-                  <span>🇧🇷</span>
-                  <span>PT</span>
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => language !== "en" && toggleLanguage()}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-all ${
-                    language === "en"
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-foreground-secondary hover:text-foreground hover:bg-background"
-                  }`}
-                  aria-label="Switch to English"
-                >
-                  <span>🇺🇸</span>
-                  <span>EN</span>
-                </motion.button>
-              </div>
+              <LanguageToggle />
             </div>
 
             {/* Mobile Menu Button */}
@@ -231,32 +203,9 @@ const Navbar = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="mt-2 flex items-center gap-2 p-1.5 bg-card border border-card-border rounded-lg"
+                    className="mt-2 flex justify-center"
                   >
-                    <motion.button
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => language !== "pt" && toggleLanguage()}
-                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md transition-all ${
-                        language === "pt"
-                          ? "bg-primary text-primary-foreground shadow-sm"
-                          : "text-foreground-secondary hover:text-foreground hover:bg-background"
-                      }`}
-                    >
-                      <span>🇧🇷</span>
-                      <span>PT</span>
-                    </motion.button>
-                    <motion.button
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => language !== "en" && toggleLanguage()}
-                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md transition-all ${
-                        language === "en"
-                          ? "bg-primary text-primary-foreground shadow-sm"
-                          : "text-foreground-secondary hover:text-foreground hover:bg-background"
-                      }`}
-                    >
-                      <span>🇺🇸</span>
-                      <span>EN</span>
-                    </motion.button>
+                    <LanguageToggle />
                   </motion.div>
                 </div>
               </motion.div>

@@ -51,7 +51,7 @@ export const translations = {
       },
       stats: {
         experience: "Experiência",
-        experienceYears: "2+ anos",
+        experienceYears: "2 anos",
         experienceRole: "Desenvolvedor de Software",
         education: "Formação",
         educationDegree: "Bacharelado em Tecnologia da Informação",
@@ -350,7 +350,7 @@ export const translations = {
       },
       stats: {
         experience: "Experience",
-        experienceYears: "2+ years",
+        experienceYears: "2 years",
         experienceRole: "Software Developer",
         education: "Education",
         educationDegree: "Bachelor's in Information Technology",
@@ -454,7 +454,7 @@ export const translations = {
       subtitle:
         "My professional journey developing solutions that impact thousands of users",
       current: "Current",
-      duration: "1 year and 4 months",
+      duration: "",
       lance: {
         title: "Jr Web Developer",
         company: "LANCE/UFRN",
@@ -465,7 +465,7 @@ export const translations = {
         achievements: [
           "Develop backend modules using Java and Spring Boot, following Modular Monolith architecture to ensure scalability and code organization",
           "Implement responsive user interfaces with ReactJS, TypeScript and Tailwind CSS, focusing on design fidelity and user experience",
-          "Use Git for code versioning and Docker for containerization, collaborating on execution and maintenance of automation pipelines (CI/CD) in GitLab",
+          "Use Git for version control and Docker for containerization, collaborating on execution and maintenance of automation pipelines (CI/CD) in GitLab",
           "Ensure delivery reliability by writing automated tests with JUnit, Mockito, JaCoCo, Jest and Cypress, guaranteeing stability of implemented features",
           "Collaborate with the team following Agile Scrum methodology, applying design patterns and best practices during code reviews and Pull Requests",
         ],
@@ -483,10 +483,8 @@ export const translations = {
           "Implemented scalable RESTful APIs in Java 21 with Spring Boot, following clean architecture principles to ensure maintainability and scalability",
           "Created responsive and modern interfaces with ReactJS, TypeScript and Tailwind CSS, focusing on user experience and usability",
           "Ensured delivery reliability with +85% automated test coverage using JUnit and Mockito",
-          "Automated CI/CD pipelines with GitHub Actions and Docker, reducing deployment time by +60%",
-          "Created responsive front-end interfaces with ReactJS, TypeScript and Tailwind CSS",
-          "Implemented scalable RESTful APIs in Java 21 with Spring Boot following clean architecture",
-          "Collaborated in multidisciplinary squads using agile methodologies (Scrum)",
+          "Automated CI/CD pipelines with GitHub Actions and Docker, reducing deployment time by +60% and ensuring continuous delivery",
+          "Collaborated in multidisciplinary squads applying Agile Scrum methodology, participating in ceremonies and code reviews",
         ],
       },
       alares: {

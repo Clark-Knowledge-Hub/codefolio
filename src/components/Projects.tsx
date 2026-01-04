@@ -19,6 +19,7 @@ import caseImage4 from "../assets/case4.jpeg";
 import dinlyImage1 from "../assets/dinly1.png";
 import dinlyImage2 from "../assets/dinly2.png";
 import gip from "../assets/gip.png";
+import grimore from "../assets/grimore.png";
 
 interface Project {
   title: string;
@@ -52,8 +53,8 @@ const Projects = () => {
       if (index === 0) {
         return {
           ...project,
-          image: "/placeholder.svg",
-          gallery: ["/placeholder.svg"],
+          image: grimore,
+          gallery: [grimore],
         };
       }
       // Dinly - imagens do dinly
