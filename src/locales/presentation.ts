@@ -96,7 +96,7 @@ export const presentationTranslations = {
           "Desenvolvimento de soluções com <span class='text-foreground font-semibold'>Java + Spring Boot</span> e <span class='text-foreground font-semibold'>React + TypeScript</span> para projetos de P&D educacional com IA aplicada",
           "Integração de modelos de <span class='text-foreground font-semibold'>Machine Learning</span> via <span class='text-foreground font-semibold'>APIs REST</span> para predição de evasão escolar e suporte à decisão pedagógica",
           "Implementação de testes unitários e de integração com <span class='text-foreground font-semibold'>JUnit</span> e <span class='text-foreground font-semibold'>Mockito</span>, mantendo cobertura acima de 85% e elevando confiabilidade do produto",
-          "Automação completa de CI/CD com <span class='text-foreground font-semibold'>GitHub Actions</span> e <span class='text-foreground font-semibold'>Docker</span>, reduzindo tempo de entrega em 60% e aumentando previsibilidade das releases",
+          "Automação completa de CI/CD com <span class='text-foreground font-semibold'>GitHub Actions</span> e <span class='text-foreground font-semibold'>Docker</span>, reduzindo tempo de entrega e aumentando previsibilidade das releases",
           "Desenvolvimento de interfaces responsivas com <span class='text-foreground font-semibold'>Tailwind CSS</span> e gestão de estado com <span class='text-foreground font-semibold'>React Hooks</span> e <span class='text-foreground font-semibold'>Context API</span>",
           "Aplicação de <span class='text-foreground font-semibold'>Clean Code</span> e padrões de arquitetura, resultando em código mais mantenível e facilidade na adoção de novas features",
         ],
@@ -192,7 +192,7 @@ export const presentationTranslations = {
           description:
             "Fundamentos de Inteligência Artificial na Oracle Cloud, incluindo Machine Learning, Deep Learning e serviços de IA generativa.",
           issuer: "Oracle",
-          date: "2024",
+          date: "2025",
           icon: "certificate",
         },
         {
@@ -201,13 +201,13 @@ export const presentationTranslations = {
           description:
             "Fundamentos da Oracle Cloud Infrastructure, abrangendo computação, armazenamento, rede e serviços de banco de dados.",
           issuer: "Oracle",
-          date: "2024",
+          date: "2025",
           icon: "certificate",
         },
         {
           type: "award",
           title: "6º Lugar",
-          subtitle: "Conexão Empreendedora 2024",
+          subtitle: "Conexão Empreendedora 2025",
           description:
             "Pitch de projeto aplicando IA e Machine Learning em educação financeira e finanças pessoais",
           event: "GO!RN - Maior evento de tecnologia do Rio Grande do Norte",
@@ -330,7 +330,7 @@ export const presentationTranslations = {
           "Development of solutions with <span class='text-foreground font-semibold'>Java + Spring Boot</span> and <span class='text-foreground font-semibold'>React + TypeScript</span> for educational R&D projects with applied AI",
           "Integration of <span class='text-foreground font-semibold'>Machine Learning</span> models via <span class='text-foreground font-semibold'>REST APIs</span> for student dropout prediction and pedagogical decision support",
           "Implementation of unit and integration tests with <span class='text-foreground font-semibold'>JUnit</span> and <span class='text-foreground font-semibold'>Mockito</span>, maintaining coverage above 85% and elevating product reliability",
-          "Complete CI/CD automation with <span class='text-foreground font-semibold'>GitHub Actions</span> and <span class='text-foreground font-semibold'>Docker</span>, reducing delivery time by 60% and increasing release predictability",
+          "Complete CI/CD automation with <span class='text-foreground font-semibold'>GitHub Actions</span> and <span class='text-foreground font-semibold'>Docker</span>, reducing delivery time and increasing release predictability",
           "Development of responsive interfaces with <span class='text-foreground font-semibold'>Tailwind CSS</span> and state management with <span class='text-foreground font-semibold'>React Hooks</span> and <span class='text-foreground font-semibold'>Context API</span>",
           "Application of <span class='text-foreground font-semibold'>Clean Code</span> and architecture patterns, resulting in more maintainable code and easier adoption of new features",
         ],
@@ -426,7 +426,7 @@ export const presentationTranslations = {
           description:
             "Artificial Intelligence fundamentals in Oracle Cloud, including Machine Learning, Deep Learning, and generative AI services.",
           issuer: "Oracle",
-          date: "2024",
+          date: "2025",
           icon: "certificate",
         },
         {
@@ -435,13 +435,13 @@ export const presentationTranslations = {
           description:
             "Oracle Cloud Infrastructure fundamentals, covering compute, storage, networking, and database services.",
           issuer: "Oracle",
-          date: "2024",
+          date: "2025",
           icon: "certificate",
         },
         {
           type: "award",
           title: "6th Place",
-          subtitle: "Entrepreneurial Connection 2024",
+          subtitle: "Entrepreneurial Connection 2025",
           description:
             "Pitch project applying AI and Machine Learning in financial education and personal finance",
           event: "GO!RN - Largest technology event in Rio Grande do Norte",
