@@ -49,7 +49,7 @@ export const presentationTranslations = {
       },
     },
     slide3: {
-      title: "Experiência Atual",
+      title: "Experiência Profissional",
       company: "LANCE — UFRN",
       role: "Desenvolvedor Web Jr",
       period: "Novembro 2025 - Presente",
@@ -57,21 +57,20 @@ export const presentationTranslations = {
       responsibilities: {
         title: "Atribuições & Resultados",
         items: [
-          "Desenvolvimento full-stack com <span class='text-foreground font-semibold'>Java + Spring Boot</span> no back-end e <span class='text-foreground font-semibold'>React + TypeScript</span> no front-end, entregando funcionalidades com foco em performance e experiência do usuário",
-          "Criação e manutenção de <span class='text-foreground font-semibold'>APIs REST</span> escaláveis com <span class='text-foreground font-semibold'>Spring Boot</span>, garantindo integração eficiente entre camadas e segurança robusta",
-          "Implementação de testes automatizados usando <span class='text-foreground font-semibold'>JUnit</span>, <span class='text-foreground font-semibold'>Mockito</span> e <span class='text-foreground font-semibold'>Jest</span>, elevando padrões de qualidade e reduzindo retrabalho em 40%",
-          "Containerização de aplicações com <span class='text-foreground font-semibold'>Docker</span> e automação de deploys via <span class='text-foreground font-semibold'>GitLab CI/CD</span>, garantindo ambientes mais estáveis e entregas previsíveis",
-          "Gestão de bancos de dados <span class='text-foreground font-semibold'>PostgreSQL</span>, otimizando queries e garantindo integridade dos dados em produção",
-          "Colaboração ativa em metodologia ágil (<span class='text-foreground font-semibold'>Scrum</span>), participando de dailies, plannings e retrospectivas para entregas incrementais",
+          "Projetei e implementei módulos backend em <span class='text-foreground font-semibold'>Java e Spring Boot</span> em um <span class='text-foreground font-semibold'>monólito modular</span>, reduzindo o acoplamento entre domínios e preparando o sistema para escalar novas funcionalidades com menor custo de manutenção",
+          "Desenvolvi interfaces responsivas em <span class='text-foreground font-semibold'>React e TypeScript</span> e estruturei o gerenciamento de estado com <span class='text-foreground font-semibold'>Zustand</span>, diminuindo complexidade de componentes e acelerando a implementação de novas telas do produto",
+          "Implementei testes automatizados com <span class='text-foreground font-semibold'>JUnit, Mockito e Cypress</span>, reduzindo a incidência de regressões em produção e aumentando a confiança da equipe em releases frequentes",
+          "Colaborei na manutenção de pipelines de <span class='text-foreground font-semibold'>CI/CD no GitLab</span> com <span class='text-foreground font-semibold'>Docker</span>, encurtando o ciclo de entrega e garantindo ambientes de desenvolvimento consistentes entre a equipe",
+          "Participo ativamente de cerimônias <span class='text-foreground font-semibold'>Scrum</span> e <span class='text-foreground font-semibold'>Code Reviews</span>, contribuindo para a adoção de boas práticas de desenvolvimento e melhoria contínua da qualidade do código da equipe",
         ],
       },
       impact: {
         title: "Resultados & Impacto",
         items: [
-          "Entrega de funcionalidades com foco em performance e UX",
-          "Melhoria na qualidade do código (padrões e refatoração)",
-          "Redução de retrabalho através de code reviews sistemáticas",
-          "Ambientes mais estáveis com pipelines CI/CD automatizados",
+          "Redução do acoplamento entre domínios",
+          "Menor custo de manutenção e maior escalabilidade",
+          "Diminuição de regressões em produção",
+          "Ciclo de entrega encurtado com ambientes consistentes",
         ],
       },
       tech: [
@@ -84,7 +83,7 @@ export const presentationTranslations = {
       ],
     },
     slide4: {
-      title: "Experiência Anterior",
+      title: "Experiência Profissional",
       company: "Senac Labs — Senac RN",
       role: "Desenvolvedor Web Jr",
       period: "Agosto 2024 - Novembro 2025",
@@ -93,21 +92,19 @@ export const presentationTranslations = {
       contributions: {
         title: "Atribuições & Resultados",
         items: [
-          "Desenvolvimento de soluções com <span class='text-foreground font-semibold'>Java + Spring Boot</span> e <span class='text-foreground font-semibold'>React + TypeScript</span> para projetos de P&D educacional com IA aplicada",
-          "Integração de modelos de <span class='text-foreground font-semibold'>Machine Learning</span> via <span class='text-foreground font-semibold'>APIs REST</span> para predição de evasão escolar e suporte à decisão pedagógica",
-          "Implementação de testes unitários e de integração com <span class='text-foreground font-semibold'>JUnit</span> e <span class='text-foreground font-semibold'>Mockito</span>, mantendo cobertura acima de 85% e elevando confiabilidade do produto",
-          "Automação completa de CI/CD com <span class='text-foreground font-semibold'>GitHub Actions</span> e <span class='text-foreground font-semibold'>Docker</span>, reduzindo tempo de entrega e aumentando previsibilidade das releases",
-          "Desenvolvimento de interfaces responsivas com <span class='text-foreground font-semibold'>Tailwind CSS</span> e gestão de estado com <span class='text-foreground font-semibold'>React Hooks</span> e <span class='text-foreground font-semibold'>Context API</span>",
-          "Aplicação de <span class='text-foreground font-semibold'>Clean Code</span> e padrões de arquitetura, resultando em código mais mantenível e facilidade na adoção de novas features",
+          "Desenvolvi <span class='text-foreground font-semibold'>APIs REST</span> em <span class='text-foreground font-semibold'>Java e Spring Boot</span> integrando modelos de <span class='text-foreground font-semibold'>IA preditiva</span> para identificar alunos com risco de evasão, permitindo intervenções pedagógicas baseadas em dados e maior retenção estudantil",
+          "Construí <span class='text-foreground font-semibold'>dashboards analíticos</span> e interfaces responsivas com <span class='text-foreground font-semibold'>React, TypeScript e Tailwind CSS</span>, facilitando a leitura de indicadores e acelerando a tomada de decisão da equipe pedagógica",
+          "Otimizei o fluxo de entrega configurando pipelines de <span class='text-foreground font-semibold'>CI/CD no GitHub Actions</span> com <span class='text-foreground font-semibold'>Docker e Nginx</span>, reduzindo o tempo de deploy para menos de 5 minutos e viabilizando releases mais frequentes",
+          "Estruturei testes <span class='text-foreground font-semibold'>unitários e E2E</span> com <span class='text-foreground font-semibold'>Jest e Cypress</span>, mantendo <span class='text-foreground font-semibold'>cobertura acima de 85%</span> e reduzindo falhas em produção, o que aumentou a confiança nas releases da equipe",
         ],
       },
       results: {
         title: "Resultados",
         items: [
-          "Mais previsibilidade e eficiência no fluxo de entregas",
-          "Evolução de produto com foco em confiabilidade",
-          "Deploy automatizado reduzindo tempo de entrega",
+          "Intervenções pedagógicas baseadas em dados",
+          "Deploy em menos de 5 minutos",
           "Cobertura de testes acima de 85%",
+          "Redução de falhas em produção",
         ],
       },
       tech: [
@@ -283,7 +280,7 @@ export const presentationTranslations = {
       },
     },
     slide3: {
-      title: "Current Experience",
+      title: "Profissional Experience",
       company: "LANCE — UFRN",
       role: "Jr Web Developer",
       period: "November 2025 - Present",
@@ -291,21 +288,20 @@ export const presentationTranslations = {
       responsibilities: {
         title: "Responsibilities & Results",
         items: [
-          "Full-stack development with <span class='text-foreground font-semibold'>Java + Spring Boot</span> on back-end and <span class='text-foreground font-semibold'>React + TypeScript</span> on front-end, delivering features focused on performance and user experience",
-          "Creation and maintenance of scalable <span class='text-foreground font-semibold'>REST APIs</span> with <span class='text-foreground font-semibold'>Spring Boot</span>, ensuring efficient integration between layers and robust security",
-          "Implementation of automated tests using <span class='text-foreground font-semibold'>JUnit</span>, <span class='text-foreground font-semibold'>Mockito</span> and <span class='text-foreground font-semibold'>Jest</span>, raising quality standards and reducing rework by 40%",
-          "Application containerization with <span class='text-foreground font-semibold'>Docker</span> and deployment automation via <span class='text-foreground font-semibold'>GitLab CI/CD</span>, ensuring more stable environments and predictable deliveries",
-          "<span class='text-foreground font-semibold'>PostgreSQL</span> database management, optimizing queries and ensuring data integrity in production",
-          "Active collaboration in agile methodology (<span class='text-foreground font-semibold'>Scrum</span>), participating in dailies, plannings and retrospectives for incremental deliveries",
+          "Designed and implemented backend modules in <span class='text-foreground font-semibold'>Java and Spring Boot</span> in a <span class='text-foreground font-semibold'>modular monolith</span>, reducing coupling between domains and preparing the system to scale new features with lower maintenance cost",
+          "Developed responsive interfaces in <span class='text-foreground font-semibold'>React and TypeScript</span> and structured state management with <span class='text-foreground font-semibold'>Zustand</span>, decreasing component complexity and accelerating the implementation of new product screens",
+          "Implemented automated tests with <span class='text-foreground font-semibold'>JUnit, Mockito and Cypress</span>, reducing the incidence of production regressions and increasing team confidence in frequent releases",
+          "Collaborated in maintaining <span class='text-foreground font-semibold'>CI/CD pipelines on GitLab</span> with <span class='text-foreground font-semibold'>Docker</span>, shortening the delivery cycle and ensuring consistent development environments across the team",
+          "Actively participate in <span class='text-foreground font-semibold'>Scrum</span> ceremonies and <span class='text-foreground font-semibold'>Code Reviews</span>, contributing to the adoption of development best practices and continuous improvement of team code quality",
         ],
       },
       impact: {
         title: "Results & Impact",
         items: [
-          "Feature delivery focused on performance and UX",
-          "Improved code quality (standards and refactoring)",
-          "Reduced rework through systematic code reviews",
-          "More stable environments with automated CI/CD pipelines",
+          "Reduced coupling between domains",
+          "Lower maintenance cost and greater scalability",
+          "Decreased production regressions",
+          "Shortened delivery cycle with consistent environments",
         ],
       },
       tech: [
@@ -318,7 +314,7 @@ export const presentationTranslations = {
       ],
     },
     slide4: {
-      title: "Previous Experience",
+      title: "Profissional Experience",
       company: "Senac Labs — Senac RN",
       role: "Jr Web Developer",
       period: "August 2024 - November 2025",
@@ -327,21 +323,19 @@ export const presentationTranslations = {
       contributions: {
         title: "Responsibilities & Results",
         items: [
-          "Development of solutions with <span class='text-foreground font-semibold'>Java + Spring Boot</span> and <span class='text-foreground font-semibold'>React + TypeScript</span> for educational R&D projects with applied AI",
-          "Integration of <span class='text-foreground font-semibold'>Machine Learning</span> models via <span class='text-foreground font-semibold'>REST APIs</span> for student dropout prediction and pedagogical decision support",
-          "Implementation of unit and integration tests with <span class='text-foreground font-semibold'>JUnit</span> and <span class='text-foreground font-semibold'>Mockito</span>, maintaining coverage above 85% and elevating product reliability",
-          "Complete CI/CD automation with <span class='text-foreground font-semibold'>GitHub Actions</span> and <span class='text-foreground font-semibold'>Docker</span>, reducing delivery time and increasing release predictability",
-          "Development of responsive interfaces with <span class='text-foreground font-semibold'>Tailwind CSS</span> and state management with <span class='text-foreground font-semibold'>React Hooks</span> and <span class='text-foreground font-semibold'>Context API</span>",
-          "Application of <span class='text-foreground font-semibold'>Clean Code</span> and architecture patterns, resulting in more maintainable code and easier adoption of new features",
+          "Developed <span class='text-foreground font-semibold'>REST APIs</span> in <span class='text-foreground font-semibold'>Java and Spring Boot</span> integrating <span class='text-foreground font-semibold'>predictive AI</span> models to identify students at risk of dropout, enabling data-driven pedagogical interventions and greater student retention",
+          "Built <span class='text-foreground font-semibold'>analytical dashboards</span> and responsive interfaces with <span class='text-foreground font-semibold'>React, TypeScript and Tailwind CSS</span>, facilitating indicator reading and accelerating decision-making by the pedagogical team",
+          "Optimized the delivery flow by configuring <span class='text-foreground font-semibold'>CI/CD pipelines on GitHub Actions</span> with <span class='text-foreground font-semibold'>Docker and Nginx</span>, reducing deployment time to less than 5 minutes and enabling more frequent releases",
+          "Structured <span class='text-foreground font-semibold'>unit and E2E tests</span> with <span class='text-foreground font-semibold'>Jest and Cypress</span>, maintaining <span class='text-foreground font-semibold'>coverage above 85%</span> and reducing production failures, which increased team confidence in releases",
         ],
       },
       results: {
         title: "Results",
         items: [
-          "More predictability and efficiency in delivery flow",
-          "Product evolution focused on reliability",
-          "Automated deployment reducing delivery time",
+          "Data-driven pedagogical interventions",
+          "Deployment in less than 5 minutes",
           "Test coverage above 85%",
+          "Reduced production failures",
         ],
       },
       tech: [

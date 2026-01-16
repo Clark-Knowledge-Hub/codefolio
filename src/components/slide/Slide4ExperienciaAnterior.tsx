@@ -44,7 +44,6 @@ const Slide4ExperienciaAnterior = () => {
                   {t.company}
                 </h3>
                 <p className="text-base text-primary font-bold">{t.role}</p>
-                <p className="text-sm text-foreground-secondary">{t.period}</p>
               </div>
             </motion.div>
 
