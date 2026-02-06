@@ -134,13 +134,25 @@ export const translations = {
           "Stack completa: Java, Spring Boot, React",
         ],
       },
+      maiscarga: {
+        title: "MaisCarga",
+        subtitle: "Tokenização de Créditos de Energia via Blockchain",
+        description:
+          "Plataforma de tokenização de créditos energéticos via Blockchain para mobilidade elétrica. Backend com Spring Boot integrando ledger distribuído e mensageria RabbitMQ para transações P2P resilientes.",
+        highlights: [
+          "Tokenização de créditos energéticos",
+          "Blockchain para transações P2P",
+          "Mensageria assíncrona com RabbitMQ",
+          "Arquitetura escalável e resiliente",
+        ],
+      },
       buttons: {
         viewImages: "Ver Imagens",
         demo: "Ver Demo",
         github: "GitHub",
         frontend: "Frontend",
         backend: "Backend",
-        internalOnly: "Acessível apenas na rede interna do Senac",
+        internalOnly: "Acessível apenas na rede interna",
         accessProject: "Acessar Projeto",
       },
       moreProjects: "Ver Mais Projetos no GitHub",
@@ -397,6 +409,18 @@ export const translations = {
           "Robust backend with Spring Boot",
         ],
       },
+      maiscarga: {
+        title: "MaisCarga",
+        subtitle: "Energy Credit Tokenization via Blockchain",
+        description:
+          "Energy credit tokenization platform via Blockchain for electric mobility. Backend with Spring Boot integrating distributed ledger and RabbitMQ messaging for resilient P2P transactions.",
+        highlights: [
+          "Energy credit tokenization",
+          "Blockchain for P2P transactions",
+          "Asynchronous messaging with RabbitMQ",
+          "Scalable and resilient architecture",
+        ],
+      },
       case: {
         title: "CASE",
         subtitle: "Educational Activities and Services Control",
@@ -439,7 +463,7 @@ export const translations = {
         github: "GitHub",
         frontend: "Frontend",
         backend: "Backend",
-        internalOnly: "Accessible only on Senac's internal network",
+        internalOnly: "Accessible only on internal network",
         accessProject: "Access Project",
       },
       moreProjects: "See More Projects on GitHub",

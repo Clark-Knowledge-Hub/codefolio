@@ -20,6 +20,10 @@ import dinlyImage1 from "../assets/dinly1.png";
 import dinlyImage2 from "../assets/dinly2.png";
 import gip from "../assets/gip.png";
 import grimore from "../assets/grimore.png";
+import maiscarga1 from "../assets/maiscarga1.jpeg";
+import maiscarga2 from "../assets/maiscarga2.jpeg";
+import maiscarga3 from "../assets/maiscarga3.jpeg";
+import maiscarga4 from "../assets/maiscarga4.jpeg";
 
 interface Project {
   title: string;
@@ -65,24 +69,34 @@ const Projects = () => {
           gallery: [dinlyImage1, dinlyImage2],
         };
       }
-      // CASE - imagens do case
+      // MaisCarga - imagens do maiscarga
       if (index === 2) {
+        return {
+          ...project,
+          image: maiscarga1,
+          gallery: [maiscarga1, maiscarga2, maiscarga3, maiscarga4],
+        };
+      }
+      // CASE - imagens do case
+      if (index === 3) {
         return {
           ...project,
           image: caseImage,
           gallery: [caseImage, caseImage2, caseImage3, caseImage4],
         };
       }
+
       // GIP - placeholder
-      if (index === 3) {
+      if (index === 4) {
         return {
           ...project,
           image: gip,
           gallery: [gip],
         };
       }
+
       return project;
-    }
+    },
   ) as Project[];
 
   const openGallery = (project: Project) => {
@@ -98,7 +112,7 @@ const Projects = () => {
   const nextImage = () => {
     if (selectedProject) {
       setCurrentImageIndex((prev) =>
-        prev === selectedProject.gallery.length - 1 ? 0 : prev + 1
+        prev === selectedProject.gallery.length - 1 ? 0 : prev + 1,
       );
     }
   };
@@ -106,7 +120,7 @@ const Projects = () => {
   const prevImage = () => {
     if (selectedProject) {
       setCurrentImageIndex((prev) =>
-        prev === 0 ? selectedProject.gallery.length - 1 : prev - 1
+        prev === 0 ? selectedProject.gallery.length - 1 : prev - 1,
       );
     }
   };
@@ -133,7 +147,7 @@ const Projects = () => {
           </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}

@@ -41,6 +41,24 @@ export const getProjectsData = (language: "pt" | "en") => {
       highlights: t.projects.dinly.highlights,
     },
     {
+      title: t.projects.maiscarga.title,
+      subtitle: t.projects.maiscarga.subtitle,
+      description: t.projects.maiscarga.description,
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "Blockchain",
+        "RabbitMQ",
+        "PostgreSQL",
+        "Docker",
+      ],
+      image: "/placeholder.svg",
+      gallery: ["/placeholder.svg"],
+      github: {},
+      internalOnly: true,
+      highlights: t.projects.maiscarga.highlights,
+    },
+    {
       title: t.projects.case.title,
       subtitle: t.projects.case.subtitle,
       description: t.projects.case.description,
@@ -50,8 +68,6 @@ export const getProjectsData = (language: "pt" | "en") => {
         "Node.js",
         "PostgreSQL",
         "JavaScript",
-        "HTML5",
-        "CSS3",
       ],
       image: "/case-image.jpg",
       gallery: ["/case-image.jpg"],
@@ -59,6 +75,7 @@ export const getProjectsData = (language: "pt" | "en") => {
       internalOnly: true,
       highlights: t.projects.case.highlights,
     },
+
     {
       title: t.projects.gip.title,
       subtitle: t.projects.gip.subtitle,
