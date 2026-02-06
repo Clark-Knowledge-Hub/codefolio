@@ -69,7 +69,7 @@ const Slide5Projetos = () => {
   const nextImage = () => {
     if (selectedProject) {
       setCurrentImageIndex((prev) =>
-        prev === selectedProject.gallery.length - 1 ? 0 : prev + 1
+        prev === selectedProject.gallery.length - 1 ? 0 : prev + 1,
       );
     }
   };
@@ -77,7 +77,7 @@ const Slide5Projetos = () => {
   const prevImage = () => {
     if (selectedProject) {
       setCurrentImageIndex((prev) =>
-        prev === 0 ? selectedProject.gallery.length - 1 : prev - 1
+        prev === 0 ? selectedProject.gallery.length - 1 : prev - 1,
       );
     }
   };
