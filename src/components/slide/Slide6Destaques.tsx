@@ -86,21 +86,6 @@ const Slide6Destaques = () => {
                         </div>
 
                         {/* Highlights */}
-                        <div className="space-y-2">
-                          {achievement.details?.map((detail, dIndex) => (
-                            <div
-                              key={dIndex}
-                              className="flex items-start gap-2"
-                            >
-                              <span className="text-primary font-bold text-sm mt-0.5 flex-shrink-0">
-                                ✓
-                              </span>
-                              <p className="text-xs text-foreground-secondary leading-snug">
-                                {detail}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
                       </div>
                     </div>
                   ) : (
