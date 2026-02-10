@@ -3,8 +3,8 @@ import { useLanguage } from "../../../contexts/LanguageContext";
 import { presentationDevopsTranslations } from "../../../locales/presentationDevops";
 import { fadeInUp, staggerContainer } from "../../AnimationVariants";
 import { FiAward } from "react-icons/fi";
-import { FaTrophy } from "react-icons/fa";
 import oracleFoundations from "../../../assets/oracle.jpeg";
+import oracleAI from "../../../assets/oracleia.jpeg";
 
 const Slide6DestaquesDevops = () => {
   const { language } = useLanguage();
@@ -28,16 +28,30 @@ const Slide6DestaquesDevops = () => {
           </motion.div>
 
           {/* Achievements Grid */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {t.achievements.map((achievement, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-              >
-                {achievement.type === "certificate" ? (
-                  /* Certificate Card */
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {t.achievements.map((achievement, index) => {
+              // Mapear imagens das certificações
+              const getCertificateImage = () => {
+                if (achievement.title.includes("AI Foundations")) {
+                  return oracleAI;
+                }
+                if (
+                  achievement.title.includes("OCI Foundations") ||
+                  achievement.title.includes("Infrastructure Foundations")
+                ) {
+                  return oracleFoundations;
+                }
+                return oracleFoundations;
+              };
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                >
+                  {/* Certificate Card */}
                   <div className="bg-card border-2 border-card-border rounded-2xl shadow-card hover:shadow-hover transition-all overflow-hidden h-full flex flex-col group">
                     {/* Header with Title */}
                     <div className="p-5 bg-gradient-card border-b border-card-border">
@@ -55,7 +69,7 @@ const Slide6DestaquesDevops = () => {
                     {/* Certificate Image */}
                     <div className="relative h-44 bg-gradient-to-br from-primary/5 to-background flex items-center justify-center p-4 overflow-hidden">
                       <img
-                        src={oracleFoundations}
+                        src={getCertificateImage()}
                         alt={achievement.title}
                         className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                       />
@@ -77,32 +91,9 @@ const Slide6DestaquesDevops = () => {
                       </p>
                     </div>
                   </div>
-                ) : (
-                  /* Achievement Card */
-                  <div className="bg-gradient-card border-2 border-primary/40 rounded-2xl overflow-hidden shadow-card hover:shadow-hover transition-all h-full flex flex-col">
-                    {/* Header */}
-                    <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-6 text-center border-b border-primary/30">
-                      <FaTrophy className="text-5xl text-primary mx-auto mb-3" />
-                      <h3 className="text-lg font-bold text-primary leading-tight mb-1">
-                        {achievement.title}
-                      </h3>
-                      {achievement.context && (
-                        <p className="text-foreground-secondary text-xs font-semibold">
-                          {achievement.context}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6 flex-1 flex flex-col justify-center">
-                      <p className="text-foreground text-sm text-center leading-relaxed">
-                        {achievement.description}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Closing Message */}

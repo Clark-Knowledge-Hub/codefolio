@@ -71,24 +71,6 @@ const Slide4ExperienciaAnteriorDevops = () => {
                 </div>
               </div>
 
-              {/* DevOps Impact */}
-              <div className="bg-gradient-card border border-primary/30 rounded-xl p-4 shadow-card">
-                <h4 className="text-sm font-bold text-foreground mb-3">
-                  {t.results.title}
-                </h4>
-                <div className="grid grid-cols-2 gap-3">
-                  {t.results.items.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start gap-2 text-xs text-foreground-secondary"
-                    >
-                      <span className="text-primary font-bold mt-0.5">→</span>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* Tech Stack */}
               <div className="bg-card border border-card-border rounded-xl p-4 shadow-card">
                 <h4 className="text-sm font-bold text-foreground mb-3">

@@ -105,58 +105,57 @@ const PresentationDevops = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Controls */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-6">
-        {/* Previous Button */}
+      {/* Navigation Arrows */}
+      {currentSlide > 0 && (
         <button
           onClick={prevSlide}
-          disabled={currentSlide === 0}
-          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
-            currentSlide === 0
-              ? "bg-card/50 text-foreground-secondary cursor-not-allowed opacity-50"
-              : "bg-primary text-primary-foreground hover:bg-primary-light shadow-card"
-          }`}
+          className="fixed left-6 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-card border border-card-border rounded-full flex items-center justify-center shadow-card transition-all"
           aria-label="Previous slide"
         >
-          <FiChevronLeft className="text-2xl" />
+          <FiChevronLeft className="text-2xl text-foreground-secondary" />
         </button>
+      )}
 
-        {/* Slide Indicators */}
-        <div className="flex items-center gap-2 bg-card/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-card border border-card-border">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`transition-all rounded-full ${
-                index === currentSlide
-                  ? "w-8 h-2 bg-primary"
-                  : "w-2 h-2 bg-foreground-secondary/40 hover:bg-foreground-secondary/60"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-
-        {/* Next Button */}
+      {currentSlide < totalSlides - 1 && (
         <button
           onClick={nextSlide}
-          disabled={currentSlide === totalSlides - 1}
-          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
-            currentSlide === totalSlides - 1
-              ? "bg-card/50 text-foreground-secondary cursor-not-allowed opacity-50"
-              : "bg-primary text-primary-foreground hover:bg-primary-light shadow-card"
-          }`}
+          className="fixed right-6 top-1/2 -translate-y-1/2 z-40 w-12 h-12 bg-card border border-card-border rounded-full flex items-center justify-center shadow-card transition-all"
           aria-label="Next slide"
         >
-          <FiChevronRight className="text-2xl" />
+          <FiChevronRight className="text-2xl text-foreground-secondary" />
         </button>
-      </div>
+      )}
 
-      {/* Slide Counter */}
-      <div className="absolute bottom-8 right-8 z-50 bg-card/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-card border border-card-border">
-        <span className="text-sm font-semibold text-foreground">
-          {currentSlide + 1} / {totalSlides}
-        </span>
+      {/* Progress Indicator - Bottom Center */}
+      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40">
+        <div className="bg-card backdrop-blur-sm border border-card-border rounded-full px-6 py-3 shadow-card">
+          <div className="flex items-center gap-3">
+            {/* Progress Dots */}
+            <div className="flex items-center gap-3">
+              {Array.from({ length: totalSlides }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className="group relative"
+                  aria-label={`Go to slide ${index + 1}`}
+                >
+                  <div
+                    className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+                      index === currentSlide
+                        ? "bg-primary scale-125 shadow-lg shadow-primary/50"
+                        : "bg-foreground-secondary/40 hover:bg-foreground-secondary/60 hover:scale-110"
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
+
+            {/* Slide Counter */}
+            <div className="ml-4 text-sm font-bold text-foreground">
+              {currentSlide + 1} / {totalSlides}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
