@@ -52,12 +52,15 @@ export const presentationDevopsTranslations = {
         items: [
           "Criei e mantenho <span class='text-foreground font-semibold'>pipeline de CI/CD no GitLab</span> automatizando build, testes e deploy para <span class='text-foreground font-semibold'>servidor Linux on-premise</span>",
           "Containerizei as aplicações com <span class='text-foreground font-semibold'>Docker</span>, subindo <span class='text-foreground font-semibold'>backend (Spring Boot), PostgreSQL, RabbitMQ e frontend (Nginx servindo build React)</span> em containers",
+          "Implementei deploy na <span class='text-foreground font-semibold'>AWS EKS (Elastic Kubernetes Service)</span> usando <span class='text-foreground font-semibold'>Terraform para infraestrutura como código</span>, provisionando cluster Kubernetes gerenciado",
           "Configurei <span class='text-foreground font-semibold'>Nginx como reverse proxy</span> para rotear requisições entre os serviços e servir os arquivos estáticos do frontend",
           "Implementei <span class='text-foreground font-semibold'>testes automatizados na pipeline</span> (unitários e de integração) para garantir qualidade antes do deploy",
-          "Gerencio <span class='text-foreground font-semibold'>ambientes de desenvolvimento e produção</span> no servidor Linux, garantindo consistência com Docker Compose",
         ],
       },
       tech: [
+        "AWS EKS",
+        "Kubernetes",
+        "Terraform",
         "GitLab CI/CD",
         "Docker",
         "Docker Compose",
@@ -148,30 +151,45 @@ export const presentationDevopsTranslations = {
       },
     },
     slide6: {
-      title: "Destaques DevOps",
-      subtitle: "Certificações e conquistas",
-      achievements: [
-        {
-          type: "certificate",
-          title: "Oracle Cloud Infrastructure Foundations Associate",
-          description:
-            "Fundamentos da Oracle Cloud Infrastructure, abrangendo computação, armazenamento, rede e conceitos de cloud.",
-          issuer: "Oracle",
-          date: "2025",
-          icon: "certificate",
-        },
-        {
-          type: "certificate",
-          title: "Oracle Cloud Infrastructure AI Foundations Associate",
-          description:
-            "Fundamentos de Inteligência Artificial na OCI, incluindo Machine Learning, serviços de IA e implementação de modelos.",
-          issuer: "Oracle",
-          date: "2025",
-          icon: "certificate",
-        },
-      ],
-      closing:
-        "Focado em automatização, containerização e práticas DevOps para entregas ágeis e confiáveis",
+      title: "Deploy na AWS EKS com Terraform",
+      subtitle: "Infraestrutura como Código & Kubernetes",
+      description:
+        "Implementação completa de cluster Kubernetes gerenciado na AWS usando Terraform para provisionamento de infraestrutura escalável e resiliente.",
+      architecture: {
+        title: "Arquitetura do Cluster EKS",
+        description:
+          "Cluster Kubernetes na AWS EKS com worker nodes em EC2, Load Balancer Application e integração completa com serviços AWS.",
+        highlights: [
+          "Provisionamento declarativo com Terraform",
+          "Cluster EKS gerenciado pela AWS",
+          "Worker nodes EC2 com auto-scaling",
+          "Application Load Balancer para roteamento",
+          "Integração com VPC, IAM e CloudWatch",
+          "Deployments e Services Kubernetes",
+        ],
+      },
+      benefits: {
+        title: "Benefícios da Solução",
+        items: [
+          "<span class='text-foreground font-semibold'>Infraestrutura como Código</span>: Terraform permite versionamento, replicação e gestão declarativa da infra",
+          "<span class='text-foreground font-semibold'>Escalabilidade Automática</span>: Auto-scaling de pods (HPA) e nodes (CA) conforme demanda",
+          "<span class='text-foreground font-semibold'>Alta Disponibilidade</span>: Multi-AZ deployment com health checks e rolling updates",
+          "<span class='text-foreground font-semibold'>Gestão Simplificada</span>: EKS gerencia o control plane, reduzindo overhead operacional",
+        ],
+      },
+      techStack: {
+        title: "Stack Completa",
+        items: [
+          "AWS EKS",
+          "Terraform",
+          "Kubernetes",
+          "Docker",
+          "AWS EC2",
+          "Application Load Balancer",
+          "VPC",
+          "CloudWatch",
+        ],
+      },
     },
     slide7: {
       title: "Obrigado!",
@@ -240,12 +258,16 @@ export const presentationDevopsTranslations = {
         items: [
           "Created and maintain <span class='text-foreground font-semibold'>CI/CD pipeline on GitLab</span> automating build, tests and deploy to <span class='text-foreground font-semibold'>on-premise Linux server</span>",
           "Containerized applications with <span class='text-foreground font-semibold'>Docker</span>, deploying <span class='text-foreground font-semibold'>backend (Spring Boot), PostgreSQL, RabbitMQ and frontend (Nginx serving React build)</span> in containers",
+          "Implemented deployment on <span class='text-foreground font-semibold'>AWS EKS (Elastic Kubernetes Service)</span> using <span class='text-foreground font-semibold'>Terraform for infrastructure as code</span>, provisioning managed Kubernetes cluster",
           "Configured <span class='text-foreground font-semibold'>Nginx as reverse proxy</span> to route requests between services and serve frontend static files",
           "Implemented <span class='text-foreground font-semibold'>automated tests in pipeline</span> (unit and integration) to ensure quality before deployment",
           "Manage <span class='text-foreground font-semibold'>development and production environments</span> on Linux server, ensuring consistency with Docker Compose",
         ],
       },
       tech: [
+        "AWS EKS",
+        "Kubernetes",
+        "Terraform",
         "GitLab CI/CD",
         "Docker",
         "Docker Compose",
@@ -336,30 +358,45 @@ export const presentationDevopsTranslations = {
       },
     },
     slide6: {
-      title: "DevOps Highlights",
-      subtitle: "Certifications and achievements",
-      achievements: [
-        {
-          type: "certificate",
-          title: "Oracle Cloud Infrastructure Foundations Associate",
-          description:
-            "Oracle Cloud Infrastructure fundamentals, covering compute, storage, networking and cloud concepts.",
-          issuer: "Oracle",
-          date: "2025",
-          icon: "certificate",
-        },
-        {
-          type: "certificate",
-          title: "Oracle Cloud Infrastructure AI Foundations Associate",
-          description:
-            "Artificial Intelligence fundamentals on OCI, including Machine Learning, AI services and model implementation.",
-          issuer: "Oracle",
-          date: "2025",
-          icon: "certificate",
-        },
-      ],
-      closing:
-        "Focused on automation, containerization and DevOps practices for agile and reliable deliveries",
+      title: "AWS EKS Deploy with Terraform",
+      subtitle: "Infrastructure as Code & Kubernetes",
+      description:
+        "Complete implementation of managed Kubernetes cluster on AWS using Terraform for scalable and resilient infrastructure provisioning.",
+      architecture: {
+        title: "EKS Cluster Architecture",
+        description:
+          "Kubernetes cluster on AWS EKS with EC2 worker nodes, Application Load Balancer and full AWS services integration.",
+        highlights: [
+          "Declarative provisioning with Terraform",
+          "AWS-managed EKS cluster",
+          "EC2 worker nodes with auto-scaling",
+          "Application Load Balancer for routing",
+          "Integration with VPC, IAM and CloudWatch",
+          "Kubernetes Deployments and Services",
+        ],
+      },
+      benefits: {
+        title: "Solution Benefits",
+        items: [
+          "<span class='text-foreground font-semibold'>Infrastructure as Code</span>: Terraform enables versioning, replication and declarative infra management",
+          "<span class='text-foreground font-semibold'>Auto-scaling</span>: Pod auto-scaling (HPA) and node auto-scaling (CA) based on demand",
+          "<span class='text-foreground font-semibold'>High Availability</span>: Multi-AZ deployment with health checks and rolling updates",
+          "<span class='text-foreground font-semibold'>Simplified Management</span>: EKS manages control plane, reducing operational overhead",
+        ],
+      },
+      techStack: {
+        title: "Complete Stack",
+        items: [
+          "AWS EKS",
+          "Terraform",
+          "Kubernetes",
+          "Docker",
+          "AWS EC2",
+          "Application Load Balancer",
+          "VPC",
+          "CloudWatch",
+        ],
+      },
     },
     slide7: {
       title: "Thank you!",

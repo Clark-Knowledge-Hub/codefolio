@@ -7,7 +7,7 @@ import Slide2QuemSouDevops from "../components/slide/devops/Slide2QuemSouDevops"
 import Slide3ExperienciaAtualDevops from "../components/slide/devops/Slide3ExperienciaAtualDevops";
 import Slide4ExperienciaAnteriorDevops from "../components/slide/devops/Slide4ExperienciaAnteriorDevops";
 import Slide5ProjetosDevops from "../components/slide/devops/Slide5ProjetosDevops";
-import Slide6DestaquesDevops from "../components/slide/devops/Slide6DestaquesDevops";
+import Slide6DeployEksDevops from "../components/slide/devops/Slide6DeployEksDevops";
 import Slide7EncerramentoDevops from "../components/slide/devops/Slide7EncerramentoDevops";
 
 const PresentationDevops = () => {
@@ -20,7 +20,7 @@ const PresentationDevops = () => {
     <Slide3ExperienciaAtualDevops key="slide3" />,
     <Slide4ExperienciaAnteriorDevops key="slide4" />,
     <Slide5ProjetosDevops key="slide5" />,
-    <Slide6DestaquesDevops key="slide6" />,
+    <Slide6DeployEksDevops key="slide6" />,
     <Slide7EncerramentoDevops key="slide7" />,
   ];
 

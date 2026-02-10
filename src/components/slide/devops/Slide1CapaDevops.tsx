@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../../../contexts/LanguageContext";
 import { presentationDevopsTranslations } from "../../../locales/presentationDevops";
 import { FaDocker, FaGitAlt, FaAws, FaLinux } from "react-icons/fa";
-import { SiPrometheus, SiGrafana } from "react-icons/si";
+import { SiPrometheus, SiGrafana, SiKubernetes } from "react-icons/si";
 
 const Slide1CapaDevops = () => {
   const { language } = useLanguage();
   const t = presentationDevopsTranslations[language].slide1;
 
   const techIcons = [
+    { Icon: SiKubernetes, name: "Kubernetes", color: "text-[#326ce5]" },
     { Icon: FaDocker, name: "Docker", color: "text-[#2496ed]" },
     { Icon: FaLinux, name: "Linux", color: "text-[#FCC624]" },
     { Icon: FaGitAlt, name: "Git", color: "text-[#f05032]" },
