@@ -47,18 +47,11 @@ const Slide2QuemSouDevops = () => {
               <div className="bg-card border border-card-border rounded-xl p-6 shadow-card">
                 <h3 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
                   <FiCode className="text-2xl" />
-                  Desenvolvedor & DevOps
+                  {language === "pt"
+                    ? "Desenvolvedor & DevOps"
+                    : "Developer & DevOps"}
                 </h3>
                 <div className="space-y-3 text-foreground-secondary leading-relaxed">
-                  {t.profile.intro && (
-                    <p className="flex items-start gap-3">
-                      <span className="text-primary text-lg font-bold mt-0.5">
-                        •
-                      </span>
-                      <span>{t.profile.intro}</span>
-                    </p>
-                  )}
-
                   {t.profile.stack && (
                     <p className="flex items-start gap-3">
                       <span className="text-primary text-lg font-bold mt-0.5">
