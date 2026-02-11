@@ -186,13 +186,6 @@ const Slide6DeployEksDevops = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Description Footer */}
-              <div className="bg-gradient-card border border-primary/30 rounded-xl p-4 shadow-card">
-                <p className="text-sm text-foreground-secondary leading-relaxed text-center italic">
-                  {t.description}
-                </p>
-              </div>
             </motion.div>
           </div>
         </motion.div>
