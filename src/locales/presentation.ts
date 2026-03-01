@@ -49,72 +49,45 @@ export const presentationTranslations = {
       },
     },
     slide3: {
-      title: "Experiência Profissional",
-      company: "LANCE — UFRN",
-      role: "Desenvolvedor Web Jr",
-      period: "Novembro 2025 - Presente",
-      context: "Leading Advanced Technologies Center of Excellence",
-      responsibilities: {
-        title: "Atribuições & Resultados",
-        items: [
-          "Projetei e implementei módulos backend em <span class='text-foreground font-semibold'>Java e Spring Boot</span> em um <span class='text-foreground font-semibold'>monólito modular</span>, reduzindo o acoplamento entre domínios e preparando o sistema para escalar novas funcionalidades com menor custo de manutenção",
-          "Desenvolvi interfaces responsivas em <span class='text-foreground font-semibold'>React e TypeScript</span> e estruturei o gerenciamento de estado com <span class='text-foreground font-semibold'>Zustand</span>, diminuindo complexidade de componentes e acelerando a implementação de novas telas do produto",
-          "Implementei testes automatizados com <span class='text-foreground font-semibold'>JUnit, Mockito e Cypress</span>, reduzindo a incidência de regressões em produção e aumentando a confiança da equipe em releases frequentes",
-          "Colaborei na manutenção de pipelines de <span class='text-foreground font-semibold'>CI/CD no GitLab</span> com <span class='text-foreground font-semibold'>Docker</span>, encurtando o ciclo de entrega e garantindo ambientes de desenvolvimento consistentes entre a equipe",
-          "Participo ativamente de cerimônias <span class='text-foreground font-semibold'>Scrum</span> e <span class='text-foreground font-semibold'>Code Reviews</span>, contribuindo para a adoção de boas práticas de desenvolvimento e melhoria contínua da qualidade do código da equipe",
-        ],
-      },
-      impact: {
-        title: "Resultados & Impacto",
-        items: [
-          "Redução do acoplamento entre domínios",
-          "Menor custo de manutenção e maior escalabilidade",
-          "Diminuição de regressões em produção",
-          "Ciclo de entrega encurtado com ambientes consistentes",
-        ],
-      },
-      tech: [
-        "Java",
-        "Spring Boot",
-        "React",
-        "TypeScript",
-        "Docker",
-        "GitLab CI/CD",
+      title: "Experiências Profissionais",
+      subtitle: "Desenvolvedor Web Jr · 2 anos de experiência",
+      companies: [
+        {
+          name: "LANCE — UFRN",
+          context: "P&D — Tecnologias Avançadas",
+          period: "Nov 2025 – Fev 2026",
+        },
+        {
+          name: "Senac Labs — Senac RN",
+          context: "Laboratório de Inovação",
+          period: "Ago 2024 – Nov 2025",
+        },
       ],
-    },
-    slide4: {
-      title: "Experiência Profissional",
-      company: "Senac Labs — Senac RN",
-      role: "Desenvolvedor Web Jr",
-      period: "Agosto 2024 - Novembro 2025",
-      context:
-        "Laboratório de Inovação e Tecnologia do Senac Rio Grande do Norte",
-      contributions: {
-        title: "Atribuições & Resultados",
-        items: [
-          "Desenvolvi <span class='text-foreground font-semibold'>APIs REST</span> em <span class='text-foreground font-semibold'>Java e Spring Boot</span> integrando modelos de <span class='text-foreground font-semibold'>IA preditiva</span> para identificar alunos com risco de evasão, permitindo intervenções pedagógicas baseadas em dados e maior retenção estudantil",
-          "Construí <span class='text-foreground font-semibold'>dashboards analíticos</span> e interfaces responsivas com <span class='text-foreground font-semibold'>React, TypeScript e Tailwind CSS</span>, facilitando a leitura de indicadores e acelerando a tomada de decisão da equipe pedagógica",
-          "Otimizei o fluxo de entrega configurando pipelines de <span class='text-foreground font-semibold'>CI/CD no GitHub Actions</span> com <span class='text-foreground font-semibold'>Docker e Nginx</span>, reduzindo o tempo de deploy para menos de 5 minutos e viabilizando releases mais frequentes",
-          "Estruturei testes <span class='text-foreground font-semibold'>unitários e E2E</span> com <span class='text-foreground font-semibold'>Jest e Cypress</span>, mantendo <span class='text-foreground font-semibold'>cobertura acima de 85%</span> e reduzindo falhas em produção, o que aumentou a confiança nas releases da equipe",
-        ],
-      },
-      results: {
-        title: "Resultados",
-        items: [
-          "Intervenções pedagógicas baseadas em dados",
-          "Deploy em menos de 5 minutos",
-          "Cobertura de testes acima de 85%",
-          "Redução de falhas em produção",
-        ],
-      },
-      tech: [
-        "Java",
-        "Spring Boot",
-        "React",
-        "TypeScript",
-        "GitHub Actions",
-        "Docker",
+      stackLabel: "Stack Tecnológico",
+      categories: [
+        {
+          label: "Backend",
+          items: ["Java 21", "Spring Boot", "PostgreSQL", "RabbitMQ"],
+        },
+        {
+          label: "Frontend",
+          items: ["ReactJS", "TypeScript", "Tailwind CSS", "Zustand"],
+        },
+        {
+          label: "Testes",
+          items: ["JUnit", "Mockito", "Jest", "Cypress"],
+        },
+        {
+          label: "DevOps",
+          items: ["Docker", "Git", "CI/CD Pipelines", "Linux On-premise"],
+        },
+        {
+          label: "Metodologias",
+          items: ["Scrum", "Kanban", "Code Review"],
+        },
       ],
+      unifiedNote:
+        "Stack consolidada e consistente nas duas experiências profissionais",
     },
     slide5: {
       title: "Projeto em Destaque",
@@ -286,72 +259,45 @@ export const presentationTranslations = {
       },
     },
     slide3: {
-      title: "Profissional Experience",
-      company: "LANCE — UFRN",
-      role: "Jr Web Developer",
-      period: "November 2025 - Present",
-      context: "Leading Advanced Technologies Center of Excellence",
-      responsibilities: {
-        title: "Responsibilities & Results",
-        items: [
-          "Designed and implemented backend modules in <span class='text-foreground font-semibold'>Java and Spring Boot</span> in a <span class='text-foreground font-semibold'>modular monolith</span>, reducing coupling between domains and preparing the system to scale new features with lower maintenance cost",
-          "Developed responsive interfaces in <span class='text-foreground font-semibold'>React and TypeScript</span> and structured state management with <span class='text-foreground font-semibold'>Zustand</span>, decreasing component complexity and accelerating the implementation of new product screens",
-          "Implemented automated tests with <span class='text-foreground font-semibold'>JUnit, Mockito and Cypress</span>, reducing the incidence of production regressions and increasing team confidence in frequent releases",
-          "Collaborated in maintaining <span class='text-foreground font-semibold'>CI/CD pipelines on GitLab</span> with <span class='text-foreground font-semibold'>Docker</span>, shortening the delivery cycle and ensuring consistent development environments across the team",
-          "Actively participate in <span class='text-foreground font-semibold'>Scrum</span> ceremonies and <span class='text-foreground font-semibold'>Code Reviews</span>, contributing to the adoption of development best practices and continuous improvement of team code quality",
-        ],
-      },
-      impact: {
-        title: "Results & Impact",
-        items: [
-          "Reduced coupling between domains",
-          "Lower maintenance cost and greater scalability",
-          "Decreased production regressions",
-          "Shortened delivery cycle with consistent environments",
-        ],
-      },
-      tech: [
-        "Java",
-        "Spring Boot",
-        "React",
-        "TypeScript",
-        "Docker",
-        "GitLab CI/CD",
+      title: "Professional Experience",
+      subtitle: "Jr Web Developer · 2 years of experience",
+      companies: [
+        {
+          name: "LANCE — UFRN",
+          context: "R&D — Advanced Technologies",
+          period: "Nov 2025 – Feb 2026",
+        },
+        {
+          name: "Senac Labs — Senac RN",
+          context: "Innovation Laboratory",
+          period: "Aug 2024 – Nov 2025",
+        },
       ],
-    },
-    slide4: {
-      title: "Profissional Experience",
-      company: "Senac Labs — Senac RN",
-      role: "Jr Web Developer",
-      period: "August 2024 - November 2025",
-      context:
-        "Innovation and Technology Laboratory at Senac Rio Grande do Norte",
-      contributions: {
-        title: "Responsibilities & Results",
-        items: [
-          "Developed <span class='text-foreground font-semibold'>REST APIs</span> in <span class='text-foreground font-semibold'>Java and Spring Boot</span> integrating <span class='text-foreground font-semibold'>predictive AI</span> models to identify students at risk of dropout, enabling data-driven pedagogical interventions and greater student retention",
-          "Built <span class='text-foreground font-semibold'>analytical dashboards</span> and responsive interfaces with <span class='text-foreground font-semibold'>React, TypeScript and Tailwind CSS</span>, facilitating indicator reading and accelerating decision-making by the pedagogical team",
-          "Optimized the delivery flow by configuring <span class='text-foreground font-semibold'>CI/CD pipelines on GitHub Actions</span> with <span class='text-foreground font-semibold'>Docker and Nginx</span>, reducing deployment time to less than 5 minutes and enabling more frequent releases",
-          "Structured <span class='text-foreground font-semibold'>unit and E2E tests</span> with <span class='text-foreground font-semibold'>Jest and Cypress</span>, maintaining <span class='text-foreground font-semibold'>coverage above 85%</span> and reducing production failures, which increased team confidence in releases",
-        ],
-      },
-      results: {
-        title: "Results",
-        items: [
-          "Data-driven pedagogical interventions",
-          "Deployment in less than 5 minutes",
-          "Test coverage above 85%",
-          "Reduced production failures",
-        ],
-      },
-      tech: [
-        "Java",
-        "Spring Boot",
-        "React",
-        "TypeScript",
-        "GitHub Actions",
-        "Docker",
+      stackLabel: "Technology Stack",
+      categories: [
+        {
+          label: "Backend",
+          items: ["Java 21", "Spring Boot", "PostgreSQL", "RabbitMQ"],
+        },
+        {
+          label: "Frontend",
+          items: ["ReactJS", "TypeScript", "Tailwind CSS", "Zustand"],
+        },
+        {
+          label: "Tests",
+          items: ["JUnit", "Mockito", "Jest", "Cypress"],
+        },
+        {
+          label: "DevOps",
+          items: ["Docker", "Git", "CI/CD Pipelines", "Linux On-premise"],
+        },
+        {
+          label: "Methodologies",
+          items: ["Scrum", "Kanban", "Code Review"],
+        },
       ],
+      unifiedNote:
+        "Consolidated and consistent stack across both professional experiences",
     },
     slide5: {
       title: "Featured Project",

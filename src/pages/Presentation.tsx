@@ -4,8 +4,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import LanguageToggle from "../components/LanguageToggle";
 import Slide1Capa from "../components/slide/Slide1Capa";
 import Slide2QuemSou from "../components/slide/Slide2QuemSou";
-import Slide3ExperienciaAtual from "../components/slide/Slide3ExperienciaAtual";
-import Slide4ExperienciaAnterior from "../components/slide/Slide4ExperienciaAnterior";
+import Slide3Experiencias from "../components/slide/Slide3Experiencias";
 import Slide5Projetos from "../components/slide/Slide5Projetos";
 import Slide6Destaques from "../components/slide/Slide6Destaques";
 import Slide7Encerramento from "../components/slide/Slide7Encerramento";
@@ -17,8 +16,7 @@ const Presentation = () => {
   const slides = [
     <Slide1Capa key="slide1" />,
     <Slide2QuemSou key="slide2" />,
-    <Slide3ExperienciaAtual key="slide3" />,
-    <Slide4ExperienciaAnterior key="slide4" />,
+    <Slide3Experiencias key="slide3" />,
     <Slide5Projetos key="slide5" />,
     <Slide6Destaques key="slide6" />,
     <Slide7Encerramento key="slide7" />,
