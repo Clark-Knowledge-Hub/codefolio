@@ -19,7 +19,8 @@ import caseImage4 from "../assets/case4.jpeg";
 import dinlyImage1 from "../assets/dinly1.png";
 import dinlyImage2 from "../assets/dinly2.png";
 import gip from "../assets/gip.png";
-import grimore from "../assets/grimore.png";
+import pomocube1 from "../assets/pomocube_1.png";
+import pomocube2 from "../assets/pomocube_2.png";
 import maiscarga1 from "../assets/maiscarga1.jpeg";
 import maiscarga2 from "../assets/maiscarga2.jpeg";
 import maiscarga3 from "../assets/maiscarga3.jpeg";
@@ -53,12 +54,12 @@ const Projects = () => {
   // Carregar imagens
   const projects: Project[] = getProjectsData(language).map(
     (project, index) => {
-      // Grimore - placeholder
+      // PomoCube - imagens do pomocube
       if (index === 0) {
         return {
           ...project,
-          image: grimore,
-          gallery: [grimore],
+          image: pomocube1,
+          gallery: [pomocube1, pomocube2],
         };
       }
       // Dinly - imagens do dinly
